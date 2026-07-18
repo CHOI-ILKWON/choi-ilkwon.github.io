@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>위생배관 관경 계산서 — MEP Works</title>
-<meta name="description" content="개별 화장실부터 MAIN관까지. 급수·급탕·오배수·통기 관경 산정, 압력검토, 밸브·부속 수량 산출을 브라우저에서.">
+<meta name="description" content="개별 화장실부터 MAIN관까지. 급수·급탕·오수·배수·통기 관경 산정, 압력검토, 밸브·부속 수량 산출을 브라우저에서.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚰</text></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -26,10 +26,10 @@
   <p class="eyebrow reveal">위생배관 관경 계산서</p>
   <h1 class="display reveal">기구 수만 입력하세요.<br>관경은 계산서가 정합니다.</h1>
   <p class="lead reveal">개별 화장실부터 MAIN관까지.
-  급수·급탕·오배수·통기의 관경 산정과 압력검토, 밸브·부속 수량까지 하나의 흐름으로 이어집니다.</p>
+  급수·급탕·오수·배수·통기의 관경 산정과 압력검토, 밸브·부속 수량까지 하나의 흐름으로 이어집니다.</p>
   <div class="hero__cta reveal">
     <a class="btn" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
-    <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
+    <a class="link-more" href="#demo">작동 모습 보기</a>
   </div>
 </header>
 
@@ -47,80 +47,204 @@
   </div>
 </section>
 
-<!-- 기능 -->
-<section id="features" class="section section--alt">
-  <div class="wrap center">
-    <p class="eyebrow reveal">기능</p>
-    <h2 class="headline reveal">입력은 한 번,<br>계산은 끝까지 이어집니다.</h2>
-    <div class="bento">
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">🚻</span>
-        <h3>개별 화장실에서 시작</h3>
-        <p>대변기·세면기·소변기… 기구 수만 넣으면 기구급수부하단위(FU)가 자동 집계되고, 화장실 단위 관경이 바로 나옵니다.</p>
-      </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">🔗</span>
-        <h3>급수·급탕 → 오배수 → MAIN관</h3>
-        <p>화장실을 연결하면 부하가 누적되며 수직관·수평주관·MAIN관까지 관경이 이어서 산정됩니다. 하나 고치면 전체가 따라 갱신됩니다.</p>
-      </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">📉</span>
-        <h3>동시사용률 곡선 내장</h3>
-        <p>급수 동시사용률 곡선을 눈으로 읽지 마세요. 부하단위에 맞는 값이 자동 적용됩니다.</p>
-      </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🧭</span>
-        <h3>압력검토까지</h3>
-        <p>정수두·마찰손실을 반영한 압력검토로 관경 선정의 근거가 계산서에 남습니다.</p>
-      </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🔩</span>
-        <h3>밸브·부속 수량 산출</h3>
-        <p>배관 위상 기반으로 밸브·엘보·티·TY·C.O까지 구경별 수량이 자동 집계됩니다.</p>
-      </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">📄</span>
-        <h3>엑셀·PDF로 납품까지</h3>
-        <p>계산 근거가 정리된 계산서를 엑셀·PDF로 내보내 그대로 제출하세요. JSON 저장으로 프로젝트도 이어집니다.</p>
-      </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <p class="bento__stat">7개 탭</p>
-        <p>개별 화장실 · 급수/급탕 연결 · 오배수 연결 · MAIN관 · 압력검토 · 메인관 결과 · 밸브·부속 산출. 실무 순서 그대로.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 라이브 데모 -->
-<section class="section">
+<!-- 3D 작동 시연 -->
+<section id="demo" class="section">
   <div class="wrap center">
     <p class="eyebrow reveal">작동 모습</p>
-    <h2 class="headline reveal">기구를 넣는 순간,<br>계산은 이렇게 흘러갑니다.</h2>
-    <div class="demo reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">위생배관 관경 계산서 — 자동 시연</span></div>
+    <h2 class="headline reveal">기구 세 개가,<br>배관 네 갈래가 되기까지.</h2>
+    <p class="lead reveal" style="margin-top:16px;">화장실에 기구를 놓는 순간 —
+    오수·배수·급수·급탕이 각자의 관경을 갖고 입상관으로 모입니다.</p>
+    <div class="demo demo--dark reveal">
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">1층 화장실 (남) — 실제 계산 예시</span></div>
       <div class="demo__stage">
         <div class="scene" data-scene>
-          <div class="sc-row" data-step="1" data-delay="550"><span>🚽 대변기 (세정밸브)</span><b>× 4</b></div>
-          <div class="sc-row" data-step="2" data-delay="550"><span>🧼 세면기</span><b>× 3</b></div>
-          <div class="sc-row" data-step="3" data-delay="750"><span>🚿 샤워기</span><b>× 2</b></div>
-          <div class="sc-row" data-step="4" data-delay="1100"><span>기구급수부하단위 합계</span><b><span data-count="46" data-suffix=" FU">0 FU</span></b></div>
-          <div class="sc-arrow" data-step="5" data-delay="700">↓ 동시사용률 곡선 자동 적용</div>
-          <div class="sc-pipe-row" data-step="6" data-delay="650"><span class="sc-size">25A</span><div class="sc-pipe" style="--w:32%; --h:10px;"></div><span class="muted" style="font-size:.85rem;">화장실 지관</span></div>
-          <div class="sc-pipe-row" data-step="7" data-delay="650"><span class="sc-size">40A</span><div class="sc-pipe" style="--w:55%; --h:14px;"></div><span class="muted" style="font-size:.85rem;">급수 수직관</span></div>
-          <div class="sc-pipe-row" data-step="8" data-delay="1100"><span class="sc-size">50A</span><div class="sc-pipe" style="--w:78%; --h:18px;"></div><span class="muted" style="font-size:.85rem;">급수 MAIN</span></div>
-          <div class="sc-result" data-step="9" data-delay="1400">
-            <div class="sc-result__num">50A</div>
-            <div class="sc-result__label">급수 MAIN 관경 — 압력검토 통과 ✓</div>
-          </div>
+          <svg class="scene-svg" viewBox="0 0 940 640" xmlns="http://www.w3.org/2000/svg" aria-label="위생배관 3D 시연: 기구 배치 후 오수·배수·급수·급탕 배관이 관경과 함께 그려지는 과정">
+
+            <!-- 1단계: 기구 배치 -->
+            <g data-step="1" data-delay="1200">
+              <ellipse cx="274" cy="352" rx="46" ry="13" fill="rgba(0,0,0,0.5)"/>
+              <ellipse cx="396" cy="282" rx="46" ry="13" fill="rgba(0,0,0,0.5)"/>
+              <ellipse cx="517" cy="210" rx="40" ry="11" fill="rgba(0,0,0,0.5)"/>
+
+              <!-- 대변기 1 -->
+              <path d="M274 344 L308 324 L308 280 L274 300 Z" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M274 344 L240 324 L240 280 L274 300 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M274 300 L308 280 L274 260 L240 280 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)"/>
+              <!-- 대변기 2 -->
+              <path d="M396 274 L430 254 L430 210 L396 230 Z" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M396 274 L362 254 L362 210 L396 230 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M396 230 L430 210 L396 190 L362 210 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)"/>
+              <!-- 세면기 -->
+              <path d="M517 204 L551 184 L551 150 L517 170 Z" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M517 204 L483 184 L483 150 L517 170 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.35)"/>
+              <path d="M517 170 L551 150 L517 130 L483 150 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)"/>
+
+              <!-- 기구 라벨 -->
+              <g font-size="13" text-anchor="middle">
+                <line x1="274" y1="248" x2="274" y2="262" stroke="rgba(255,255,255,0.3)"/>
+                <rect x="232" y="224" width="84" height="24" rx="12" fill="rgba(255,255,255,0.92)"/>
+                <text x="274" y="240" fill="#1d1d1f" font-weight="600">대변기 ×1</text>
+                <line x1="396" y1="178" x2="396" y2="192" stroke="rgba(255,255,255,0.3)"/>
+                <rect x="354" y="154" width="84" height="24" rx="12" fill="rgba(255,255,255,0.92)"/>
+                <text x="396" y="170" fill="#1d1d1f" font-weight="600">대변기 ×1</text>
+                <line x1="517" y1="118" x2="517" y2="132" stroke="rgba(255,255,255,0.3)"/>
+                <rect x="475" y="94" width="84" height="24" rx="12" fill="rgba(255,255,255,0.92)"/>
+                <text x="517" y="110" fill="#1d1d1f" font-weight="600">세면기 ×1</text>
+              </g>
+            </g>
+
+            <!-- 2단계: 오수관 100A -->
+            <g data-step="2" data-delay="1600">
+              <path d="M274 344 L337 380" stroke="#e8443a" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M396 274 L459 310" stroke="#e8443a" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M192 464 L677 184" stroke="#e8443a" stroke-width="23" stroke-linecap="round" opacity="0.16" class="draw" pathLength="600"/>
+              <path d="M192 464 L677 184" stroke="#e8443a" stroke-width="13" stroke-linecap="round" class="draw" pathLength="600"/>
+              <g font-size="13" text-anchor="middle">
+                <rect x="341" y="383" width="60" height="24" rx="12" fill="rgba(232,68,58,0.18)" stroke="rgba(232,68,58,0.6)"/>
+                <text x="371" y="399" fill="#ff8a80" font-weight="700">오수 100A</text>
+              </g>
+            </g>
+
+            <!-- 3단계: 배수관 50A -->
+            <g data-step="3" data-delay="1200">
+              <path d="M517 204 L600 252" stroke="#bf5af2" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M213 476 L698 196" stroke="#bf5af2" stroke-width="16" stroke-linecap="round" opacity="0.16" class="draw" pathLength="600"/>
+              <path d="M213 476 L698 196" stroke="#bf5af2" stroke-width="8" stroke-linecap="round" class="draw" pathLength="600"/>
+              <g font-size="13" text-anchor="middle">
+                <rect x="482" y="328" width="60" height="24" rx="12" fill="rgba(191,90,242,0.18)" stroke="rgba(191,90,242,0.6)"/>
+                <text x="512" y="344" fill="#d9a8ff" font-weight="700">배수 50A</text>
+              </g>
+            </g>
+
+            <!-- 4단계: 급수관 (누적 관경) -->
+            <g data-step="4" data-delay="1800">
+              <path d="M274 344 L295 356" stroke="#2997ff" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M396 274 L417 286" stroke="#2997ff" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M517 204 L538 216" stroke="#2997ff" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M635 160 L150 440" stroke="#2997ff" stroke-width="17" stroke-linecap="round" opacity="0.16" class="draw" pathLength="600"/>
+              <path d="M635 160 L150 440" stroke="#2997ff" stroke-width="9" stroke-linecap="round" class="draw" pathLength="600"/>
+              <g font-size="13" text-anchor="middle" font-weight="700">
+                <rect x="439" y="216" width="52" height="24" rx="12" fill="rgba(41,151,255,0.18)" stroke="rgba(41,151,255,0.6)"/>
+                <text x="465" y="232" fill="#8ec5ff">25A</text>
+                <rect x="328" y="280" width="52" height="24" rx="12" fill="rgba(41,151,255,0.18)" stroke="rgba(41,151,255,0.6)"/>
+                <text x="354" y="296" fill="#8ec5ff">40A</text>
+                <rect x="182" y="364" width="52" height="24" rx="12" fill="rgba(41,151,255,0.18)" stroke="rgba(41,151,255,0.6)"/>
+                <text x="208" y="380" fill="#8ec5ff">50A</text>
+              </g>
+            </g>
+
+            <!-- 5단계: 급탕관 25A -->
+            <g data-step="5" data-delay="1200">
+              <path d="M517 204 L559 228" stroke="#ff6482" stroke-width="2.5" class="draw" pathLength="600"/>
+              <path d="M656 172 L171 452" stroke="#ff6482" stroke-width="14" stroke-linecap="round" opacity="0.16" class="draw" pathLength="600"/>
+              <path d="M656 172 L171 452" stroke="#ff6482" stroke-width="7" stroke-linecap="round" class="draw" pathLength="600"/>
+              <g font-size="13" text-anchor="middle">
+                <rect x="246" y="416" width="60" height="24" rx="12" fill="rgba(255,100,130,0.18)" stroke="rgba(255,100,130,0.6)"/>
+                <text x="276" y="432" fill="#ffb3c0" font-weight="700">급탕 25A</text>
+              </g>
+            </g>
+
+            <!-- 6단계: 입상관 + 실제 계산 결과 -->
+            <g data-step="6" data-delay="1800">
+              <path d="M150 440 L150 512" stroke="#2997ff" stroke-width="9" stroke-linecap="round" class="draw" pathLength="600"/>
+              <path d="M171 452 L171 524" stroke="#ff6482" stroke-width="7" stroke-linecap="round" class="draw" pathLength="600"/>
+              <path d="M192 464 L192 536" stroke="#e8443a" stroke-width="13" stroke-linecap="round" class="draw" pathLength="600"/>
+              <path d="M213 476 L213 548" stroke="#bf5af2" stroke-width="8" stroke-linecap="round" class="draw" pathLength="600"/>
+              <g font-size="13" text-anchor="middle">
+                <rect x="105" y="566" width="130" height="26" rx="13" fill="rgba(255,255,255,0.92)"/>
+                <text x="170" y="583" fill="#1d1d1f" font-weight="600">a 입상관으로 ↓</text>
+              </g>
+              <g font-size="13.5" text-anchor="middle" font-weight="600">
+                <rect x="45" y="26" width="200" height="30" rx="15" fill="rgba(41,151,255,0.16)" stroke="rgba(41,151,255,0.55)"/>
+                <text x="145" y="45" fill="#fff">급수 50A · 84.0 L/min</text>
+                <rect x="260" y="26" width="200" height="30" rx="15" fill="rgba(255,100,130,0.16)" stroke="rgba(255,100,130,0.55)"/>
+                <text x="360" y="45" fill="#fff">급탕 25A · 18.0 L/min</text>
+                <rect x="475" y="26" width="195" height="30" rx="15" fill="rgba(232,68,58,0.16)" stroke="rgba(232,68,58,0.55)"/>
+                <text x="572" y="45" fill="#fff">오수 100A · 28 DFU</text>
+                <rect x="685" y="26" width="175" height="30" rx="15" fill="rgba(191,90,242,0.16)" stroke="rgba(191,90,242,0.55)"/>
+                <text x="772" y="45" fill="#fff">배수 50A · 3 DFU</text>
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
-    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">위 수치는 앱이 계산한 실제 예시입니다(1층 화장실 · 대변기 2 + 세면기 1).
+    직접 계산해 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+  </div>
+</section>
+
+<!-- 기능: 실제 화면과 함께 -->
+<section id="features" class="section section--alt">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">기능</p>
+      <h2 class="headline reveal">실제 화면 그대로,<br>하나씩 보여드립니다.</h2>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature__text">
+        <span class="eyebrow">① 개별 화장실</span>
+        <h3>평면도 그대로,<br>기구를 이어 붙이세요.</h3>
+        <p>메인관 시작에서 + 버튼으로 대변기·세면기·소변기를 잇습니다.
+        직진은 주관이 계속 가는 것, T 분기는 가지를 치는 것.
+        연결하는 즉시 구간마다 급수·급탕·오수·배수 관경이 자동 계산됩니다.</p>
+      </div>
+      <div class="feature__media"><img src="../assets/sanitary/plan.png" alt="화장실 평면도에서 기구를 연결하며 구간별 관경이 계산되는 화면" loading="lazy"></div>
+    </div>
+
+    <div class="feature feature--flip reveal">
+      <div class="feature__text">
+        <span class="eyebrow">화장실 요약</span>
+        <h3>화장실 하나가,<br>카드 한 장으로.</h3>
+        <p>층별 화장실마다 기구 구성과 급수·급탕·오수·배수 관경이 한눈에 정리됩니다.
+        도면 옆에 띄워 두고 그대로 옮겨 적으면 됩니다.</p>
+      </div>
+      <div class="feature__media feature__media--narrow"><img src="../assets/sanitary/rooms.png" alt="화장실별 도기수와 관경 요약 카드 목록" loading="lazy"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature__text">
+        <span class="eyebrow">② 급수/급탕 연결</span>
+        <h3>층을 배정하면,<br>계통도가 그려집니다.</h3>
+        <p>화장실을 층에, 층을 입상관에 배정하세요. 이 계층이 곧 계통도입니다.
+        층 누적 → 입상관 → MAIN관까지 관경이 자동으로 이어지고,
+        전기온수기를 쓰는 존은 중앙급탕에서 제외됩니다.</p>
+      </div>
+      <div class="feature__media"><img src="../assets/sanitary/riser.png" alt="급수·급탕 계통도가 자동 구현된 화면" loading="lazy"></div>
+    </div>
+
+    <div class="feature feature--flip reveal">
+      <div class="feature__text">
+        <span class="eyebrow">③ 오배수 연결</span>
+        <h3>오배수는,<br>오배수답게.</h3>
+        <p>급수와 계통이 다르면 다르게 구성할 수 있습니다.
+        DFU 누적으로 오수·배수 관경이 층에서 입상관, MAIN관까지 산정됩니다.</p>
+      </div>
+      <div class="feature__media"><img src="../assets/sanitary/drain.png" alt="오배수 계통도 화면" loading="lazy"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature__text">
+        <span class="eyebrow">⑤ 압력검토</span>
+        <h3>가장 불리한 경로의<br>말단 잔압까지.</h3>
+        <p>공급압력·층고·배관 길이를 입력하면 임계경로의 구간별 마찰손실과 잔압을 검토합니다.
+        기준 70 kPa 충족 여부가 경로마다 표시되고, 잔압이 부족하면 업사이즈를 권해줍니다.</p>
+      </div>
+      <div class="feature__media"><img src="../assets/sanitary/pressure.png" alt="급수 압력검토 화면 — 임계경로 잔압 157.5 kPa 기준 충족" loading="lazy"></div>
+    </div>
+
+    <div class="center" style="padding-top:clamp(52px,7vw,96px);">
+      <span class="eyebrow reveal">⑦ 밸브·부속 산출</span>
+      <h3 class="headline reveal" style="font-size:clamp(1.7rem,3.2vw,2.5rem);">끝으로, 밸브와 부속까지 세어서<br>엑셀로 내보냅니다.</h3>
+      <p class="lead reveal" style="max-width:640px;margin:18px auto 0;font-size:1.1rem;">볼·앵글·WHA·온수기 세트·진공브레이커, 티·엘보·레듀서까지 자동 산출.
+      관경 + 밸브 + 부속 전체가 CSV 한 번으로 내려받아집니다.</p>
+    </div>
   </div>
 </section>
 
 <!-- 클로징 -->
-<section class="section section--alt closing">
+<section class="section closing">
   <div class="wrap--narrow center">
     <h2 class="headline reveal">다음 프로젝트의 관경 산정,<br>오늘부터 30분이면 됩니다.</h2>
     <div class="hero__cta reveal">
@@ -131,7 +255,7 @@
 </section>
 
 <!-- 다른 제품 -->
-<section class="section">
+<section class="section section--alt">
   <div class="wrap">
     <h2 class="title center reveal">함께 쓰면 좋은 제품</h2>
     <div class="rail">
