@@ -76,13 +76,33 @@
 
 <section class="section">
   <div class="wrap center">
-    <p class="eyebrow reveal">직접 써보기</p>
-    <h2 class="headline reveal">지금 바로 만들어보세요.</h2>
+    <p class="eyebrow reveal">작동 모습</p>
+    <h2 class="headline reveal">체크할 때마다,<br>문서가 자랍니다.</h2>
     <div class="demo reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">choi-ilkwon.github.io/hvac-specification</span></div>
-      <iframe data-src="https://choi-ilkwon.github.io/hvac-specification/hvac_spec_app.html" title="HVAC 시방서 자동생성 데모" loading="lazy"></iframe>
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">HVAC 시방서 자동생성 — 자동 시연</span></div>
+      <div class="demo__stage">
+        <div class="scene" data-scene>
+          <div class="sc-row sc-check" data-step="1" data-delay="550"><i>✓</i><span>냉난방설비 — 열원기기 · 배관</span></div>
+          <div class="sc-row sc-check" data-step="2" data-delay="550"><i>✓</i><span>환기·덕트설비 — 송풍기 · 덕트</span></div>
+          <div class="sc-row sc-check" data-step="3" data-delay="900"><i>✓</i><span>위생설비 — 급수급탕 · 오배수</span></div>
+          <div class="sc-arrow" data-step="4" data-delay="600">↓ KCS 31 기반 시방서 생성</div>
+          <div class="sc-doc" data-step="5" data-delay="1400">
+            <i class="hl" style="--w:45%;"></i>
+            <i style="--w:100%; transition-delay:.25s;"></i>
+            <i style="--w:92%; transition-delay:.4s;"></i>
+            <i style="--w:97%; transition-delay:.55s;"></i>
+            <i class="hl" style="--w:38%; transition-delay:.75s;"></i>
+            <i style="--w:95%; transition-delay:.9s;"></i>
+            <i style="--w:88%; transition-delay:1.05s;"></i>
+          </div>
+          <div class="sc-result" data-step="6" data-delay="1400">
+            <div class="sc-result__num">.docx</div>
+            <div class="sc-result__label">목차·서식 완성된 Word 시방서 다운로드</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="demo-note">실제 앱입니다. 새 창에서 크게 보려면 <a href="https://choi-ilkwon.github.io/hvac-specification/hvac_spec_app.html" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 실제로 만들어 보려면 <a href="https://choi-ilkwon.github.io/hvac-specification/hvac_spec_app.html" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
   </div>
 </section>
 
@@ -138,5 +158,6 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script src="../js/demo.js"></script>
 </body>
 </html>

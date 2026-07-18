@@ -76,13 +76,27 @@
 
 <section class="section">
   <div class="wrap center">
-    <p class="eyebrow reveal">직접 써보기</p>
-    <h2 class="headline reveal">지금 바로 만져보세요.</h2>
+    <p class="eyebrow reveal">작동 모습</p>
+    <h2 class="headline reveal">풍량이 들어가면,<br>덕트가 자랍니다.</h2>
     <div class="demo reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">choi-ilkwon.github.io/duct-calc</span></div>
-      <iframe data-src="https://choi-ilkwon.github.io/duct-calc/" title="환기 덕트 관경 계산서 데모" loading="lazy"></iframe>
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">환기 덕트 관경 계산서 — 자동 시연</span></div>
+      <div class="demo__stage">
+        <div class="scene" data-scene>
+          <div class="sc-row" data-step="1" data-delay="650"><span>💨 급기 풍량</span><b><span data-count="1200" data-suffix=" CMH">0 CMH</span></b></div>
+          <div class="sc-row" data-step="2" data-delay="750"><span>🌬️ 설계 풍속</span><b>4.0 m/s</b></div>
+          <div class="sc-arrow" data-step="3" data-delay="600">↓ 분기별 자동 산정</div>
+          <div class="sc-pipe-row" data-step="4" data-delay="650"><span class="sc-size" style="min-width:86px;">200×150</span><div class="sc-pipe" style="--w:30%; --h:10px; border-radius:3px;"></div><span class="muted" style="font-size:.85rem;">말단 분기</span></div>
+          <div class="sc-pipe-row" data-step="5" data-delay="650"><span class="sc-size" style="min-width:86px;">300×200</span><div class="sc-pipe" style="--w:52%; --h:14px; border-radius:3px;"></div><span class="muted" style="font-size:.85rem;">중간 분기</span></div>
+          <div class="sc-pipe-row" data-step="6" data-delay="1100"><span class="sc-size" style="min-width:86px;">450×250</span><div class="sc-pipe" style="--w:76%; --h:18px; border-radius:3px;"></div><span class="muted" style="font-size:.85rem;">메인 덕트</span></div>
+          <div class="sc-row" data-step="7" data-delay="900"><span>◎ 원형덕트로 전환</span><span class="sc-chip">Ø350 · 디퓨져 Ø200 × 6</span></div>
+          <div class="sc-result" data-step="8" data-delay="1400">
+            <div class="sc-result__num">450×250</div>
+            <div class="sc-result__label">메인 덕트 사이즈 — 선도표 없이</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="demo-note">실제 앱입니다. 새 창에서 크게 보려면 <a href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
   </div>
 </section>
 
@@ -138,5 +152,6 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script src="../js/demo.js"></script>
 </body>
 </html>

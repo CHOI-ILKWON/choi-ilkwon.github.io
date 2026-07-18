@@ -94,13 +94,28 @@
 <!-- 라이브 데모 -->
 <section class="section">
   <div class="wrap center">
-    <p class="eyebrow reveal">직접 써보기</p>
-    <h2 class="headline reveal">지금 바로 만져보세요.</h2>
+    <p class="eyebrow reveal">작동 모습</p>
+    <h2 class="headline reveal">기구를 넣는 순간,<br>계산은 이렇게 흘러갑니다.</h2>
     <div class="demo reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">sanitary-pipe-calc.pages.dev</span></div>
-      <iframe data-src="https://sanitary-pipe-calc.pages.dev/" title="위생배관 관경 계산서 데모" loading="lazy"></iframe>
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">위생배관 관경 계산서 — 자동 시연</span></div>
+      <div class="demo__stage">
+        <div class="scene" data-scene>
+          <div class="sc-row" data-step="1" data-delay="550"><span>🚽 대변기 (세정밸브)</span><b>× 4</b></div>
+          <div class="sc-row" data-step="2" data-delay="550"><span>🧼 세면기</span><b>× 3</b></div>
+          <div class="sc-row" data-step="3" data-delay="750"><span>🚿 샤워기</span><b>× 2</b></div>
+          <div class="sc-row" data-step="4" data-delay="1100"><span>기구급수부하단위 합계</span><b><span data-count="46" data-suffix=" FU">0 FU</span></b></div>
+          <div class="sc-arrow" data-step="5" data-delay="700">↓ 동시사용률 곡선 자동 적용</div>
+          <div class="sc-pipe-row" data-step="6" data-delay="650"><span class="sc-size">25A</span><div class="sc-pipe" style="--w:32%; --h:10px;"></div><span class="muted" style="font-size:.85rem;">화장실 지관</span></div>
+          <div class="sc-pipe-row" data-step="7" data-delay="650"><span class="sc-size">40A</span><div class="sc-pipe" style="--w:55%; --h:14px;"></div><span class="muted" style="font-size:.85rem;">급수 수직관</span></div>
+          <div class="sc-pipe-row" data-step="8" data-delay="1100"><span class="sc-size">50A</span><div class="sc-pipe" style="--w:78%; --h:18px;"></div><span class="muted" style="font-size:.85rem;">급수 MAIN</span></div>
+          <div class="sc-result" data-step="9" data-delay="1400">
+            <div class="sc-result__num">50A</div>
+            <div class="sc-result__label">급수 MAIN 관경 — 압력검토 통과 ✓</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="demo-note">실제 앱입니다. 입력하고 계산해 보세요. 새 창에서 크게 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
   </div>
 </section>
 
@@ -158,5 +173,6 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script src="../js/demo.js"></script>
 </body>
 </html>

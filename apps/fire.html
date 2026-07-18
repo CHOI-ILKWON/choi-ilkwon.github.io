@@ -81,13 +81,27 @@
 
 <section class="section">
   <div class="wrap center">
-    <p class="eyebrow reveal">직접 써보기</p>
-    <h2 class="headline reveal">지금 바로 만져보세요.</h2>
+    <p class="eyebrow reveal">작동 모습</p>
+    <h2 class="headline reveal">개요를 넣으면,<br>검토가 시작됩니다.</h2>
     <div class="demo reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">choi-ilkwon.github.io/fire-suppression-calc</span></div>
-      <iframe data-src="https://choi-ilkwon.github.io/fire-suppression-calc/" title="소화설비 법규검토 데모" loading="lazy"></iframe>
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">소화설비 법규검토 — 자동 시연</span></div>
+      <div class="demo__stage">
+        <div class="scene" data-scene>
+          <div class="sc-row" data-step="1" data-delay="650"><span>🏛️ 용도 — 업무시설</span><b>지상 12층</b></div>
+          <div class="sc-row" data-step="2" data-delay="750"><span>📐 연면적</span><b><span data-count="12500" data-suffix=" ㎡">0 ㎡</span></b></div>
+          <div class="sc-arrow" data-step="3" data-delay="600">↓ 설치 대상 자동 판정</div>
+          <div class="sc-row sc-check" data-step="4" data-delay="550"><i>✓</i><span>소화기구 — 능력단위 산정</span></div>
+          <div class="sc-row sc-check" data-step="5" data-delay="550"><i>✓</i><span>옥내소화전 — 설치 대상</span></div>
+          <div class="sc-row sc-check" data-step="6" data-delay="900"><i>✓</i><span>스프링클러 — 설치 대상 (11층 이상 전층)</span></div>
+          <div class="sc-row" data-step="7" data-delay="1000"><span style="flex-shrink:0;">수원량 산정</span><div class="sc-bar" style="--w:82%;"><i></i></div></div>
+          <div class="sc-result" data-step="8" data-delay="1400">
+            <div class="sc-result__num"><span data-count="37" data-suffix=" ㎥">0 ㎥</span></div>
+            <div class="sc-result__label">소화용수량 — 근거 조문과 함께 정리</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="demo-note">실제 앱입니다. 새 창에서 크게 보려면 <a href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다(수치는 예시). 실제로 검토해 보려면 <a href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
   </div>
 </section>
 
@@ -143,5 +157,6 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script src="../js/demo.js"></script>
 </body>
 </html>
