@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEP Works — 설비 엔지니어를 위한 계산 웹앱</title>
+<meta name="description" content="위생배관·밸브·HVAC·덕트·소방 계산서를 브라우저에서. 설비 실무자가 직접 만든 엔지니어링 웹 도구 모음.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧰</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="index.html">MEP Works <span>· 설비 엔지니어링 웹앱</span></a>
+    <div class="gnav__actions">
+      <a class="gnav__link" href="#products">제품</a>
+      <a class="gnav__link" href="mailto:jikwang8610@gmail.com">문의</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow reveal">설비 엔지니어를 위한 웹 도구</p>
+  <h1 class="display reveal">계산서 작업,<br>이제 브라우저에서 끝.</h1>
+  <p class="lead reveal">표를 뒤지고, 엑셀 서식을 고치고, 수량을 다시 세던 시간.<br>
+  현장을 아는 설비 엔지니어가 그 시간을 줄이려고 직접 만들었습니다.</p>
+  <div class="hero__cta reveal">
+    <a class="btn" href="#products">제품 둘러보기</a>
+    <a class="link-more" href="apps/sanitary.html">대표 제품 보기</a>
+  </div>
+</header>
+
+<main id="products" class="tiles">
+
+  <!-- 위생배관 (플래그십) -->
+  <section class="tile tile--wide tile--dark reveal" style="--tile-accent:#2997ff; --tile-art-from:#0b2b4a; --tile-art-to:#123a63;">
+    <p class="tile__eyebrow">위생배관 관경 계산서</p>
+    <h2 class="tile__name">기구 수만 입력하세요.<br>관경은 계산서가 정합니다.</h2>
+    <p class="tile__desc">개별 화장실부터 MAIN관까지. 급수·급탕·오배수·통기 관경 산정과 압력검토,
+    밸브·부속 수량까지 한 흐름으로.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/sanitary.html">자세히 보기</a>
+      <a class="link-more" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+    <div class="tile__art">
+      <div class="mock">
+        <div class="mock__bar"><i></i><i></i><i></i></div>
+        <div class="mock__body">
+          <div class="mock__row"><span>대변기(세정밸브) × 4 · 세면기 × 3</span><b>FU 44</b></div>
+          <div class="mock__row"><span>급수 MAIN — 동시사용률 적용</span><b>50A</b></div>
+          <div class="mock__row"><span>오수 수직관 — 배수부하단위</span><b>100A</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 밸브 계통도 -->
+  <section class="tile reveal" style="--tile-accent:#00857c;">
+    <p class="tile__eyebrow">밸브 계통도 계산서</p>
+    <h2 class="tile__name">계통도를 그리면,<br>밸브 목록이 나옵니다.</h2>
+    <p class="tile__desc">계통 설정에서 밸브 리스트까지. 누락 없이, 계통도와 수량이 항상 일치하게.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/valve.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/valve-calc/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+  <!-- HVAC 부하 -->
+  <section class="tile reveal" style="--tile-accent:#f56300;">
+    <p class="tile__eyebrow">HVAC 부하 + 용량계산서</p>
+    <h2 class="tile__name">부하계산부터<br>장비 선정까지.</h2>
+    <p class="tile__desc">지역·실 유형·창호만 입력하면 국토교통부 기준 부하계산서와 장비 용량이 함께.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/hvac-calc.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+  <!-- 덕트 -->
+  <section class="tile reveal" style="--tile-accent:#00a3c4;">
+    <p class="tile__eyebrow">환기 덕트 관경 계산서</p>
+    <h2 class="tile__name">풍량을 넣으면,<br>덕트 사이즈가 나옵니다.</h2>
+    <p class="tile__desc">사각·원형 덕트, 레지스터·디퓨져까지. 분기마다 표를 다시 볼 필요가 없습니다.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/duct.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+  <!-- 소방 -->
+  <section class="tile reveal" style="--tile-accent:#e30000;">
+    <p class="tile__eyebrow">소화설비 법규검토 · 설계기준</p>
+    <h2 class="tile__name">이 건물에 뭐가 필요한지,<br>법규가 답합니다.</h2>
+    <p class="tile__desc">용도·규모를 넣으면 소화설비 적용 여부부터 소요유량·수원량까지 자동 산정.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/fire.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+  <!-- 스프링클러 -->
+  <section class="tile reveal" style="--tile-accent:#5e5ce6;">
+    <p class="tile__eyebrow">스프링클러 설계 가이드</p>
+    <h2 class="tile__name">NFPC 103,<br>찾지 말고 펼치세요.</h2>
+    <p class="tile__desc">습식·건식·준비작동식 비교부터 헤드 배치·배관경 기준까지 한 화면에.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/sprinkler.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+  <!-- 시방서 -->
+  <section class="tile reveal" style="--tile-accent:#8944ab;">
+    <p class="tile__eyebrow">HVAC 시방서 자동생성</p>
+    <h2 class="tile__name">체크하면,<br>시방서가 됩니다.</h2>
+    <p class="tile__desc">KCS 31 표준시방서 기반. 해당 설비만 선택하면 Word 파일로 바로.</p>
+    <div class="tile__links">
+      <a class="link-more" href="apps/hvac-spec.html">자세히 보기</a>
+      <a class="link-more" href="https://choi-ilkwon.github.io/hvac-specification/hvac_spec_app.html" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- 공통 가치 -->
+<section class="section section--alt">
+  <div class="wrap center">
+    <h2 class="headline reveal">모든 앱에 공통으로<br>담겨 있는 것.</h2>
+    <div class="values">
+      <div class="value reveal">
+        <span class="value__icon">🌐</span>
+        <h3>설치가 없습니다</h3>
+        <p>브라우저만 열면 됩니다. 현장에서도, 사무실에서도.</p>
+      </div>
+      <div class="value reveal">
+        <span class="value__icon">📐</span>
+        <h3>기준이 내장되어 있습니다</h3>
+        <p>국내 법규와 설계기준의 표와 곡선이 이미 들어 있습니다.</p>
+      </div>
+      <div class="value reveal">
+        <span class="value__icon">📄</span>
+        <h3>납품까지 갑니다</h3>
+        <p>엑셀·PDF·Word로 내보내서 그대로 계산서로 제출하세요.</p>
+      </div>
+      <div class="value reveal">
+        <span class="value__icon">💾</span>
+        <h3>작업이 남습니다</h3>
+        <p>저장하고 불러오기. 프로젝트가 바뀌어도 처음부터가 아닙니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 클로징 -->
+<section class="section closing">
+  <div class="wrap--narrow center">
+    <h2 class="headline reveal">설비 실무자가 만들었고,<br>지금도 매주 업데이트됩니다.</h2>
+    <p class="lead reveal" style="margin-top:18px;">필요한 기능, 불편한 부분을 알려주세요. 다음 업데이트가 됩니다.</p>
+    <div class="hero__cta reveal">
+      <a class="btn" href="mailto:jikwang8610@gmail.com">기능 제안 · 문의하기</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="apps/sanitary.html">위생배관 관경</a>
+      <a href="apps/valve.html">밸브 계통도</a>
+      <a href="apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="apps/duct.html">환기 덕트</a>
+      <a href="apps/fire.html">소화설비 법규검토</a>
+      <a href="apps/sprinkler.html">스프링클러</a>
+      <a href="apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

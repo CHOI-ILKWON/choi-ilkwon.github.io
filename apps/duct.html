@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환기 덕트 관경 계산서 — MEP Works</title>
+<meta name="description" content="풍량·풍속을 입력하면 사각·원형 덕트 사이즈와 레지스터·디퓨져까지 분기별로 자동 산정.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>:root { --accent: #00a3c4; }</style>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../index.html">MEP Works</a>
+    <span class="gnav__title">환기 덕트 관경 계산서</span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow reveal">환기 덕트 관경 계산서</p>
+  <h1 class="display reveal">풍량을 넣으면,<br>덕트 사이즈가 나옵니다.</h1>
+  <p class="lead reveal">사각이든 원형이든, 분기가 몇 개든.
+  실의 풍량과 풍속만 정하면 덕트 사이즈와 레지스터·디퓨져까지 이어서 산정됩니다.</p>
+  <div class="hero__cta reveal">
+    <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
+  </div>
+</header>
+
+<section class="section section--dark">
+  <div class="wrap center">
+    <h2 class="headline reveal">분기 하나 늘 때마다<br>표를 다시 봐야 했습니다.</h2>
+    <ul class="pain-list">
+      <li class="reveal">덕트 선도표 놓고 풍량·풍속 맞춰가며 눈으로 사이즈 읽기.</li>
+      <li class="reveal">사각으로 계산했는데 현장은 원형. 등가지름 환산은 또 다른 표.</li>
+      <li class="reveal">분기별 풍량이 바뀌면 말단부터 메인까지 전부 재계산.</li>
+    </ul>
+    <p class="pain-answer reveal">선도표와 환산표가 <em>계산 로직 안에</em> 들어 있습니다.</p>
+  </div>
+</section>
+
+<section id="features" class="section section--alt">
+  <div class="wrap center">
+    <p class="eyebrow reveal">기능</p>
+    <h2 class="headline reveal">사각도, 원형도,<br>같은 입력에서 나옵니다.</h2>
+    <div class="bento">
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">⚙️</span>
+        <h3>기본 설정은 한 번만</h3>
+        <p>공통 파라미터를 한 번 정하면 모든 분기 계산에 일관되게 적용됩니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">▦</span>
+        <h3>사각덕트 계산</h3>
+        <p>풍속을 설정하면 분기별 사각덕트 사이즈와 레지스터 사이즈가 자동 산정됩니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">◎</span>
+        <h3>원형덕트 계산</h3>
+        <p>같은 입력으로 원형덕트와 디퓨져 사이즈까지. 환산표를 찾을 필요가 없습니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">📄</span>
+        <h3>저장 · 불러오기 · PDF</h3>
+        <p>프로젝트를 저장해 두고, 계산서는 PDF로 내보내 그대로 제출하세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <p class="eyebrow reveal">직접 써보기</p>
+    <h2 class="headline reveal">지금 바로 만져보세요.</h2>
+    <div class="demo reveal">
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">choi-ilkwon.github.io/duct-calc</span></div>
+      <iframe data-src="https://choi-ilkwon.github.io/duct-calc/" title="환기 덕트 관경 계산서 데모" loading="lazy"></iframe>
+    </div>
+    <p class="demo-note">실제 앱입니다. 새 창에서 크게 보려면 <a href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+  </div>
+</section>
+
+<section class="section section--alt closing">
+  <div class="wrap--narrow center">
+    <h2 class="headline reveal">덕트 산정 근거,<br>계산서로 남기세요.</h2>
+    <div class="hero__cta reveal">
+      <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[환기 덕트 관경 계산서] 문의">도입 문의</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="title center reveal">함께 쓰면 좋은 제품</h2>
+    <div class="rail">
+      <a class="rail__card reveal" href="hvac-calc.html" style="--accent:#f56300;">
+        <p class="eyebrow">HVAC 부하 + 용량계산서</p>
+        <h3>부하계산부터 장비 선정까지.</h3>
+        <p>환기량의 출발점, 부하계산.</p>
+      </a>
+      <a class="rail__card reveal" href="hvac-spec.html" style="--accent:#8944ab;">
+        <p class="eyebrow">HVAC 시방서 자동생성</p>
+        <h3>체크하면, 시방서가 됩니다.</h3>
+        <p>덕트 공사 시방서도 선택만 하면.</p>
+      </a>
+      <a class="rail__card reveal" href="sanitary.html" style="--accent:#0071e3;">
+        <p class="eyebrow">위생배관 관경 계산서</p>
+        <h3>기구 수만 입력하세요. 관경은 계산서가 정합니다.</h3>
+        <p>위생배관 관경 산정 도구.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="sanitary.html">위생배관 관경</a>
+      <a href="valve.html">밸브 계통도</a>
+      <a href="hvac-calc.html">HVAC 부하·용량</a>
+      <a href="duct.html">환기 덕트</a>
+      <a href="fire.html">소화설비 법규검토</a>
+      <a href="sprinkler.html">스프링클러</a>
+      <a href="hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

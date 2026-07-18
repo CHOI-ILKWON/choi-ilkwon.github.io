@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>위생배관 관경 계산서 — MEP Works</title>
+<meta name="description" content="개별 화장실부터 MAIN관까지. 급수·급탕·오배수·통기 관경 산정, 압력검토, 밸브·부속 수량 산출을 브라우저에서.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚰</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>:root { --accent: #0071e3; }</style>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../index.html">MEP Works</a>
+    <span class="gnav__title">위생배관 관경 계산서</span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow reveal">위생배관 관경 계산서</p>
+  <h1 class="display reveal">기구 수만 입력하세요.<br>관경은 계산서가 정합니다.</h1>
+  <p class="lead reveal">개별 화장실부터 MAIN관까지.
+  급수·급탕·오배수·통기의 관경 산정과 압력검토, 밸브·부속 수량까지 하나의 흐름으로 이어집니다.</p>
+  <div class="hero__cta reveal">
+    <a class="btn" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
+  </div>
+</header>
+
+<!-- 공감: 불편함 -->
+<section class="section section--dark">
+  <div class="wrap center">
+    <h2 class="headline reveal">관경 하나 정하는 데,<br>표가 몇 개나 필요했나요.</h2>
+    <ul class="pain-list">
+      <li class="reveal">기구급수부하단위 표를 찾고, 기구 수를 세고, 엑셀에 옮겨 적고.</li>
+      <li class="reveal">동시사용률 곡선은 눈대중으로 읽고, 관경표는 또 다른 파일에.</li>
+      <li class="reveal">화장실 하나가 바뀌면, 수직관부터 MAIN관까지 전부 다시 계산.</li>
+      <li class="reveal">계산은 끝났는데 밸브·부속 수량 산출은 처음부터 다시 시작.</li>
+    </ul>
+    <p class="pain-answer reveal">그 모든 표와 곡선이, <em>이미 앱 안에</em> 있습니다.</p>
+  </div>
+</section>
+
+<!-- 기능 -->
+<section id="features" class="section section--alt">
+  <div class="wrap center">
+    <p class="eyebrow reveal">기능</p>
+    <h2 class="headline reveal">입력은 한 번,<br>계산은 끝까지 이어집니다.</h2>
+    <div class="bento">
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">🚻</span>
+        <h3>개별 화장실에서 시작</h3>
+        <p>대변기·세면기·소변기… 기구 수만 넣으면 기구급수부하단위(FU)가 자동 집계되고, 화장실 단위 관경이 바로 나옵니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">🔗</span>
+        <h3>급수·급탕 → 오배수 → MAIN관</h3>
+        <p>화장실을 연결하면 부하가 누적되며 수직관·수평주관·MAIN관까지 관경이 이어서 산정됩니다. 하나 고치면 전체가 따라 갱신됩니다.</p>
+      </div>
+      <div class="bento__card reveal">
+        <span class="bento__icon">📉</span>
+        <h3>동시사용률 곡선 내장</h3>
+        <p>급수 동시사용률 곡선을 눈으로 읽지 마세요. 부하단위에 맞는 값이 자동 적용됩니다.</p>
+      </div>
+      <div class="bento__card reveal">
+        <span class="bento__icon">🧭</span>
+        <h3>압력검토까지</h3>
+        <p>정수두·마찰손실을 반영한 압력검토로 관경 선정의 근거가 계산서에 남습니다.</p>
+      </div>
+      <div class="bento__card reveal">
+        <span class="bento__icon">🔩</span>
+        <h3>밸브·부속 수량 산출</h3>
+        <p>배관 위상 기반으로 밸브·엘보·티·TY·C.O까지 구경별 수량이 자동 집계됩니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <span class="bento__icon">📄</span>
+        <h3>엑셀·PDF로 납품까지</h3>
+        <p>계산 근거가 정리된 계산서를 엑셀·PDF로 내보내 그대로 제출하세요. JSON 저장으로 프로젝트도 이어집니다.</p>
+      </div>
+      <div class="bento__card bento__card--w3 reveal">
+        <p class="bento__stat">7개 탭</p>
+        <p>개별 화장실 · 급수/급탕 연결 · 오배수 연결 · MAIN관 · 압력검토 · 메인관 결과 · 밸브·부속 산출. 실무 순서 그대로.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 라이브 데모 -->
+<section class="section">
+  <div class="wrap center">
+    <p class="eyebrow reveal">직접 써보기</p>
+    <h2 class="headline reveal">지금 바로 만져보세요.</h2>
+    <div class="demo reveal">
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">sanitary-pipe-calc.pages.dev</span></div>
+      <iframe data-src="https://sanitary-pipe-calc.pages.dev/" title="위생배관 관경 계산서 데모" loading="lazy"></iframe>
+    </div>
+    <p class="demo-note">실제 앱입니다. 입력하고 계산해 보세요. 새 창에서 크게 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+  </div>
+</section>
+
+<!-- 클로징 -->
+<section class="section section--alt closing">
+  <div class="wrap--narrow center">
+    <h2 class="headline reveal">다음 프로젝트의 관경 산정,<br>오늘부터 30분이면 됩니다.</h2>
+    <div class="hero__cta reveal">
+      <a class="btn" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[위생배관 관경 계산서] 문의">도입 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- 다른 제품 -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title center reveal">함께 쓰면 좋은 제품</h2>
+    <div class="rail">
+      <a class="rail__card reveal" href="valve.html" style="--accent:#00857c;">
+        <p class="eyebrow">밸브 계통도 계산서</p>
+        <h3>계통도를 그리면, 밸브 목록이 나옵니다.</h3>
+        <p>급수앱과 연동되는 밸브 산출 도구.</p>
+      </a>
+      <a class="rail__card reveal" href="hvac-calc.html" style="--accent:#f56300;">
+        <p class="eyebrow">HVAC 부하 + 용량계산서</p>
+        <h3>부하계산부터 장비 선정까지.</h3>
+        <p>국토교통부 기준 냉난방 부하 자동 계산.</p>
+      </a>
+      <a class="rail__card reveal" href="fire.html" style="--accent:#e30000;">
+        <p class="eyebrow">소화설비 법규검토</p>
+        <h3>이 건물에 뭐가 필요한지, 법규가 답합니다.</h3>
+        <p>소화설비 적용 여부와 수원량 자동 산정.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="sanitary.html">위생배관 관경</a>
+      <a href="valve.html">밸브 계통도</a>
+      <a href="hvac-calc.html">HVAC 부하·용량</a>
+      <a href="duct.html">환기 덕트</a>
+      <a href="fire.html">소화설비 법규검토</a>
+      <a href="sprinkler.html">스프링클러</a>
+      <a href="hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
