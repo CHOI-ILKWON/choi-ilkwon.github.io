@@ -17,7 +17,7 @@
     <a class="gnav__brand" href="../index.html">MEP Works</a>
     <span class="gnav__title">위생배관 관경 계산서</span>
     <div class="gnav__actions">
-      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/?utm_source=site&utm_content=nav" target="_blank" rel="noopener">무료로 시작</a>
     </div>
   </div>
 </nav>
@@ -28,9 +28,10 @@
   <p class="lead reveal">개별 화장실부터 MAIN관까지.
   급수·급탕·오수·배수·통기의 관경 산정과 압력검토, 밸브·부속 수량까지 하나의 흐름으로 이어집니다.</p>
   <div class="hero__cta reveal">
-    <a class="btn" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=site&utm_content=hero" target="_blank" rel="noopener">7일 무료로 써보기</a>
     <a class="link-more" href="#demo">작동 모습 보기</a>
   </div>
+  <p class="hero__note reveal">카드 등록 없음 · 설치 없음 · 구글 로그인만 하면 바로 시작</p>
 </header>
 
 <!-- 공감: 불편함 -->
@@ -55,7 +56,7 @@
     <p class="lead reveal" style="margin-top:16px;">화장실에 기구를 놓는 순간 —
     오수·배수·급수·급탕이 각자의 관경을 갖고 입상관으로 모입니다.</p>
     <div class="demo demo--dark reveal">
-      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">1층 화장실 (남) — 실제 계산 예시</span></div>
+      <div class="demo__bar"><i></i><i></i><i></i><span class="demo__url">1층 화장실 (남) — 실제 계산 예시</span><span class="demo__tag">3D 그래픽 예시</span></div>
       <div class="demo__stage">
         <div class="scene" data-scene>
           <svg class="scene-svg" viewBox="0 0 940 640" xmlns="http://www.w3.org/2000/svg" aria-label="위생배관 3D 시연: 기구 배치 후 오수·배수·급수·급탕 배관이 관경과 함께 그려지는 과정">
@@ -170,76 +171,141 @@
       </div>
     </div>
     <p class="demo-note">위 수치는 앱이 계산한 실제 예시입니다(1층 화장실 · 대변기 2 + 세면기 1).
-    직접 계산해 보려면 <a href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    직접 계산해 보려면 <a href="https://sanitary-pipe-calc.pages.dev/?utm_source=site&utm_content=demo" target="_blank" rel="noopener" style="color:var(--accent);">7일 무료로 써보기</a>.</p>
   </div>
 </section>
 
-<!-- 기능: 실제 화면과 함께 -->
-<section id="features" class="section section--alt">
+<!-- 기능: 실제 화면과 함께 (다크) -->
+<section id="features" class="section section--dark" style="--accent-bright:#2997ff;">
   <div class="wrap">
-    <div class="center">
-      <p class="eyebrow reveal">기능</p>
-      <h2 class="headline reveal">실제 화면 그대로,<br>하나씩 보여드립니다.</h2>
-    </div>
 
-    <div class="feature reveal">
-      <div class="feature__text">
-        <span class="eyebrow">① 개별 화장실</span>
-        <h3>평면도 그대로,<br>기구를 이어 붙이세요.</h3>
-        <p>메인관 시작에서 + 버튼으로 대변기·세면기·소변기를 잇습니다.
-        직진은 주관이 계속 가는 것, T 분기는 가지를 치는 것.
-        연결하는 즉시 구간마다 급수·급탕·오수·배수 관경이 자동 계산됩니다.</p>
+    <div class="featx featx--first">
+      <p class="eyebrow reveal" style="color:#2997ff;">개별 화장실</p>
+      <h3 class="featx__head reveal">평면도 그대로,<br>기구를 이어 붙이세요.</h3>
+      <p class="featx__lead reveal">메인관 시작에서 + 버튼으로 대변기·세면기·소변기를 잇습니다.
+      직진은 주관이 계속 가는 것, T 분기는 가지를 치는 것.
+      <b>연결하는 즉시</b> 구간마다 급수·급탕·오수·배수 관경이 자동 계산됩니다.
+      기구 하나를 고치면, 그 뒤의 모든 구간이 함께 갱신됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sanitary/plan.png" alt="화장실 평면도에서 기구를 연결하며 구간별 관경이 계산되는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
       </div>
-      <div class="feature__media"><img src="../assets/sanitary/plan.png" alt="화장실 평면도에서 기구를 연결하며 구간별 관경이 계산되는 화면" loading="lazy"></div>
-    </div>
-
-    <div class="feature feature--flip reveal">
-      <div class="feature__text">
-        <span class="eyebrow">화장실 요약</span>
-        <h3>화장실 하나가,<br>카드 한 장으로.</h3>
-        <p>층별 화장실마다 기구 구성과 급수·급탕·오수·배수 관경이 한눈에 정리됩니다.
-        도면 옆에 띄워 두고 그대로 옮겨 적으면 됩니다.</p>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">급수 · 급탕 · 오수 · 배수</p>
+          <p class="stat__num">4계통 동시</p>
+          <p class="stat__post">구간별 관경 산정</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">부하단위 표 · 곡선</p>
+          <p class="stat__num">찾기 0회</p>
+          <p class="stat__post">전부 내장</p>
+        </div>
       </div>
-      <div class="feature__media feature__media--narrow"><img src="../assets/sanitary/rooms.png" alt="화장실별 도기수와 관경 요약 카드 목록" loading="lazy"></div>
     </div>
 
-    <div class="feature reveal">
-      <div class="feature__text">
-        <span class="eyebrow">② 급수/급탕 연결</span>
-        <h3>층을 배정하면,<br>계통도가 그려집니다.</h3>
-        <p>화장실을 층에, 층을 입상관에 배정하세요. 이 계층이 곧 계통도입니다.
-        층 누적 → 입상관 → MAIN관까지 관경이 자동으로 이어지고,
-        전기온수기를 쓰는 존은 중앙급탕에서 제외됩니다.</p>
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#2997ff;">화장실 요약</p>
+      <h3 class="featx__head reveal">화장실 하나가,<br>카드 한 장으로.</h3>
+      <p class="featx__lead reveal">층별 화장실마다 기구 구성과 급수·급탕·오수·배수 관경이 한눈에 정리됩니다.
+      도면 옆에 띄워 두고 그대로 옮겨 적으면 됩니다.</p>
+      <div class="featx__media featx__media--narrow reveal">
+        <img src="../assets/sanitary/rooms.png" alt="화장실별 도기수와 관경 요약 카드 목록" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
       </div>
-      <div class="feature__media"><img src="../assets/sanitary/riser.png" alt="급수·급탕 계통도가 자동 구현된 화면" loading="lazy"></div>
     </div>
 
-    <div class="feature feature--flip reveal">
-      <div class="feature__text">
-        <span class="eyebrow">③ 오배수 연결</span>
-        <h3>오배수는,<br>오배수답게.</h3>
-        <p>급수와 계통이 다르면 다르게 구성할 수 있습니다.
-        DFU 누적으로 오수·배수 관경이 층에서 입상관, MAIN관까지 산정됩니다.</p>
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#2997ff;">급수/급탕 연결</p>
+      <h3 class="featx__head reveal">층을 배정하면,<br>계통도가 그려집니다.</h3>
+      <p class="featx__lead reveal">화장실을 층에, 층을 입상관에 배정하세요. <b>이 계층이 곧 계통도</b>입니다.
+      층 누적 → 입상관 → MAIN관까지 관경이 자동으로 이어지고,
+      전기온수기를 쓰는 존은 중앙급탕에서 알아서 제외됩니다.
+      CAD로 계통도를 다시 그릴 필요가 없습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sanitary/riser.png" alt="급수·급탕 계통도가 자동 구현된 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
       </div>
-      <div class="feature__media"><img src="../assets/sanitary/drain.png" alt="오배수 계통도 화면" loading="lazy"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div class="feature__text">
-        <span class="eyebrow">⑤ 압력검토</span>
-        <h3>가장 불리한 경로의<br>말단 잔압까지.</h3>
-        <p>공급압력·층고·배관 길이를 입력하면 임계경로의 구간별 마찰손실과 잔압을 검토합니다.
-        기준 70 kPa 충족 여부가 경로마다 표시되고, 잔압이 부족하면 업사이즈를 권해줍니다.</p>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">층 → 입상관 → MAIN관</p>
+          <p class="stat__num">3단계 자동</p>
+          <p class="stat__post">누적 관경 산정</p>
+        </div>
       </div>
-      <div class="feature__media"><img src="../assets/sanitary/pressure.png" alt="급수 압력검토 화면 — 임계경로 잔압 157.5 kPa 기준 충족" loading="lazy"></div>
     </div>
 
-    <div class="center" style="padding-top:clamp(52px,7vw,96px);">
-      <span class="eyebrow reveal">⑦ 밸브·부속 산출</span>
-      <h3 class="headline reveal" style="font-size:clamp(1.7rem,3.2vw,2.5rem);">끝으로, 밸브와 부속까지 세어서<br>엑셀로 내보냅니다.</h3>
-      <p class="lead reveal" style="max-width:640px;margin:18px auto 0;font-size:1.1rem;">볼·앵글·WHA·온수기 세트·진공브레이커, 티·엘보·레듀서까지 자동 산출.
-      관경 + 밸브 + 부속 전체가 CSV 한 번으로 내려받아집니다.</p>
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#2997ff;">오배수 연결</p>
+      <h3 class="featx__head reveal">오배수는,<br>오배수답게.</h3>
+      <p class="featx__lead reveal">급수와 계통이 다르면 다르게 구성할 수 있습니다.
+      DFU 누적으로 오수·배수 관경이 층에서 입상관, MAIN관까지 산정됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sanitary/drain.png" alt="오배수 계통도 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
     </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#2997ff;">압력검토</p>
+      <h3 class="featx__head reveal">가장 불리한 경로의<br>말단 잔압까지.</h3>
+      <p class="featx__lead reveal">공급압력·층고·배관 길이를 입력하면 <b>임계경로</b>의 구간별 마찰손실과 잔압을 검토합니다.
+      기준 충족 여부가 경로마다 표시되고, 잔압이 부족하면 업사이즈를 권해줍니다.
+      계산서에 근거가 그대로 남습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sanitary/pressure.png" alt="급수 압력검토 화면 — 임계경로 잔압 157.5 kPa 기준 충족" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">임계경로 말단 잔압</p>
+          <p class="stat__num">157.5 kPa</p>
+          <p class="stat__post">예시 결과 — 자동 검토</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">최소 잔압 기준</p>
+          <p class="stat__num">70 kPa</p>
+          <p class="stat__post">충족 여부 자동 판정</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#2997ff;">밸브·부속 산출</p>
+      <h3 class="featx__head reveal">끝으로, 밸브와 부속까지 세어서<br>엑셀로 내보냅니다.</h3>
+      <p class="featx__lead reveal">볼·앵글·WHA·온수기 세트·진공브레이커, 티·엘보·레듀서까지 자동 산출.
+      관경 + 밸브 + 부속 전체가 <b>CSV 한 번</b>으로 내려받아집니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 가격 -->
+<section id="price" class="section section--alt">
+  <div class="wrap--narrow center">
+    <p class="eyebrow reveal">가격</p>
+    <h2 class="headline reveal">먼저 써보고,<br>필요하면 그때 결제하세요.</h2>
+
+    <div class="price-card reveal">
+      <p class="price-card__label">위생배관 관경 계산서</p>
+      <p class="price-card__num">99,000<span>원</span></p>
+      <p class="price-card__sub">1회 결제 · 기간 제한 없음</p>
+      <ul class="price-card__list">
+        <li>전 기능 — 관경 산정, 압력검토, 계통도, 밸브·부속 산출</li>
+        <li>엑셀 · PDF 계산서 출력</li>
+        <li>기능 추가·개선 무상 제공</li>
+        <li>계정 1개 기준 (구글 계정으로 로그인)</li>
+      </ul>
+      <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=site&utm_content=price" target="_blank" rel="noopener">7일 무료로 먼저 써보기</a>
+      <p class="price-card__note">체험 중 정보를 입력하시면 14일까지 늘어납니다.<br>
+      체험이 끝나도 입력하신 프로젝트 자료는 그대로 남습니다.</p>
+    </div>
+
+    <p class="price-fine reveal">
+      결제는 <b>계좌이체</b>로 진행되며, 앱 안에서 신청하면 계좌를 안내해 드립니다.<br>
+      사업자 등록 전이라 <b>세금계산서·현금영수증은 발행해 드릴 수 없습니다.</b>
+      회사 경비 처리가 필요하시면 결제 전에 확인해 주세요.
+    </p>
   </div>
 </section>
 
@@ -248,7 +314,7 @@
   <div class="wrap--narrow center">
     <h2 class="headline reveal">다음 프로젝트의 관경 산정,<br>오늘부터 30분이면 됩니다.</h2>
     <div class="hero__cta reveal">
-      <a class="btn" href="https://sanitary-pipe-calc.pages.dev/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=site&utm_content=closing" target="_blank" rel="noopener">7일 무료로 써보기</a>
       <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[위생배관 관경 계산서] 문의">도입 문의</a>
     </div>
   </div>
@@ -298,5 +364,6 @@
 
 <script src="../js/main.js"></script>
 <script src="../js/demo.js"></script>
+<script src="../js/lightbox.js"></script>
 </body>
 </html>
