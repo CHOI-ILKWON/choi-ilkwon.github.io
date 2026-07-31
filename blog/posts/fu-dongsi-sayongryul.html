@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기구 수를 그대로 더하면 왜 안 되는가 — 부하단위와 동시사용률 | MEP Works</title>
+<meta name="description" content="화장실 기구 유량을 다 더해서 관경을 잡으면 과대설계가 됩니다. 부하단위(FU)를 쓰는 이유와 동시사용률 곡선을 읽을 때 실무에서 자주 틀리는 지점을 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="기구 수를 그대로 더하면 왜 안 되는가 — 부하단위와 동시사용률">
+<meta property="og:description" content="화장실 기구 유량을 다 더해서 관경을 잡으면 과대설계가 됩니다. 부하단위와 동시사용률, 실무에서 자주 틀리는 지점.">
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-fu-nav" target="_blank" rel="noopener">7일 무료로 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">급수</span>
+      <time datetime="2026-08-01">2026년 8월 1일</time>
+      <span>8분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">기구 수를 그대로 더하면<br>왜 안 되는가</h1>
+    <p class="lead reveal">부하단위(FU)와 동시사용률 — 급수 관경 산정에서 가장 먼저 갈리는 지점</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>신입 때 처음으로 화장실 급수 관경을 잡아보라는 지시를 받았습니다.
+      대변기 몇 개, 세면기 몇 개를 세고, 기구마다 필요한 유량을 찾아 전부 더했습니다.
+      합계가 나왔으니 그 유량으로 관경표를 보고 사이즈를 정했습니다.
+      논리적으로는 틀린 데가 없어 보였습니다.</p>
+
+      <p>선배가 보더니 한마디 했습니다. <b>“화장실에서 스무 명이 동시에 물을 트나?”</b></p>
+
+      <p>그때는 그냥 “아 그렇구나” 하고 넘어갔는데, 이 질문 하나에
+      급수 관경 산정의 논리가 거의 다 들어 있습니다.
+      오늘은 그 이야기를 정리해 보겠습니다.</p>
+
+      <h2>단순 합산이 틀리는 이유</h2>
+
+      <p>기구별 필요 유량을 전부 더한다는 것은 <b>“모든 기구가 동시에, 최대 유량으로 사용된다”</b>고
+      가정하는 것입니다. 화장실에 기구가 30개면 30개가 한꺼번에 열린다는 뜻이죠.</p>
+
+      <p>실제로는 그런 일이 일어나지 않습니다. 대변기 하나가 세정되는 시간은 길어야 10초 남짓이고,
+      세면기는 물을 틀었다 잠갔다 합니다. 사용 빈도도 기구마다 다릅니다.
+      그런데도 전부 동시에 쓰인다고 가정하면 어떻게 될까요.</p>
+
+      <ul>
+        <li>관경이 실제 필요보다 한두 단계 커집니다</li>
+        <li>배관 자재비와 보온재가 함께 늘어납니다</li>
+        <li>펌프 용량도 과대해집니다</li>
+        <li><b>유속이 지나치게 낮아져</b> 관내 침전이나 수질 문제로 이어질 수 있습니다</li>
+      </ul>
+
+      <p>과대설계는 “안전하니까 괜찮다”가 아닙니다. 돈이 더 들고, 다른 문제를 만듭니다.
+      반대로 무작정 줄이면 말단 수압이 안 나옵니다.
+      그래서 <b>“동시에 쓰일 만큼만”</b> 잡는 방법이 필요했고, 그게 부하단위입니다.</p>
+
+      <h2>부하단위는 유량이 아닙니다</h2>
+
+      <p>가장 흔한 오해부터 짚겠습니다. <b>부하단위(FU)는 유량 단위가 아닙니다.</b>
+      FU 40이라고 해서 40 L/min이 아닙니다.</p>
+
+      <p>부하단위는 기구 하나가 배관에 주는 부담을 <b>세 가지를 합쳐 하나의 지수로 압축한 값</b>입니다.</p>
+
+      <ul>
+        <li><b>순간 유량</b> — 한 번 쓸 때 얼마나 많이 흐르는가</li>
+        <li><b>사용 시간</b> — 한 번에 얼마나 오래 흐르는가</li>
+        <li><b>사용 빈도</b> — 얼마나 자주 쓰이는가</li>
+      </ul>
+
+      <p>예를 들어 대변기는 순간 유량이 크지만 아주 짧게 쓰이고,
+      세면기는 유량은 작지만 자주 쓰입니다.
+      이 둘을 “유량”이라는 하나의 잣대로만 비교하면 실제 부담을 반영하지 못합니다.
+      그래서 셋을 묶어 <b>비교 가능한 지수</b>로 만든 것이 부하단위입니다.</p>
+
+      <p>그러니까 순서는 이렇게 됩니다.</p>
+
+      <div class="post__note">
+        <p><b>기구별 FU 부여 → 구간별 FU 합산 → 동시사용률을 반영해 유량으로 환산 → 유량과 허용유속으로 관경 결정</b></p>
+        <p>FU를 더하는 단계와 유량으로 바꾸는 단계는 <b>다른 단계</b>입니다. 이 둘을 섞으면 계산이 무너집니다.</p>
+      </div>
+
+      <h2>가장 크게 갈리는 지점 — 세정밸브식 vs 세정탱크식</h2>
+
+      <p>같은 “대변기 1개”라도 <b>세정밸브식(플러시 밸브)</b>이냐 <b>세정탱크식(로우탱크)</b>이냐에 따라
+      부하단위가 크게 달라집니다. 실무에서 관경이 뒤집히는 가장 흔한 원인이 여기입니다.</p>
+
+      <p>이유는 순간 유량입니다. 세정탱크식은 탱크에 물을 천천히 받아두었다가 그 물로 세정합니다.
+      급수관 입장에서는 <b>작은 유량이 길게</b> 흐르는 것입니다.
+      반면 세정밸브식은 탱크 없이 급수관에서 직접 순간적으로 많은 물을 뽑아냅니다.
+      <b>큰 유량이 짧게</b> 흐르죠.</p>
+
+      <p>배관 굵기를 결정하는 것은 “하루에 쓴 총량”이 아니라 <b>“한순간에 얼마나 뽑아가는가”</b>입니다.
+      그래서 세정밸브식이 붙는 순간 부하단위가 뛰고, 관경도 따라 올라갑니다.</p>
+
+      <div class="post__note">
+        <p><b>실무 팁.</b> 도면에 기구만 그려져 있고 세정 방식이 안 적혀 있으면
+        반드시 확인하고 넘어가세요. 나중에 “학교라서 세정밸브식입니다”라는 답이 오면
+        화장실부터 MAIN관까지 전부 다시 계산해야 합니다.</p>
+      </div>
+
+      <h3>부하단위 표는 하나가 아닙니다</h3>
+
+      <p>여기서 두 번째로 자주 나는 사고가 있습니다.
+      <b>부하단위 표는 출처마다 값이 다릅니다.</b>
+      국내 표준시방서 계열, 학회·협회 자료, 해외 코드 계열이 각각 조금씩 다른 값을 씁니다.</p>
+
+      <p>문제는 값이 다르다는 것 자체가 아니라, <b>여러 표를 섞어 쓰는 것</b>입니다.
+      대변기는 A자료에서, 세면기는 B자료에서 가져오면 그 계산서는 근거를 설명할 수 없게 됩니다.
+      발주처가 “이 값 어디서 나온 겁니까”라고 물었을 때 답이 막히는 계산서가 이렇게 만들어집니다.</p>
+
+      <p><b>사무소가 채택한 기준 하나를 정하고, 계산서에 출처를 명시하고, 끝까지 그것만 쓰세요.</b>
+      이게 값을 정확히 고르는 것보다 중요합니다.</p>
+
+      <div class="post__cta">
+        <p>기구를 연결하면 구간마다 부하단위가 자동으로 합산되고,
+        세정밸브식·세정탱크식이 구분되어 반영됩니다. 표를 열 일이 없습니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-fu-mid" target="_blank" rel="noopener">위생배관 관경 계산서 7일 무료로 써보기</a>
+        <span class="post__cta-fine">카드 등록 없음 · 설치 없음 · 구글 로그인만 하면 바로 시작</span>
+      </div>
+
+      <h2>동시사용률 — FU를 유량으로 바꾸는 자리</h2>
+
+      <p>구간별로 FU를 다 더했다면, 이제 그 값을 <b>실제 흐를 유량</b>으로 바꿔야 합니다.
+      여기서 쓰는 것이 동시사용률 곡선입니다.
+      가로축에 부하단위, 세로축에 유량을 놓은 그래프죠.</p>
+
+      <p>이 곡선의 핵심 성질은 <b>직선이 아니라는 것</b>입니다.
+      기구가 늘어날수록 “동시에 쓰일 비율”은 오히려 떨어집니다.
+      기구 10개짜리 화장실에서는 두세 개가 겹칠 확률이 꽤 되지만,
+      기구 200개인 건물 전체에서 200개가 겹칠 확률은 사실상 0입니다.</p>
+
+      <p>그래서 곡선은 처음엔 가파르게 오르다가 점점 완만해집니다.
+      <b>FU가 2배가 되어도 유량은 2배가 되지 않습니다.</b>
+      이 성질 때문에 층별로 따로 계산한 유량을 그대로 더해서 MAIN관을 잡으면 안 됩니다.</p>
+
+      <div class="post__note">
+        <p><b>자주 나는 실수.</b> 각 층 유량을 구한 뒤 그것을 합산해 MAIN관 관경을 정하는 것.</p>
+        <p>올바른 순서는 <b>FU를 먼저 누적한 뒤, 누적된 FU로 한 번만 곡선을 적용</b>하는 것입니다.
+        유량끼리 더하면 동시사용률이 이미 반영된 값을 또 더하게 되어 과대설계가 됩니다.</p>
+      </div>
+
+      <h3>곡선이 두 개인 이유</h3>
+
+      <p>자료를 보면 동시사용률 곡선이 보통 두 개 그려져 있습니다.
+      <b>세정밸브식이 포함된 계통</b>과 <b>세정탱크식만 있는 계통</b>이 다르기 때문입니다.</p>
+
+      <p>세정밸브식은 순간 유량이 크기 때문에, 같은 FU라도 더 높은 유량 쪽 곡선을 따릅니다.
+      이 두 곡선을 헷갈려 쓰면 관경이 한 단계씩 어긋납니다.
+      계통에 세정밸브식 기구가 <b>하나라도</b> 있으면 어느 곡선을 쓸지부터 정하고 시작하세요.</p>
+
+      <h2>말단 구간에서는 곡선을 믿지 마세요</h2>
+
+      <p>마지막으로, 경력이 쌓여도 놓치기 쉬운 지점입니다.</p>
+
+      <p>동시사용률 곡선은 <b>기구가 여러 개 모여 있을 때의 확률</b>을 다룹니다.
+      그런데 기구 한두 개짜리 말단 구간에 이 곡선을 그대로 적용하면
+      계산 유량이 <b>기구 하나의 필요 유량보다 작게</b> 나오는 일이 생깁니다.
+      확률적으로는 맞지만, 그 기구 하나를 열었을 때 물이 안 나오면 아무 의미가 없습니다.</p>
+
+      <p>그래서 말단부는 다른 논리로 잡습니다.</p>
+
+      <ul>
+        <li><b>말단 구간</b> — 그 기구가 요구하는 최소 유량과 최소 관경이 지배합니다</li>
+        <li><b>중간 구간</b> — 누적 FU에 곡선을 적용한 유량이 지배합니다</li>
+        <li><b>둘 중 큰 값</b>으로 관경을 결정합니다</li>
+      </ul>
+
+      <p>정리하면 <b>“곡선으로 나온 값”과 “기구 최소 요구값” 중 큰 쪽</b>을 쓰는 것입니다.
+      곡선만 믿고 내려가면 말단에서 물이 부족해집니다.</p>
+
+      <h2>정리</h2>
+
+      <ol>
+        <li>기구 유량을 단순 합산하면 과대설계가 됩니다. 동시에 쓰이지 않기 때문입니다</li>
+        <li>부하단위는 유량이 아니라, 유량·시간·빈도를 압축한 <b>지수</b>입니다</li>
+        <li>세정밸브식과 세정탱크식은 부하단위가 크게 다릅니다. 도면에 없으면 반드시 확인하세요</li>
+        <li>부하단위 표는 출처마다 다릅니다. <b>하나를 정해 끝까지 쓰고, 출처를 계산서에 남기세요</b></li>
+        <li>유량끼리 더하지 마세요. <b>FU를 누적한 뒤 곡선을 한 번만</b> 적용합니다</li>
+        <li>세정밸브식 포함 여부에 따라 곡선이 갈립니다</li>
+        <li>말단은 곡선 대신 기구 최소 요구값이 지배합니다. 둘 중 큰 값을 쓰세요</li>
+      </ol>
+
+      <p>이 일곱 가지만 지켜도 급수 관경 계산서에서 지적받을 일은 크게 줄어듭니다.
+      그리고 무엇보다, <b>“이 값 어디서 나왔냐”는 질문에 답할 수 있게 됩니다.</b>
+      계산서의 값어치는 결국 거기서 갈립니다.</p>
+
+      <div class="post__cta">
+        <p>여기까지 읽으셨다면, 손으로 한 번 해보시는 게 가장 좋습니다.
+        다만 매 프로젝트마다 반복하기엔 시간이 아깝습니다.
+        위생배관 관경 계산서는 부하단위 표와 동시사용률 곡선을 내장하고,
+        말단·중간 구간의 지배 조건까지 자동으로 판정합니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-fu-end" target="_blank" rel="noopener">7일 무료로 써보기</a>
+        <a class="btn btn--ghost" href="../../apps/sanitary.html">앱 소개 보기</a>
+        <span class="post__cta-fine">계통도·압력검토·밸브 수량 산출까지 한 흐름으로 이어집니다.</span>
+      </div>
+
+      <div class="post__note">
+        <p>이 글은 설계 실무에서 쓰는 관점으로 정리한 것입니다.
+        구체적인 부하단위 값과 곡선은 사무소가 채택한 기준 자료를 따르시고,
+        최종 판단은 프로젝트 조건과 관계 기준에 맞춰 검토하시기 바랍니다.</p>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>

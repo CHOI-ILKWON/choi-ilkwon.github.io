@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>설비 실무 노트 — MEP Works</title>
+<meta name="description" content="기계설비 설계 실무에서 매번 걸리는 계산과 기준을, 현직 15년차가 정리합니다. 급수·배관·부하계산·소방 법규검토.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../index.html">MEP Works</a>
+    <span class="gnav__title">설비 실무 노트</span>
+    <div class="gnav__actions">
+      <a class="gnav__link" href="../index.html#products">제품</a>
+      <a class="gnav__link" href="mailto:jikwang8610@gmail.com">문의</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero hero--blog">
+  <p class="eyebrow reveal">설비 실무 노트</p>
+  <h1 class="display reveal">계산은 끝났는데,<br>근거를 못 대던 순간들.</h1>
+  <p class="lead reveal">기계설비 설계·감리 15년차가 실무에서 매번 걸렸던 계산과 기준을 정리합니다.
+  표를 어디서 찾는지, 어느 값을 쓰는지, 왜 그렇게 되는지까지.</p>
+</header>
+
+<main class="section">
+  <div class="wrap--narrow">
+    <div id="postList" class="postlist">
+      <p class="postlist__empty">글을 불러오는 중입니다…</p>
+    </div>
+  </div>
+</main>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">읽고 나서, 직접 해보세요.</h2>
+    <p class="lead reveal" style="margin-top:14px;">글에서 다룬 계산은 대부분 앱에 들어 있습니다.
+    설치 없이 브라우저에서 바로 됩니다.</p>
+    <div class="hero__cta reveal" style="margin-top:26px;">
+      <a class="btn" href="../index.html#products">앱 둘러보기</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../apps/sanitary.html">위생배관 관경</a>
+      <a href="../apps/valve.html">밸브 계통도</a>
+      <a href="../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../apps/duct.html">환기 덕트</a>
+      <a href="../apps/fire.html">소화설비 법규검토</a>
+      <a href="../apps/sprinkler.html">스프링클러</a>
+      <a href="../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// 글 목록은 posts.json 하나만 고치면 갱신된다.
+// 글을 늘릴 때 index.html 을 손대지 않게 하려는 구조다.
+(function () {
+  var box = document.getElementById('postList');
+
+  fetch('posts.json?v=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var posts = (data.posts || []).slice().sort(function (a, b) {
+        return String(b.date).localeCompare(String(a.date));
+      });
+      if (!posts.length) {
+        box.innerHTML = '<p class="postlist__empty">첫 글을 준비하고 있습니다.</p>';
+        return;
+      }
+      box.innerHTML = posts.map(function (p, i) {
+        return '<a class="pcard' + (i === 0 ? ' pcard--first' : '') + '" href="posts/' + esc(p.slug) + '.html">' +
+          '<div class="pcard__meta">' +
+            '<span class="pcard__tag">' + esc(p.tag || '실무') + '</span>' +
+            '<time>' + esc(p.date) + '</time>' +
+            (p.readMin ? '<span>' + esc(p.readMin) + '분</span>' : '') +
+          '</div>' +
+          '<h2 class="pcard__title">' + esc(p.title) + '</h2>' +
+          '<p class="pcard__summary">' + esc(p.summary) + '</p>' +
+          '<span class="link-more">이어서 읽기</span>' +
+        '</a>';
+      }).join('');
+    })
+    .catch(function () {
+      box.innerHTML = '<p class="postlist__empty">글 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</p>';
+    });
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+})();
+</script>
+
+</body>
+</html>
