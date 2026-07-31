@@ -1323,3 +1323,79 @@ h1, h2, h3,
   .post__body h2 { font-size: 22px; margin-top: 42px; }
   .post__cta { padding: 22px 20px; }
 }
+
+/* ── 타일 구분 강화 ────────────────────────────────
+   문제: 7개 타일이 전부 같은 회색 배경이라 "긴 글 하나"처럼 읽히고,
+   앱이 여러 개라는 게 느껴지지 않았다.
+   해결: ① 타일마다 제품 색을 옅게 깐다 ② 아이콘을 색 배지 안에 넣는다
+        ③ 실제 앱 화면을 넣는다 — 계통도·부하표·덕트표는 생김새가 완전히 달라서
+           이것만으로도 "다른 도구"라는 게 즉시 보인다. */
+
+.tile {
+  background: color-mix(in srgb, var(--tile-accent, var(--accent)) 7%, #fff);
+  border: 1px solid color-mix(in srgb, var(--tile-accent, var(--accent)) 18%, #fff);
+  padding-bottom: 0;                 /* 화면이 바닥에 붙게 */
+  transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+.tile:hover {
+  border-color: color-mix(in srgb, var(--tile-accent, var(--accent)) 42%, #fff);
+}
+.tile--dark {
+  background: #000;
+  border-color: rgba(255, 255, 255, .14);
+}
+
+/* 제품 색 띠 — 타일 맨 위에서 어느 제품인지 먼저 알린다 */
+.tile::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--tile-accent, var(--accent));
+}
+
+/* 아이콘을 색 배지 안에 */
+.picon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--tile-accent, var(--accent)) 14%, #fff);
+  border: 1px solid color-mix(in srgb, var(--tile-accent, var(--accent)) 26%, #fff);
+}
+.tile--dark .picon-box {
+  background: rgba(41, 151, 255, .16);
+  border-color: rgba(41, 151, 255, .34);
+}
+.rail__card .picon-box {
+  width: 52px; height: 52px; border-radius: 16px;
+}
+
+/* 실제 앱 화면 — 타일 바닥에 걸치게 두어 "기기 사진" 처럼 보이게 한다 */
+.tile__shot {
+  margin-top: 34px;
+  width: 100%;
+  max-width: 620px;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--tile-accent, var(--accent)) 22%, #fff);
+  border-bottom: 0;
+  box-shadow: 0 -2px 30px rgba(0, 0, 0, .07);
+  background: #fff;
+}
+.tile__shot img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (max-width: 900px) {
+  .tile { padding-left: 22px; padding-right: 22px; }
+  .picon-box { width: 54px; height: 54px; border-radius: 17px; }
+  .tile__shot { margin-top: 26px; }
+  .tile__shot img { height: 150px; }
+}
