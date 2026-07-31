@@ -17,7 +17,7 @@
     <a class="gnav__brand" href="../index.html">MEP Works</a>
     <span class="gnav__title">HVAC 부하계산서 + 용량계산서</span>
     <div class="gnav__actions">
-      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     </div>
   </div>
 </nav>
@@ -28,7 +28,7 @@
   <p class="lead reveal">지역을 고르면 기상조건이 들어오고, 실을 등록하면 부하가 계산되고,
   부하가 나오면 장비 용량이 선정됩니다. 하나의 계산서 안에서.</p>
   <div class="hero__cta reveal">
-    <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
   </div>
 </header>
@@ -45,37 +45,135 @@
   </div>
 </section>
 
-<section id="features" class="section section--alt">
-  <div class="wrap center">
-    <p class="eyebrow reveal">기능</p>
-    <h2 class="headline reveal">입력한 만큼만 묻고,<br>기준대로 계산합니다.</h2>
-    <div class="bento">
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">📍</span>
-        <h3>지역 선택 = 기상조건 입력 끝</h3>
-        <p>지역을 고르면 설계 외기조건이 자동으로 들어옵니다. 기상데이터를 찾아다닐 필요가 없습니다.</p>
+<!-- 니즈 ↔ 기능 대조 -->
+<section id="swap" class="section">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">무엇이 대체되나</p>
+      <h2 class="headline reveal">지금 손으로 하시는 일이,<br>어떤 기능으로 바뀌는지.</h2>
+    </div>
+
+    <div class="swap">
+      <div class="swap__head" aria-hidden="true">
+        <span>지금 이렇게 하고 계시다면</span>
+        <span>앱에서는</span>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">🏢</span>
-        <h3>건물 · 층 · 실 단위 관리</h3>
-        <p>실 유형을 고르고 면적과 창호만 넣으세요. 실별 부하가 목록으로 정리됩니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">지역 기상데이터를 찾아 외기조건을 직접 입력</div>
+        <div class="swap__after"><b>지역만 고르면 설계 외기조건이 자동</b>
+        전국 17개 지역의 여름·겨울 조건이 들어 있습니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🧮</span>
-        <h3>국토교통부 기준 부하계산</h3>
-        <p>외벽 방위, 창호, 내부발열을 반영한 냉난방 부하가 기준에 따라 계산됩니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">실마다 엑셀 시트를 복사해 만들고 수식을 손보기</div>
+        <div class="swap__after"><b>건물 · 층 · 실 구조로 관리</b>
+        실을 추가하면 부하 요약표에 자동으로 한 줄이 늘어납니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">❄️</span>
-        <h3>장비 용량 선정</h3>
-        <p>CTH, PAC, EHP, 라디에이터까지. 부하 결과에서 장비 용량계산서로 바로 이어집니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">CLTD 표와 방위 계수를 찾아 옮겨 적기</div>
+        <div class="swap__after"><b>방위별 CLTD·일사량이 내장</b>
+        10시·12시·14시·16시 시각별 부하가 함께 나옵니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🎓</span>
-        <h3>4단계 사용 가이드</h3>
-        <p>처음 열어도 헤매지 않도록, 튜토리얼이 앱 안에 들어 있습니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">부하는 프로그램에서, 장비 선정은 다른 엑셀에서</div>
+        <div class="swap__after"><b>부하 결과가 그대로 용량계산서로</b>
+        값을 손으로 옮기지 않습니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">장비번호(TAG)를 도면 보며 따로 부여</div>
+        <div class="swap__after"><b>장비일람표에서 TAG 자동 부여</b>
+        수정하면 각 용량계산서 탭에 함께 반영됩니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">계산 결과가 상식적인지 눈대중으로 판단</div>
+        <div class="swap__after"><b>W/㎡ 가 상식 범위를 벗어나면 표시</b>
+        입력 실수를 제출 전에 잡습니다.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="features" class="section section--dark" style="--accent-bright:#ff8a3d;">
+  <div class="wrap">
+
+    <div class="featx featx--first">
+      <p class="eyebrow reveal" style="color:#ff8a3d;">② 실 목록 관리</p>
+      <h3 class="featx__head reveal">건물 · 층 · 실.<br>구조대로 담습니다.</h3>
+      <p class="featx__lead reveal">건물을 만들고 층을 붙이고 실을 추가합니다.
+      실 유형을 고르면 인원밀도·조명·기기부하 기본값이 따라오고,
+      <b>면적과 창호만 넣으면</b> 나머지는 계산됩니다.
+      실이 늘어도 시트를 복사할 일이 없습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/hvac/rooms.png" alt="건물·층·실 구조로 실을 관리하고 벽체와 창호를 입력하는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">설계 외기조건</p>
+          <p class="stat__num">17개 지역</p>
+          <p class="stat__post">지역 선택으로 자동 입력</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">실 유형별 기본값</p>
+          <p class="stat__num">9종</p>
+          <p class="stat__post">사무실 · 전기실 · 주방 등</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#ff8a3d;">③ 부하계산서</p>
+      <h3 class="featx__head reveal">요약표와 상세 계산서가<br>같이 나옵니다.</h3>
+      <p class="featx__lead reveal">실별 냉난방부하와 W/㎡ 가 요약표로 정리되고,
+      아래에는 유리·외벽·전열·내부발열까지 <b>항목별 상세 계산서</b>가 이어집니다.
+      계산식이 그대로 적혀 있어서 “이 값 어디서 나왔냐”는 질문에 표를 넘겨 보여주면 됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/hvac/load.png" alt="실별 부하 요약표와 항목별 상세 계산서가 함께 표시된 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">시각별 냉방부하</p>
+          <p class="stat__num">10 · 12 · 14 · 16시</p>
+          <p class="stat__post">최대 부하 시각 확인</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">상식 범위 이탈</p>
+          <p class="stat__num">자동 경고</p>
+          <p class="stat__post">제출 전에 입력 실수 발견</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#ff8a3d;">④ 용량계산서</p>
+      <h3 class="featx__head reveal">부하가 정해지면,<br>장비도 정해집니다.</h3>
+      <p class="featx__lead reveal">부하 결과에서 그대로 장비 용량이 산정되고,
+      <b>장비일람표에 TAG 번호가 자동으로 부여</b>됩니다.
+      PAC · EHP · CTH · 전열교환기 · 각종 팬 · 유니트히터까지 설비별 탭으로 정리됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/hvac/capacity.png" alt="장비일람표에 TAG 번호와 용량이 자동으로 정리된 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">설비 종류</p>
+          <p class="stat__num">15개 탭</p>
+          <p class="stat__post">PAC · EHP · CTH · 팬 · 펌프</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">장비번호</p>
+          <p class="stat__num">TAG 자동</p>
+          <p class="stat__post">수정 시 전 탭 반영</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -101,7 +199,7 @@
         </div>
       </div>
     </div>
-    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener" style="color:var(--accent);">무료로 바로 쓰기</a>.</p>
   </div>
 </section>
 
@@ -109,7 +207,7 @@
   <div class="wrap--narrow center">
     <h2 class="headline reveal">부하계산서 납품,<br>오늘 안에 됩니다.</h2>
     <div class="hero__cta reveal">
-      <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
       <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[HVAC 부하계산서] 문의">도입 문의</a>
     </div>
   </div>
@@ -161,6 +259,7 @@
 
 <script src="../js/icons.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
 <script src="../js/demo.js"></script>
 </body>
 </html>
