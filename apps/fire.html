@@ -17,7 +17,7 @@
     <a class="gnav__brand" href="../index.html">MEP Works</a>
     <span class="gnav__title">소화설비 법규검토 · 설계기준</span>
     <div class="gnav__actions">
-      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     </div>
   </div>
 </nav>
@@ -28,7 +28,7 @@
   <p class="lead reveal">용도와 규모를 입력하면 소화설비 설치 대상 여부를 판단하고,
   소요유량과 소화용수량, 펌프 선정까지 이어서 산정합니다.</p>
   <div class="hero__cta reveal">
-    <a class="btn" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="btn" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
   </div>
 </header>
@@ -45,37 +45,136 @@
   </div>
 </section>
 
-<section id="features" class="section section--alt">
-  <div class="wrap center">
-    <p class="eyebrow reveal">기능</p>
-    <h2 class="headline reveal">설치 여부 판단부터<br>펌프 선정까지, 한 문서로.</h2>
-    <div class="bento">
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">🏛️</span>
-        <h3>용도·규모로 적용 설비 판단</h3>
-        <p>건축 개요를 넣으면 소화기구부터 스프링클러까지, 설치 대상 여부가 기준 조문과 함께 정리됩니다.</p>
+<!-- 니즈 ↔ 기능 대조 -->
+<section id="swap" class="section">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">무엇이 대체되나</p>
+      <h2 class="headline reveal">지금 손으로 하시는 일이,<br>어떤 기능으로 바뀌는지.</h2>
+    </div>
+
+    <div class="swap">
+      <div class="swap__head" aria-hidden="true">
+        <span>지금 이렇게 하고 계시다면</span>
+        <span>앱에서는</span>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">💧</span>
-        <h3>소요유량 · 소화용수량 산정</h3>
-        <p>적용 설비에 따른 소요유량과 수원량이 자동 계산됩니다. 근거가 계산서에 남습니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">별표4를 펼쳐놓고 용도·면적을 하나씩 대조</div>
+        <div class="swap__after"><b>용도와 층별 면적만 넣으면 설비별 해당·비해당 판정</b>
+        판정 옆에 법 조항이 함께 표시됩니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">⛽</span>
-        <h3>위험물 · 도시가스 검토</h3>
-        <p>위험물시설과 도시가스 사용시설 검토 항목이 함께 들어 있습니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">개정된 기준이 맞는지 매번 다시 확인</div>
+        <div class="swap__after"><b>현행 기준이 앱에 반영</b>
+        구법 기준으로 잘못 판단할 일이 없습니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🧯</span>
-        <h3>소화기구 능력단위</h3>
-        <p>용도별 바닥면적 기준으로 소화기구 능력단위를 산정합니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">지하·무창층, 4층 이상 조건을 층마다 따져보기</div>
+        <div class="swap__after"><b>층 라벨과 무창 여부로 자동 판정</b>
+        층별 조건이 걸리는 설비를 놓치지 않습니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">⚡</span>
-        <h3>가압송수장치 선정</h3>
-        <p>소요유량에서 소방펌프 선정까지. 실별 소화설비 적용 종합표로 마무리.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">수원량·펌프 양정을 별도 엑셀에서 계산</div>
+        <div class="swap__after"><b>적용 설비에서 유량·수원·양정이 바로 산정</b>
+        소화수조는 20㎥ 단위로 따로 잡힙니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">위험물·도시가스 검토는 또 다른 파일에서</div>
+        <div class="swap__after"><b>지정수량 배수와 월사용예정량을 한 화면에서</b>
+        허가·예방규정·자체소방대 대상 여부까지 판정합니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">실별로 어떤 설비를 넣었는지 따로 정리</div>
+        <div class="swap__after"><b>실별 소화설비 종합표로 자동 집계</b>
+        수계 설비는 펌프·수원에 합산됩니다.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="features" class="section section--dark" style="--accent-bright:#ff5a4d;">
+  <div class="wrap">
+
+    <div class="featx featx--first">
+      <p class="eyebrow reveal" style="color:#ff5a4d;">입력</p>
+      <h3 class="featx__head reveal">용도와 층별 면적.<br>그게 입력의 전부입니다.</h3>
+      <p class="featx__lead reveal">특정소방대상물 용도를 고르고 건물마다 층을 추가합니다.
+      층 라벨과 면적, 무창층 여부만 넣으면 됩니다.
+      내화구조를 체크하면 소화기 능력단위가 <b>2배 완화</b>되어 반영됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/fire/building.png" alt="건물과 층별 면적, 무창층 여부를 입력하는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">특정소방대상물</p>
+          <p class="stat__num">용도 선택</p>
+          <p class="stat__post">공동주택 · 판매 · 의료 · 창고 등</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">건물 여러 동</p>
+          <p class="stat__num">동시 검토</p>
+          <p class="stat__post">동별로 판정이 나뉩니다</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#ff5a4d;">판정</p>
+      <h3 class="featx__head reveal">해당인지 아닌지,<br>근거 조항과 함께.</h3>
+      <p class="featx__lead reveal">시행령 별표4 기준으로 설비별 <b>해당 · 비해당</b>이 판정됩니다.
+      옆에는 <b>법 조항과 설치 기준 요약</b>이 함께 표시되어,
+      왜 그렇게 판단했는지를 검토서에 그대로 옮길 수 있습니다.
+      법적 의무가 아닌 자진설비도 따로 추가할 수 있습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/fire/judge.png" alt="설비별 해당·비해당 판정이 법 조항 및 설치 기준과 함께 표시된 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">판정 대상 설비</p>
+          <p class="stat__num">10종 이상</p>
+          <p class="stat__post">소화기 · 옥내외소화전 · SP · 물분무 · 피난기구</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">판정 근거</p>
+          <p class="stat__num">조항 표시</p>
+          <p class="stat__post">1항 가목 · 3항 나목 …</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#ff5a4d;">집계</p>
+      <h3 class="featx__head reveal">판정이 끝나면,<br>펌프와 수원이 나옵니다.</h3>
+      <p class="featx__lead reveal">실별 적용 소화설비가 종합표로 정리되고,
+      수계 설비는 <b>소요유량 · 수원량 · 펌프 양정</b>으로 합산됩니다.
+      소화용수설비는 펌프 유량에서 빼고 소화수조 20㎥ 단위로 따로 산정합니다.
+      위험물 지정수량 배수와 도시가스 월사용예정량 검토도 같은 화면에 있습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/fire/summary.png" alt="실별 소화설비 종합표와 펌프·수원 산정 결과 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">소화수조</p>
+          <p class="stat__num">20㎥ 단위</p>
+          <p class="stat__post">펌프 유량과 분리 산정</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">위험물 · 도시가스</p>
+          <p class="stat__num">함께 검토</p>
+          <p class="stat__post">허가 · 예방규정 대상 판정</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -101,7 +200,7 @@
         </div>
       </div>
     </div>
-    <p class="demo-note">연출된 시연 장면입니다(수치는 예시). 실제로 검토해 보려면 <a href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다(수치는 예시). 실제로 검토해 보려면 <a href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener" style="color:var(--accent);">무료로 바로 쓰기</a>.</p>
   </div>
 </section>
 
@@ -109,7 +208,7 @@
   <div class="wrap--narrow center">
     <h2 class="headline reveal">소방 사전검토,<br>회의 전에 끝내세요.</h2>
     <div class="hero__cta reveal">
-      <a class="btn" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn" href="https://choi-ilkwon.github.io/fire-suppression-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
       <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[소화설비 법규검토] 문의">도입 문의</a>
     </div>
   </div>
@@ -161,6 +260,7 @@
 
 <script src="../js/icons.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
 <script src="../js/demo.js"></script>
 </body>
 </html>

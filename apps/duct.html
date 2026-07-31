@@ -17,7 +17,7 @@
     <a class="gnav__brand" href="../index.html">MEP Works</a>
     <span class="gnav__title">환기 덕트 관경 계산서</span>
     <div class="gnav__actions">
-      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     </div>
   </div>
 </nav>
@@ -28,7 +28,7 @@
   <p class="lead reveal">사각이든 원형이든, 분기가 몇 개든.
   실의 풍량과 풍속만 정하면 덕트 사이즈와 레지스터·디퓨져까지 이어서 산정됩니다.</p>
   <div class="hero__cta reveal">
-    <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
   </div>
 </header>
@@ -45,32 +45,135 @@
   </div>
 </section>
 
-<section id="features" class="section section--alt">
-  <div class="wrap center">
-    <p class="eyebrow reveal">기능</p>
-    <h2 class="headline reveal">사각도, 원형도,<br>같은 입력에서 나옵니다.</h2>
-    <div class="bento">
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">⚙️</span>
-        <h3>기본 설정은 한 번만</h3>
-        <p>공통 파라미터를 한 번 정하면 모든 분기 계산에 일관되게 적용됩니다.</p>
+<!-- 니즈 ↔ 기능 대조 -->
+<section id="swap" class="section">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">무엇이 대체되나</p>
+      <h2 class="headline reveal">지금 손으로 하시는 일이,<br>어떤 기능으로 바뀌는지.</h2>
+    </div>
+
+    <div class="swap">
+      <div class="swap__head" aria-hidden="true">
+        <span>지금 이렇게 하고 계시다면</span>
+        <span>앱에서는</span>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">▦</span>
-        <h3>사각덕트 계산</h3>
-        <p>풍속을 설정하면 분기별 사각덕트 사이즈와 레지스터 사이즈가 자동 산정됩니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">덕트 선도표에서 풍량·풍속을 눈으로 읽어 사이즈 결정</div>
+        <div class="swap__after"><b>풍량과 풍속을 넣으면 사이즈가 산출</b>
+        읽는 사람마다 달라지던 값이 계산값으로 남습니다.</div>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">◎</span>
-        <h3>원형덕트 계산</h3>
-        <p>같은 입력으로 원형덕트와 디퓨져 사이즈까지. 환산표를 찾을 필요가 없습니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">천장 속 높이에 들어가는지 나중에 확인</div>
+        <div class="swap__after"><b>설치 가능 높이를 먼저 넣고 계산</b>
+        선정 면적이 최소 설치면적을 넘는지 바로 판정합니다.</div>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">📄</span>
-        <h3>저장 · 불러오기 · PDF</h3>
-        <p>프로젝트를 저장해 두고, 계산서는 PDF로 내보내 그대로 제출하세요.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">사각으로 계산한 뒤 원형 등가지름을 다시 환산</div>
+        <div class="swap__after"><b>사각 · 원형 두 방식을 탭으로 동시에</b>
+        같은 조건으로 두 결과를 비교합니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">분기 풍량이 바뀌면 말단부터 메인까지 재계산</div>
+        <div class="swap__after"><b>구간별 표가 한 번에 갱신</b>
+        말단 · 분기 · 메인이 함께 다시 잡힙니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">레지스터 개수와 개당 풍량을 따로 계산</div>
+        <div class="swap__after"><b>총 풍량과 개수만 넣으면 개당 풍량 자동</b>
+        개구율까지 반영한 유효면적으로 사이즈를 잡습니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">아스펙트비가 적정한지 감으로 판단</div>
+        <div class="swap__after"><b>구간마다 아스펙트비와 면적비교 표시</b>
+        무리한 편평 덕트를 미리 걸러냅니다.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="features" class="section section--dark" style="--accent-bright:#3ecfe8;">
+  <div class="wrap">
+
+    <div class="featx featx--first">
+      <p class="eyebrow reveal" style="color:#3ecfe8;">사각덕트</p>
+      <h3 class="featx__head reveal">풍량과 높이만 넣으면,<br>사이즈가 나옵니다.</h3>
+      <p class="featx__lead reveal">실별 계산풍량과 레지스터 개수를 넣으면 개당 풍량이 자동으로 잡히고,
+      개구율을 반영한 유효면적에서 최소 설치면적이 나옵니다.
+      <b>선정값을 넣는 즉시 OK / 부족 판정</b>이 뜹니다.
+      취출구 · 말단 · 분기 · 메인 풍속은 용도에 맞게 바꿀 수 있습니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/duct/square.png" alt="풍량과 덕트 설치 가능 높이를 입력해 사각덕트 사이즈를 산정하는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">용도별 권장 풍속</p>
+          <p class="stat__num">4개 유형</p>
+          <p class="stat__post">주거 · 사무 · 상업 · 공장</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">설치 가능 높이</p>
+          <p class="stat__num">먼저 반영</p>
+          <p class="stat__post">천장 속에 들어가는지 즉시 판정</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#3ecfe8;">구간별 산정</p>
+      <h3 class="featx__head reveal">말단부터 메인까지,<br>표 하나로.</h3>
+      <p class="featx__lead reveal">구간마다 풍량 · 풍속 · 최소설치면적 · 평면/측면 치수 · 선정면적이
+      한 표에 정리됩니다. <b>면적비교와 아스펙트비가 함께 표시</b>되어
+      무리한 편평 덕트를 미리 걸러냅니다. 분기 풍량이 바뀌면 전 구간이 함께 갱신됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/duct/table.png" alt="말단·분기·메인 구간별 덕트 사이즈와 아스펙트비가 정리된 표" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">구간 구분</p>
+          <p class="stat__num">말단 · 분기 · 메인</p>
+          <p class="stat__post">누적 풍량 자동 반영</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">적정성 확인</p>
+          <p class="stat__num">면적 · 아스펙트비</p>
+          <p class="stat__post">구간마다 표시</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#3ecfe8;">원형덕트</p>
+      <h3 class="featx__head reveal">같은 조건으로<br>원형도 함께.</h3>
+      <p class="featx__lead reveal">사각으로 잡아둔 조건 그대로 원형덕트 결과를 볼 수 있습니다.
+      <b>등가지름 환산표를 따로 찾을 필요가 없습니다.</b>
+      현장 조건에 따라 두 방식을 비교하고 유리한 쪽으로 결정하면 됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/duct/round.png" alt="같은 조건으로 원형덕트 지름을 산정한 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">사각 ↔ 원형</p>
+          <p class="stat__num">탭 전환</p>
+          <p class="stat__post">입력은 한 번만</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">디퓨져 선정</p>
+          <p class="stat__num">함께 산정</p>
+          <p class="stat__post">개당 풍량 기준</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -96,7 +199,7 @@
         </div>
       </div>
     </div>
-    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 실제로 계산해 보려면 <a href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener" style="color:var(--accent);">무료로 바로 쓰기</a>.</p>
   </div>
 </section>
 
@@ -104,7 +207,7 @@
   <div class="wrap--narrow center">
     <h2 class="headline reveal">덕트 산정 근거,<br>계산서로 남기세요.</h2>
     <div class="hero__cta reveal">
-      <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn" href="https://choi-ilkwon.github.io/duct-calc/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
       <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[환기 덕트 관경 계산서] 문의">도입 문의</a>
     </div>
   </div>
@@ -156,6 +259,7 @@
 
 <script src="../js/icons.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
 <script src="../js/demo.js"></script>
 </body>
 </html>
