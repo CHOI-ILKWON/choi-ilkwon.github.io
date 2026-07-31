@@ -5,7 +5,7 @@
  * 대신 한참 쓰고 난 뒤에 작은 카드로 이메일만 물어본다. 거절하면 다시 묻지 않는다.
  *
  * 붙이는 법 — 앱의 index.html 맨 아래에 두 줄:
- *   <script src="subscribe.js?v=1"></script>
+ *   <script src="subscribe.js?v=2"></script>
  *   <script>MEPSubscribe.init({ apiUrl:"...", appId:"valve", appName:"밸브 계통도 계산서" });</script>
  *
  * 모은 명단은 「구독」 시트에 쌓인다. 나중에 이 앱을 유료화할 때
@@ -63,7 +63,7 @@ window.MEPSubscribe = (function () {
     box.innerHTML =
       '<button class="mepsub__x" aria-label="닫기">✕</button>' +
       '<p class="mepsub__title">새 기능이 나오면 알려드릴까요?</p>' +
-      '<p class="mepsub__desc">' + esc(cfg.appName) + '은 계속 고쳐지고 있습니다.<br>' +
+      '<p class="mepsub__desc">' + esc(cfg.appName) + josa(cfg.appName, '은', '는') + ' 계속 고쳐지고 있습니다.<br>' +
       '기능이 추가되거나 기준이 바뀌면 메일로 한 번씩 알려드립니다.</p>' +
       '<div class="mepsub__form">' +
       '<input type="email" class="mepsub__in" id="mepsub-email" placeholder="이메일 주소" ' +
@@ -159,6 +159,19 @@ window.MEPSubscribe = (function () {
     if (/instagram|threads/.test(r)) return '인스타/스레드';
     if (/choi-ilkwon|mepworks/.test(r)) return '소개사이트';
     try { return new URL(r).hostname; } catch (e) { return ''; }
+  }
+
+  /**
+   * 받침 유무에 따라 조사를 고른다. 앱 이름마다 다르므로 하드코딩하면 틀린다.
+   * 한글 음절은 0xAC00 부터 28개 단위로 종성이 반복된다 — 나머지가 0 이면 받침이 없다.
+   * 한글이 아닌 글자로 끝나면 받침 없는 쪽을 쓴다.
+   */
+  function josa(word, withBatchim, withoutBatchim) {
+    var s = String(word || '').trim();
+    if (!s) return withoutBatchim;
+    var code = s.charCodeAt(s.length - 1);
+    if (code < 0xac00 || code > 0xd7a3) return withoutBatchim;
+    return ((code - 0xac00) % 28) ? withBatchim : withoutBatchim;
   }
 
   function esc(s) {
