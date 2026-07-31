@@ -85,7 +85,7 @@
         return;
       }
       box.innerHTML = posts.map(function (p, i) {
-        return '<a class="pcard' + (i === 0 ? ' pcard--first' : '') + '" href="posts/' + esc(p.slug) + '.html">' +
+        return '<a class="pcard' + (i === 0 ? ' pcard--first' : '') + '" href="' + esc(p.slug) + '/">' +
           '<div class="pcard__meta">' +
             '<span class="pcard__tag">' + esc(p.tag || '실무') + '</span>' +
             '<time>' + esc(p.date) + '</time>' +
