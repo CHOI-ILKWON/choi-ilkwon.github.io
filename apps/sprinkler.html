@@ -17,7 +17,7 @@
     <a class="gnav__brand" href="../index.html">MEP Works</a>
     <span class="gnav__title">스프링클러 설계 가이드</span>
     <div class="gnav__actions">
-      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     </div>
   </div>
 </nav>
@@ -28,7 +28,7 @@
   <p class="lead reveal">습식·건식·준비작동식·일제살수식의 선정 기준부터
   위험등급별 헤드 배치, 배관경 선정표까지. 설계에 필요한 조문이 정리된 한 화면.</p>
   <div class="hero__cta reveal">
-    <a class="btn" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">앱 열기</a>
+    <a class="btn" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
     <a class="link-more" href="#features">어떻게 해결하는지 보기</a>
   </div>
 </header>
@@ -45,37 +45,149 @@
   </div>
 </section>
 
-<section id="features" class="section section--alt">
-  <div class="wrap center">
-    <p class="eyebrow reveal">구성</p>
-    <h2 class="headline reveal">방식 선정부터 배관경까지,<br>순서대로.</h2>
-    <div class="bento">
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">⚖️</span>
-        <h3>4가지 시스템, 한눈에 비교</h3>
-        <p>습식·건식·준비작동식·일제살수식의 장단점과 적용 공간, 관련 조문을 비교표로 정리했습니다.</p>
+<!-- 니즈 ↔ 기능 대조 -->
+<section id="swap" class="section">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">무엇이 대체되나</p>
+      <h2 class="headline reveal">지금 손으로 하시는 일이,<br>어떤 기능으로 바뀌는지.</h2>
+    </div>
+
+    <div class="swap">
+      <div class="swap__head" aria-hidden="true">
+        <span>지금 이렇게 하고 계시다면</span>
+        <span>앱에서는</span>
       </div>
-      <div class="bento__card bento__card--w3 reveal">
-        <span class="bento__icon">🎯</span>
-        <h3>위험등급별 헤드 설치 기준</h3>
-        <p>경급부터 상급까지 방호면적, 헤드간격, 방수량과 적용 예시가 표 하나로.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">습식인지 준비작동식인지 매번 장단점을 다시 찾아 비교</div>
+        <div class="swap__after"><b>용도·온도·수손 민감도를 넣으면 방식이 추천</b>
+        근거 조문과 필요 밸브류가 함께 나옵니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">📏</span>
-        <h3>헤드 설치 규정</h3>
-        <p>반사판 이격, 벽 이격, 장애물 거리, 가지관당 헤드 수까지.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">위험등급별 방호면적·헤드간격 표를 찾아 대조</div>
+        <div class="swap__after"><b>등급을 고르면 간격과 방수량이 자동</b>
+        NFPC 103 별표2 기준이 들어 있습니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🧵</span>
-        <h3>배관경 선정표 (별표1)</h3>
-        <p>헤드 수 1개부터 161개 이상까지, 배관 구경이 바로 나옵니다.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">헤드 배치를 도면에 그려보며 개수 세기</div>
+        <div class="swap__after"><b>실 치수만 넣으면 배치도가 그려지고 개수가 나옵니다</b>
+        주배관·교차관·가지관까지 함께 표시됩니다.</div>
       </div>
-      <div class="bento__card reveal">
-        <span class="bento__icon">🏭</span>
-        <h3>방호구역 한도</h3>
-        <p>시스템별 밸브당 최대면적·최대헤드 기준으로 구역 분할을 검토하세요.</p>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">헤드 수에 따른 배관 구경을 별표1에서 확인</div>
+        <div class="swap__after"><b>구간별 구경이 자동 산정</b>
+        가지관·교차관·입상관이 한 번에 정해집니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">최불리 헤드를 눈대중으로 고르고 수리계산</div>
+        <div class="swap__after"><b>배치도에서 클릭하면 수리계산 기준점으로 연동</b>
+        하젠-윌리엄스 압력손실이 그 경로로 계산됩니다.</div>
+      </div>
+
+      <div class="swap__row reveal">
+        <div class="swap__before">계산 근거를 따로 정리해 제출</div>
+        <div class="swap__after"><b>계산서로 인쇄·PDF 출력</b>
+        조문 근거가 함께 남습니다.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="features" class="section section--dark" style="--accent-bright:#8b87ff;">
+  <div class="wrap">
+
+    <div class="featx featx--first">
+      <p class="eyebrow reveal" style="color:#8b87ff;">② 시스템 선정</p>
+      <h3 class="featx__head reveal">이 공간엔 어떤 방식인지,<br>조건으로 정해집니다.</h3>
+      <p class="featx__lead reveal">용도 · 천장 온도 · 수손 민감도 · 화재 특성을 고르면
+      습식 · 건식 · 준비작동식 중 어느 방식이 맞는지 <b>근거 조문과 함께</b> 나옵니다.
+      선정된 방식에 필요한 밸브류(유수검지장치 · 감지기 연동반 · 시험밸브 등)가
+      구경까지 붙어서 정리됩니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sprinkler/system.png" alt="설계조건을 입력하면 스프링클러 방식과 필요 밸브류가 근거 조문과 함께 추천되는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">용도 구분</p>
+          <p class="stat__num">14종</p>
+          <p class="stat__post">사무소 · 병원 · 데이터센터 · 랙식창고 등</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">판단 근거</p>
+          <p class="stat__num">조문 표시</p>
+          <p class="stat__post">NFPC 103 제4·6·7·10조</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#8b87ff;">③ 헤드 배치</p>
+      <h3 class="featx__head reveal">실 치수만 넣으면,<br>배치도가 그려집니다.</h3>
+      <p class="featx__lead reveal">가로 · 세로와 위험등급을 넣으면 헤드가 배치되고
+      <b>주배관 · 교차관 · 가지관까지 계통이 함께</b> 그려집니다.
+      실별 헤드 수, 간격 X/Y, 방수량이 표로 정리되고 기준 충족 여부가 표시됩니다.
+      배치도에서 헤드를 클릭하면 최불리 헤드가 바뀝니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sprinkler/head.png" alt="실 치수를 입력하면 헤드 배치도와 배관 계통이 그려지고 간격·방수량이 표로 정리되는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">헤드 간격</p>
+          <p class="stat__num">등급별 자동</p>
+          <p class="stat__post">NFPC 103 별표2 기준</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">실 여러 개</p>
+          <p class="stat__num">동시 관리</p>
+          <p class="stat__post">총 헤드 수·방호면적 합산</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#8b87ff;">④ 배관 계산</p>
+      <h3 class="featx__head reveal">헤드 수가 정해지면,<br>구경이 정해집니다.</h3>
+      <p class="featx__lead reveal">가지관 · 교차관 · 입상관 구경이 헤드 수에 따라 산정됩니다.
+      <b>별표1을 다시 펼칠 일이 없습니다.</b>
+      구간별 유량과 함께 정리되어 그대로 계산서에 들어갑니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sprinkler/pipe.png" alt="헤드 수에 따라 가지관·교차관·입상관 구경이 산정된 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+    </div>
+
+    <div class="featx">
+      <p class="eyebrow reveal" style="color:#8b87ff;">⑤ 수리계산</p>
+      <h3 class="featx__head reveal">최불리 경로의<br>압력손실까지.</h3>
+      <p class="featx__lead reveal">배치도에서 고른 최불리 헤드가 그대로 기준점이 됩니다.
+      관 재질(강관 C=120 · 동관/스테인리스 C=150)과 구간별 직관 길이 · 부속류를 넣으면
+      <b>하젠-윌리엄스 식으로 압력손실</b>이 계산됩니다.
+      설계유량은 동시개방 기준개수에서 자동으로 잡힙니다.</p>
+      <div class="featx__media reveal">
+        <img src="../assets/sprinkler/hydro.png" alt="최불리 헤드를 기준으로 관 재질과 구간별 부속류를 넣어 압력손실을 계산하는 화면" loading="lazy" data-zoom>
+        <p class="featx__hint">🔍 클릭하면 크게 볼 수 있습니다</p>
+      </div>
+      <div class="featx__stats reveal">
+        <div class="stat">
+          <p class="stat__pre">설계유량</p>
+          <p class="stat__num">자동 산정</p>
+          <p class="stat__post">기준개수 × 헤드 방수량</p>
+        </div>
+        <div class="stat">
+          <p class="stat__pre">부속 등가장</p>
+          <p class="stat__num">구간별 입력</p>
+          <p class="stat__post">엘보 · 티 · OS&amp;Y · 알람 · 체크</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -102,7 +214,7 @@
         </div>
       </div>
     </div>
-    <p class="demo-note">연출된 시연 장면입니다. 기준 전체를 보려면 <a href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener" style="color:var(--accent);">앱 열기</a>.</p>
+    <p class="demo-note">연출된 시연 장면입니다. 기준 전체를 보려면 <a href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener" style="color:var(--accent);">무료로 바로 쓰기</a>.</p>
   </div>
 </section>
 
@@ -110,7 +222,7 @@
   <div class="wrap--narrow center">
     <h2 class="headline reveal">스프링클러 검토,<br>이 한 페이지로 시작하세요.</h2>
     <div class="hero__cta reveal">
-      <a class="btn" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">앱 열기</a>
+      <a class="btn" href="https://choi-ilkwon.github.io/sprinkler-app/" target="_blank" rel="noopener">무료로 바로 쓰기</a>
       <a class="btn btn--ghost" href="mailto:jikwang8610@gmail.com?subject=[스프링클러 설계 가이드] 문의">도입 문의</a>
     </div>
   </div>
@@ -162,6 +274,7 @@
 
 <script src="../js/icons.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/lightbox.js"></script>
 <script src="../js/demo.js"></script>
 </body>
 </html>
