@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>말단 수압이 안 나올 때 — 부스터펌프와 고가수조 | MEP Works</title>
+<meta name="description" content="관경 계산은 끝났는데 최상층 잔압이 부족합니다. 압력을 만드는 두 방식의 차이와 선택 기준, 그리고 실무에서 자주 놓치는 지점을 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="말단 수압이 안 나올 때 — 부스터펌프와 고가수조">
+<meta property="og:description" content="압력을 만드는 두 방식의 차이와 선택 기준, 실무에서 자주 놓치는 지점.">
+<script src="../../js/analytics.js"></script>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-janap-nav" target="_blank" rel="noopener">7일 무료로 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">급수</span>
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      <span>9분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">말단 수압이 안 나올 때,<br>무엇으로 풀 것인가</h1>
+    <p class="lead reveal">부스터펌프와 고가수조 — 관경을 키우기 전에 먼저 볼 것</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>관경은 다 잡았습니다. 부하단위 더하고, 동시사용률 적용하고, 유속도 맞췄습니다.
+      그런데 압력검토를 해보니 <b>최상층 말단에서 잔압이 부족</b>합니다.</p>
+
+      <p>이때 가장 먼저 떠오르는 해법이 “관경을 한 단계 키우자”입니다.
+      틀린 방법은 아니지만, <b>대개는 그걸로 안 풀립니다.</b>
+      마찰손실을 조금 줄여봐야 부족한 게 압력 자체라면 소용이 없기 때문입니다.</p>
+
+      <p>압력이 부족하면 압력을 만들어야 합니다. 오늘은 그 이야기입니다.</p>
+
+      <h2>먼저, 무엇이 부족한가</h2>
+
+      <p>말단 기구가 제대로 작동하려면 <b>그 기구 앞에 남아 있어야 하는 압력</b>이 있습니다.
+      이걸 잔압 또는 최소 필요 압력이라고 부릅니다.</p>
+
+      <p>중요한 건 <b>기구마다 요구하는 압력이 다르다</b>는 점입니다.
+      특히 <b>세정밸브식 대변기는 요구 압력이 높습니다.</b>
+      탱크식은 물을 천천히 받으면 되니 압력이 조금 낮아도 되지만,
+      세정밸브식은 순간에 많은 물을 밀어내야 해서 압력이 부족하면 세정이 제대로 안 됩니다.</p>
+
+      <div class="post__note">
+        <p>그래서 <b>최상층에 세정밸브식이 들어가는지</b>가 급수 방식 결정에 크게 작용합니다.
+        같은 건물이라도 최상층이 탱크식이면 넘어갈 일이,
+        세정밸브식이면 가압 설비가 필요해지는 경우가 있습니다.</p>
+      </div>
+
+      <p>그리고 잔압은 이렇게 계산됩니다.</p>
+
+      <p><b>공급 압력 − 정수두(높이차로 잃는 압력) − 마찰손실(배관·밸브·부속) = 말단 잔압</b></p>
+
+      <p>여기서 <b>정수두가 압도적으로 큽니다.</b>
+      층이 높아질수록 높이만으로 잃는 압력이 커지고, 마찰손실은 그에 비하면 작습니다.
+      관경을 키워서 푸는 게 잘 안 되는 이유가 이것입니다.
+      <b>마찰손실을 건드려봐야 정수두는 그대로</b>이기 때문입니다.</p>
+
+      <h2>압력을 만드는 두 가지 방식</h2>
+
+      <h3>고가수조 방식</h3>
+      <p>옥상에 물탱크를 두고, <b>높이차로 압력을 만드는</b> 방식입니다.
+      양수펌프가 저수조에서 옥상까지 물을 올리고, 그 뒤로는 중력으로 내려옵니다.</p>
+
+      <p>압력의 근원이 <b>물탱크 수면과 기구 사이의 높이차</b>이므로,
+      탱크에서 가까운 최상층은 압력이 낮고 아래층으로 갈수록 높아집니다.</p>
+
+      <h3>부스터펌프 방식 (가압급수)</h3>
+      <p>옥상 탱크 없이 <b>펌프가 직접 압력을 만들어</b> 각 층으로 보내는 방식입니다.
+      요즘 신축에서 더 많이 씁니다. 인버터로 사용량에 따라 회전수를 조절합니다.</p>
+
+      <p>압력을 설계자가 정할 수 있고 층별 편차가 작습니다.
+      대신 <b>펌프가 멈추면 물이 안 나옵니다.</b></p>
+
+      <div class="post__cta">
+        <p>공급압력·층고·배관 길이를 넣으면 임계경로의 구간별 마찰손실과 말단 잔압이 검토됩니다.
+        기준에 못 미치면 업사이즈를 권해주고, 그래도 부족하면 가압이 필요하다는 게 바로 보입니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-janap-mid" target="_blank" rel="noopener">위생배관 관경 계산서 7일 무료로 써보기</a>
+        <span class="post__cta-fine">카드 등록 없음 · 설치 없음 · 구글 로그인만 하면 바로 시작</span>
+      </div>
+
+      <h2>무엇으로 갈릴까</h2>
+
+      <p>둘 중 하나가 절대적으로 낫지는 않습니다. 조건에 따라 갈립니다.</p>
+
+      <h3>옥상 공간과 구조</h3>
+      <p>고가수조는 물탱크가 올라갑니다. 물은 무겁습니다.
+      <b>구조 검토가 따라오고, 옥상 면적을 씁니다.</b>
+      리모델링에서 고가수조를 못 쓰는 경우가 대부분 이 이유입니다.</p>
+
+      <h3>정전 시</h3>
+      <p>고가수조는 <b>탱크에 남은 물만큼은 계속 나옵니다.</b>
+      부스터펌프는 멈추는 즉시 단수입니다.
+      병원처럼 단수가 치명적인 용도에서 고가수조가 아직 선택되는 이유입니다.</p>
+
+      <h3>압력 편차</h3>
+      <p>고가수조는 층별 압력차가 큽니다. 최상층은 부족하고 저층은 과합니다.
+      그래서 <b>저층부에는 감압밸브가, 최상층에는 별도 가압이</b> 필요해지는 일이 흔합니다.
+      부스터펌프는 압력을 만들어내니 편차가 작습니다.</p>
+
+      <h3>수질</h3>
+      <p>고가수조는 물이 탱크에 머무는 시간이 생깁니다.
+      <b>체류시간이 길면 잔류염소가 떨어집니다.</b> 청소·점검 관리도 따라옵니다.
+      부스터펌프는 저수조만 관리하면 됩니다.</p>
+
+      <h3>비용</h3>
+      <p>초기비용은 조건에 따라 달라서 일반화하기 어렵습니다.
+      다만 <b>부스터펌프는 계속 전기를 씁니다.</b>
+      고가수조는 양수할 때만 씁니다. 운영 기간이 길수록 이 차이가 쌓입니다.
+      반대로 고가수조는 탱크 청소·점검이라는 다른 비용이 있습니다.</p>
+
+      <h2>실무에서 자주 놓치는 다섯 가지</h2>
+
+      <h3>① 고가수조인데도 최상층은 압력이 부족합니다</h3>
+      <p>가장 많이 나오는 상황입니다. 탱크가 옥상에 있으니 다 해결됐다고 생각하는데,
+      <b>탱크 바로 아래 한두 개 층은 높이차가 거의 없습니다.</b>
+      여기가 세정밸브식이면 거의 확실하게 부족합니다.
+      결국 최상층 전용 소형 부스터를 따로 다는 경우가 생깁니다.</p>
+
+      <h3>② 저층부 과압을 안 챙깁니다</h3>
+      <p>압력은 부족한 것만 문제가 아닙니다. <b>저층부는 압력이 너무 셉니다.</b>
+      과압은 수격, 소음, 기구 파손, 누수로 이어집니다.
+      감압밸브로 존을 나눠야 하고, 이때 <b>감압비가 너무 크면 2단 감압</b>을 검토해야 합니다.</p>
+
+      <h3>③ 임계경로를 잘못 잡습니다</h3>
+      <p>잔압 검토는 <b>가장 불리한 경로</b>로 해야 합니다.
+      대개 최상층이지만, 항상 그런 건 아닙니다.
+      수평 이동이 아주 긴 구간이 있으면 <b>한 층 아래가 더 불리할 수 있습니다.</b>
+      높이만 보지 말고 마찰손실까지 합쳐서 판단해야 합니다.</p>
+
+      <h3>④ 밸브·부속 손실을 빠뜨립니다</h3>
+      <p>직관 길이만 계산하고 엘보·티·밸브를 빼면 손실이 과소평가됩니다.
+      말단으로 갈수록 부속이 많아서, 이걸 빼면 <b>계산은 통과했는데 현장에서 안 나오는</b> 일이 생깁니다.</p>
+
+      <h3>⑤ 나중에 바뀔 걸 안 봅니다</h3>
+      <p>준공 후 최상층이 사무실에서 식당으로 바뀌거나, 기구가 추가되는 일은 흔합니다.
+      압력에 여유가 하나도 없게 딱 맞춰 설계하면 그때 손을 못 댑니다.
+      <b>어느 정도 여유를 두되, 과대설계로 가지 않는 선</b>을 잡는 게 실력입니다.</p>
+
+      <h2>정리</h2>
+
+      <ol>
+        <li>잔압이 부족하면 <b>관경보다 압력을 먼저 보세요.</b> 정수두가 마찰손실보다 훨씬 큽니다</li>
+        <li>기구마다 요구 압력이 다릅니다. <b>세정밸브식이 들어가면 기준이 올라갑니다</b></li>
+        <li>고가수조 = 높이로 만든 압력, 부스터펌프 = 펌프로 만든 압력</li>
+        <li>옥상 구조·정전 대응·수질이면 고가수조, 공간·압력 편차·설치 자유도면 부스터펌프</li>
+        <li><b>고가수조라도 최상층은 부족할 수 있습니다</b></li>
+        <li>저층부 과압과 감압 존 분할을 같이 검토하세요</li>
+        <li>임계경로는 높이만이 아니라 마찰손실까지 합쳐서 고릅니다</li>
+      </ol>
+
+      <p>압력검토는 계산서에서 가장 나중에 하는 일이지만,
+      결과에 따라 <b>급수 방식 자체가 바뀌는</b> 검토입니다.
+      기구 배치가 끝나면 바로 한 번 돌려보는 습관이, 나중에 도면을 다시 그리는 일을 막아줍니다.</p>
+
+      <div class="post__cta">
+        <p>위생배관 관경 계산서는 임계경로의 구간별 마찰손실과 말단 잔압을 자동으로 검토합니다.
+        기준 충족 여부가 경로마다 표시되고, 부족하면 업사이즈를 권해줍니다.
+        계산서에 근거가 그대로 남아서 발주처 질문에 표를 보여주면 됩니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-janap-end" target="_blank" rel="noopener">7일 무료로 써보기</a>
+        <a class="btn btn--ghost" href="../../apps/sanitary.html">앱 소개 보기</a>
+        <span class="post__cta-fine">관경 산정 · 압력검토 · 계통도 · 밸브 수량까지 한 흐름으로.</span>
+      </div>
+
+      <div class="post__note">
+        <p>이 글은 설계 실무에서 쓰는 관점으로 정리한 것입니다.
+        구체적인 최소 필요 압력과 감압 기준은 사무소가 채택한 기준 자료와 기구 제조사 사양을 따르시고,
+        최종 판단은 프로젝트 조건과 관계 기준에 맞춰 검토하시기 바랍니다.</p>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
