@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엑셀로 하던 관경 계산을 웹앱으로 — 화장실 하나로 비교해봤습니다 | MEP Works</title>
+<meta name="description" content="같은 화장실을 엑셀과 웹앱으로 각각 계산해봤습니다. 한 개는 시간이 비슷했습니다. 그런데 프로젝트 전체로 가면 완전히 달라집니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="엑셀로 하던 관경 계산을 웹앱으로 — 화장실 하나로 비교해봤습니다">
+<meta property="og:description" content="한 개는 시간이 비슷했습니다. 그런데 프로젝트 전체로 가면 완전히 달라집니다.">
+<script src="../../js/analytics.js"></script>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-excel-nav" target="_blank" rel="noopener">7일 무료로 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">계산서 실무</span>
+      <time datetime="2026-08-05">2026년 8월 5일</time>
+      <span>8분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">엑셀로 하던 관경 계산을<br>웹앱으로 옮겨봤습니다</h1>
+    <p class="lead reveal">같은 화장실을 두 방식으로 계산하고, 화면을 그대로 녹화했습니다</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>제가 만든 도구를 소개하는 글을 쓰려니 마음에 걸리는 게 있었습니다.
+      좋은 얘기만 늘어놓으면 광고가 되니까요.</p>
+
+      <p>그래서 그냥 <b>같은 화장실을 두 방식으로 계산하고 화면을 녹화</b>했습니다.
+      하나는 지금까지 쓰던 엑셀로, 하나는 제가 만든 웹앱으로.</p>
+
+      <h2>먼저, 시간은 거의 같았습니다</h2>
+
+      <p>결론부터 말하면 <b>화장실 하나를 계산하는 데 걸린 시간은 비슷했습니다.</b>
+      두 녹화 영상의 길이가 3분대로 거의 차이가 없었습니다.</p>
+
+      <p>솔직히 조금 김이 샜습니다. “시간이 반으로 줄었습니다” 같은 얘기를 쓰고 싶었으니까요.
+      그런데 실제로는 그렇지 않았습니다.</p>
+
+      <div class="post__note">
+        <p>생각해보면 당연합니다. 엑셀 시트는 이미 만들어져 있습니다.
+        <b>관균등표도, 동시사용률 표도 시트 안에 다 있습니다.</b>
+        숫자만 넣으면 결과가 나옵니다.
+        그 상태에서 화장실 하나를 계산하는 건 원래 오래 걸리는 일이 아닙니다.</p>
+      </div>
+
+      <p>그러니까 <b>“계산 자체가 느리다”는 건 사실이 아닙니다.</b>
+      15년간 엑셀로 해온 사람이 만든 시트는 충분히 빠릅니다.</p>
+
+      <p>그런데 녹화를 다시 보면서 다른 게 보였습니다.</p>
+
+      <h2>화면을 두 개 띄우고 있었습니다</h2>
+
+      <p>엑셀 녹화를 보면 <b>왼쪽에 CAD, 오른쪽에 엑셀</b>이 떠 있습니다.
+      그리고 제가 계속 하는 일이 이겁니다.</p>
+
+      <ul>
+        <li>도면에서 대변기가 몇 개인지 <b>눈으로 셉니다</b></li>
+        <li>고개를 돌려 엑셀 수량 칸에 <b>숫자를 칩니다</b></li>
+        <li>소변기, 세면기, 청소씽크, 샤워… <b>기구 종류마다 반복합니다</b></li>
+        <li>급수가 끝나면 급탕 시트로, 그다음 배수 시트로 <b>또 옮겨 적습니다</b></li>
+      </ul>
+
+      <p>계산은 엑셀이 합니다. <b>제가 하는 일은 세는 것과 옮겨 적는 것</b>입니다.
+      그리고 실수가 나는 자리도 정확히 거기입니다.
+      틀린 값이 들어가도 엑셀은 아무 말 없이 계산해줍니다.</p>
+
+      <h2>기구 하나 차이로 관경이 바뀝니다</h2>
+
+      <p>두 화장실을 비교해보니 이게 눈에 들어왔습니다.</p>
+
+      <div class="post-table-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>화장실 A</th><th>화장실 B</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>대변기(세정밸브)</td><td>3</td><td><b>4</b></td></tr>
+          <tr><td>소변기</td><td>2</td><td><b>3</b></td></tr>
+          <tr><td>세면기</td><td>2</td><td><b>3</b></td></tr>
+          <tr><td>청소씽크 · 샤워</td><td>1 · 6</td><td>1 · 6</td></tr>
+          <tr><td>대변기 계통</td><td>32A</td><td><b>40A</b></td></tr>
+          <tr><td>최종 결정 관경</td><td><b>40A</b></td><td><b>50A</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>기구가 몇 개 늘었을 뿐인데 <b>결정 관경이 한 단계 올라갔습니다.</b></p>
+
+      <p>이게 무슨 뜻이냐면 — <b>설계 변경이 왔을 때 무서운 이유</b>입니다.
+      “화장실에 대변기 하나 추가해주세요”라는 한 줄이 오면,
+      그 화장실만 고치고 끝나는 게 아닙니다.
+      그 화장실이 붙은 <b>층별 주관, 입상관, MAIN관까지 전부 다시</b> 계산해야 합니다.</p>
+
+      <p>엑셀에서는 이걸 손으로 따라가야 합니다.
+      그리고 바쁠 때 <b>“이 정도면 안 바뀌겠지” 하고 넘어가는 순간</b>, 계산서와 도면이 어긋납니다.</p>
+
+      <div class="post__cta">
+        <p>웹앱에서는 기구를 고치면 그 뒤의 모든 구간이 함께 갱신됩니다.
+        화장실 → 층 → 입상관 → MAIN관이 이어져 있어서, 어디까지 영향이 가는지 따라갈 필요가 없습니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-excel-mid" target="_blank" rel="noopener">위생배관 관경 계산서 7일 무료로 써보기</a>
+        <span class="post__cta-fine">카드 등록 없음 · 설치 없음 · 구글 로그인만 하면 바로 시작</span>
+      </div>
+
+      <h2>기억해야 하는 조건이 시트에 적혀 있습니다</h2>
+
+      <p>엑셀 화면을 보면 관경결정 줄 옆에 이런 주의 문구가 있습니다.</p>
+
+      <div class="post__note">
+        <p><b>“동시사용율을 곱한 값이 35 이상이면 마찰손실도표를 이용한다”</b></p>
+      </div>
+
+      <p>맞는 얘기입니다. 제가 직접 적어둔 문구이기도 하고요.</p>
+
+      <p>그런데 이건 <b>사람이 매번 확인해야 하는 조건</b>입니다.
+      값이 34면 그냥 가고, 36이면 다른 방법으로 가야 합니다.
+      급할 때, 화장실 20개를 연달아 칠 때, 이걸 매번 눈으로 확인하고 있을까요.</p>
+
+      <p>시트에 적어두는 것과 프로그램이 판정하는 것은 다릅니다.
+      <b>적어둔 조건은 지키는 사람에게 달려 있고, 판정하는 조건은 안 지킬 수가 없습니다.</b></p>
+
+      <h2>그래서 진짜 차이는 어디서 나는가</h2>
+
+      <p>화장실 하나로는 차이가 안 납니다. 그건 사실입니다.
+      차이는 <b>반복과 변경</b>에서 납니다.</p>
+
+      <div class="post-table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>엑셀</th><th>웹앱</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>화장실 1개</td><td>비슷함</td><td>비슷함</td></tr>
+          <tr><td>화장실 20개</td><td>20번 반복</td><td>기구만 추가</td></tr>
+          <tr><td>급수 · 급탕 · 배수</td><td>시트 3개에 각각</td><td>한 번에 같이</td></tr>
+          <tr><td>기구 1개 추가</td><td>영향 구간을 손으로 추적</td><td>뒤 구간 자동 갱신</td></tr>
+          <tr><td>계통도</td><td>CAD에서 따로</td><td>층·입상관 배정이 곧 계통도</td></tr>
+          <tr><td>판정 조건</td><td>시트에 적어두고 사람이 확인</td><td>자동 판정</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>엑셀이 나쁜 도구는 아닙니다</h2>
+
+      <p>오해가 없도록 적어둡니다. <b>엑셀은 훌륭한 도구입니다.</b>
+      제 시트도 15년에 걸쳐 다듬은 것이고, 지금도 어떤 계산은 엑셀이 더 빠릅니다.</p>
+
+      <p>엑셀이 약한 지점은 계산이 아니라 <b>연결</b>입니다.
+      화장실과 층과 입상관이 서로 이어져 있다는 것을,
+      급수와 급탕과 배수가 같은 기구에서 나온다는 것을,
+      엑셀은 알지 못합니다. 그 연결을 사람이 머리로 들고 있어야 합니다.</p>
+
+      <p>그게 20개, 30개가 되면 사람이 놓칩니다. 저도 놓쳤습니다.
+      <b>도구를 만든 이유가 그것이었습니다.</b></p>
+
+      <h2>정리</h2>
+
+      <ol>
+        <li>화장실 하나 계산하는 시간은 <b>거의 같았습니다</b></li>
+        <li>엑셀에서 제가 한 일은 계산이 아니라 <b>세고 옮겨 적는 것</b>이었습니다</li>
+        <li>기구 몇 개 차이로 결정 관경이 한 단계 바뀝니다</li>
+        <li>그래서 <b>변경이 왔을 때 영향 범위를 따라가는 것</b>이 진짜 일입니다</li>
+        <li>시트에 적어둔 조건은 지키는 사람에게 달려 있습니다</li>
+        <li>차이는 계산 속도가 아니라 <b>반복과 연결</b>에서 납니다</li>
+      </ol>
+
+      <p>혹시 지금 엑셀로 잘 하고 계시다면 굳이 바꾸실 필요 없습니다.
+      다만 <b>화장실이 스무 개가 넘어가거나, 설계 변경이 잦은 프로젝트</b>라면
+      한 번 비교해보실 만합니다.</p>
+
+      <div class="post__cta">
+        <p>7일 동안 전 기능을 써보실 수 있습니다.
+        샘플로 둘러보시는 것보다 <b>지금 하고 계신 실제 프로젝트를 넣어보시는 걸</b> 권합니다.
+        그래야 본인 일에 맞는지 판단이 됩니다.</p>
+        <a class="btn" href="https://sanitary-pipe-calc.pages.dev/?utm_source=blog&utm_content=post-excel-end" target="_blank" rel="noopener">7일 무료로 써보기</a>
+        <a class="btn btn--ghost" href="../../apps/sanitary.html">앱 소개 보기</a>
+        <span class="post__cta-fine">관경 산정 · 압력검토 · 계통도 · 밸브 수량까지 한 흐름으로.</span>
+      </div>
+
+      <div class="post__note">
+        <p>비교에 쓴 화면은 실제 업무 중 녹화한 것이며, 프로젝트를 특정할 수 있는 정보는 가렸습니다.
+        수치는 해당 사례의 조건에서 나온 값이고, 사무소가 채택한 기준 자료에 따라 달라질 수 있습니다.</p>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
