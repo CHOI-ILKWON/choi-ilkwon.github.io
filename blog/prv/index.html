@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>감압밸브 3:1 원칙과 존 분할 — 몇 층에서 나눠야 하나 | MEP Works</title>
+<meta name="description" content="저층부 과압은 수격·소음·누수로 이어집니다. 감압비 3:1이 왜 나왔는지, 2단 감압이 필요한 경우와 존을 나누는 실무 기준을 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="감압밸브 3:1 원칙과 존 분할 — 몇 층에서 나눠야 하나">
+<meta property="og:description" content="감압비 3:1이 왜 나왔는지, 2단 감압이 필요한 경우와 존을 나누는 실무 기준.">
+<script src="../../js/analytics.js"></script>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/valve-calc/?utm_source=blog&utm_content=post-prv-nav" target="_blank" rel="noopener">밸브 계통도 앱 열기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">급수</span>
+      <time datetime="2026-08-22">2026년 8월 22일</time>
+      <span>9분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">감압밸브 3:1 원칙과<br>존 분할</h1>
+    <p class="lead reveal">압력은 부족한 것만 문제가 아닙니다. 넘치는 것도 문제입니다</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>지난 글에서 말단 잔압이 부족할 때 어떻게 푸는지를 다뤘습니다.
+      그런데 압력검토에서 절반만 본 셈입니다.
+      <b>압력은 부족한 것만 문제가 아니라, 넘치는 것도 문제</b>이기 때문입니다.</p>
+
+      <p>최상층 걱정하다 보면 저층부를 놓칩니다.
+      그리고 저층부 과압은 준공 후에 <b>수격 소음, 기구 파손, 누수</b>로 돌아옵니다.</p>
+
+      <h2>과압이 왜 문제인가</h2>
+
+      <p>압력이 세면 물이 잘 나오니 좋은 것 아닌가 싶지만, 실제로는 이런 일이 생깁니다.</p>
+
+      <ul>
+        <li><b>수격(워터해머)</b> — 세정밸브나 전자밸브가 급히 닫힐 때 충격이 커집니다.
+        압력이 높을수록 충격도 큽니다. 밤에 "쿵" 소리가 나는 민원이 여기서 나옵니다</li>
+        <li><b>소음</b> — 수전에서 물이 튀고, 배관에서 유속 소음이 납니다</li>
+        <li><b>기구 파손</b> — 수전 카트리지, 플렉시블, 패킹이 빨리 상합니다.
+        준공 1~2년 뒤에 저층부만 유독 고장이 잦다면 의심해볼 지점입니다</li>
+        <li><b>누수</b> — 이음부가 버티는 힘에는 한계가 있습니다</li>
+        <li><b>물 낭비</b> — 같은 시간 틀어도 더 많이 나옵니다</li>
+      </ul>
+
+      <p>그래서 일정 압력을 넘는 구간에는 <b>감압밸브(PRV)</b>를 넣어 압력을 낮춥니다.</p>
+
+      <h2>3:1 이라는 숫자</h2>
+
+      <p>감압밸브를 쓸 때 흔히 <b>감압비 3:1</b>을 넘기지 말라고 합니다.
+      들어가는 압력이 나가는 압력의 3배를 넘지 않게 하라는 뜻입니다.</p>
+
+      <p>왜 이런 기준이 생겼을까요. 밸브 하나로 압력을 너무 많이 떨어뜨리면
+      <b>밸브 내부에서 유속이 급격히 빨라지기 때문</b>입니다. 그러면 이런 일이 따라옵니다.</p>
+
+      <ul>
+        <li><b>캐비테이션</b> — 압력이 급락하는 지점에서 기포가 생겼다 터지면서
+        밸브 내부를 깎아냅니다. 소음과 진동이 함께 옵니다</li>
+        <li><b>제어 불안정</b> — 감압비가 크면 미세한 유량 변화에도 출구 압력이 출렁입니다</li>
+        <li><b>수명 단축</b> — 시트와 다이어프램이 빨리 상합니다</li>
+      </ul>
+
+      <div class="post__note">
+        <p>3:1은 <b>물리 상수가 아니라 실무 경험에서 나온 안전한 선</b>입니다.
+        제조사 사양에 따라 허용 감압비가 다르고, 어떤 제품은 더 큰 비율을 견딥니다.
+        <b>최종 확인은 쓰려는 밸브의 제조사 자료로 하세요.</b>
+        다만 설계 단계에서 존을 나눌 때는 3:1을 기준으로 잡아두면 크게 틀리지 않습니다.</p>
+      </div>
+
+      <h2>넘으면 2단 감압</h2>
+
+      <p>필요한 감압폭이 한 밸브로 감당이 안 되면 <b>두 번에 나눠서</b> 떨어뜨립니다.
+      감압밸브를 직렬로 두 개 놓고, 각각 3:1 안에서 처리하는 방식입니다.</p>
+
+      <p>2단으로 갈 때 챙길 것이 있습니다.</p>
+
+      <ul>
+        <li><b>두 밸브 사이에 충분한 직관 거리</b>를 둡니다. 붙여놓으면 앞 밸브의 흐트러진
+        흐름이 뒤 밸브로 그대로 들어가서 제어가 불안정해집니다</li>
+        <li><b>중간 압력을 어디로 잡을지</b> 정합니다. 1단과 2단의 감압비가 한쪽으로 쏠리지 않게 나눕니다</li>
+        <li>각 단마다 <b>압력계</b>를 답니다. 나중에 어느 쪽이 문제인지 봐야 합니다</li>
+      </ul>
+
+      <div class="post__cta">
+        <p>입상관에 관경과 담당층을 넣으면 층별 압력이 계산되고,
+        감압이 필요한 구간과 감압비가 과한 구간이 표시됩니다.
+        2단 감압을 검토해야 하는지 그 자리에서 보입니다.</p>
+        <a class="btn" href="https://choi-ilkwon.github.io/valve-calc/?utm_source=blog&utm_content=post-prv-mid" target="_blank" rel="noopener">밸브 계통도 계산서 무료로 바로 쓰기</a>
+        <span class="post__cta-fine">설치 없이 브라우저에서 · 계통도와 밸브 목록이 함께 나옵니다</span>
+      </div>
+
+      <h2>존은 몇 층씩 나누나</h2>
+
+      <p>가장 많이 받는 질문입니다. 그런데 <b>"몇 층"으로 답할 수 있는 문제가 아닙니다.</b>
+      층고가 다르고, 공급 압력이 다르고, 기구 사양이 다르기 때문입니다.</p>
+
+      <p>대신 <b>존을 정하는 논리</b>는 같습니다. 이 순서로 잡습니다.</p>
+
+      <h3>① 존 안에서 가장 낮은 층의 압력을 본다</h3>
+      <p>한 존에서 압력이 가장 센 곳은 <b>그 존의 맨 아래층</b>입니다.
+      여기가 허용 상한을 넘으면 존이 너무 길다는 뜻입니다.</p>
+
+      <h3>② 존 안에서 가장 높은 층의 압력을 본다</h3>
+      <p>반대로 압력이 가장 약한 곳은 <b>그 존의 맨 위층</b>입니다.
+      여기가 최소 필요 압력에 못 미치면 존을 그렇게 나눌 수 없습니다.</p>
+
+      <h3>③ 둘 다 만족하는 층수가 그 존의 길이다</h3>
+      <p>즉 <b>존의 길이는 "상한과 하한 사이에 몇 개 층이 들어가느냐"</b>로 정해집니다.
+      층고가 높으면 존이 짧아지고, 낮으면 길어집니다.</p>
+
+      <div class="post__note">
+        <p>그래서 존 분할은 <b>층수를 외워서 하는 게 아니라 압력표를 그려놓고 자르는 일</b>입니다.
+        층별 압력을 한 줄로 늘어놓고, 상한선과 하한선을 그은 다음, 그 사이에 들어가는 구간을 묶으면 됩니다.</p>
+      </div>
+
+      <h2>실무에서 자주 놓치는 다섯 가지</h2>
+
+      <h3>① 감압밸브 뒤에도 압력이 오릅니다</h3>
+      <p>감압밸브는 흐를 때 압력을 낮춥니다. 그런데 <b>물을 아무도 안 쓰는 밤에는</b>
+      흐름이 없어서 뒤쪽 압력이 서서히 앞쪽 압력까지 따라 올라가는 경우가 있습니다.
+      이걸 모르면 "낮에는 괜찮은데 아침 첫 사용 때만 충격이 있다"는 현상을 설명하지 못합니다.</p>
+
+      <h3>② 바이패스를 안 만듭니다</h3>
+      <p>감압밸브도 고장 납니다. 정비하려면 물을 끊어야 하는데,
+      <b>바이패스가 없으면 그 존 전체가 단수</b>됩니다.
+      감압밸브 세트는 보통 앞뒤 차단밸브 + 스트레이너 + 압력계 + 바이패스로 구성합니다.
+      도면에 밸브 하나만 그려두면 현장에서 다시 그려야 합니다.</p>
+
+      <h3>③ 스트레이너를 빠뜨립니다</h3>
+      <p>감압밸브는 정밀 부품입니다. <b>이물질이 시트에 끼면 압력이 안 잡힙니다.</b>
+      앞에 스트레이너를 두고, 청소할 수 있게 배치해야 합니다.</p>
+
+      <h3>④ 급탕 계통을 잊습니다</h3>
+      <p>급수만 감압하고 급탕을 그냥 두면, 같은 화장실에서
+      <b>찬물과 더운물의 압력이 달라집니다.</b> 혼합수전에서 온도가 안 잡히고
+      한쪽이 밀려 들어가는 문제가 생깁니다. <b>급수와 급탕은 같은 압력대로 맞추세요.</b></p>
+
+      <h3>⑤ 세정밸브식 계통에서 수격을 안 봅니다</h3>
+      <p>세정밸브는 급히 닫히는 기구입니다. 압력이 높은 존에 세정밸브식이 들어가면
+      수격이 커집니다. <b>감압으로 압력을 낮추는 것과 수격방지기를 다는 것은 다른 대책</b>이고,
+      둘 다 필요한 경우가 많습니다.</p>
+
+      <h2>정리</h2>
+
+      <ol>
+        <li>과압은 <b>수격·소음·기구 파손·누수</b>로 돌아옵니다</li>
+        <li>감압비 3:1은 물리 상수가 아니라 <b>실무에서 잡아둔 안전한 선</b>입니다.
+        캐비테이션과 제어 불안정을 피하기 위한 것이고, 최종 확인은 제조사 자료로</li>
+        <li>감압폭이 크면 <b>2단 감압</b>. 사이에 직관 거리를 두고 단마다 압력계를</li>
+        <li>존 길이는 층수가 아니라 <b>상한과 하한 사이에 몇 층이 들어가느냐</b>로 정합니다</li>
+        <li>존 맨 아래는 과압, 존 맨 위는 부족 — <b>양쪽을 같이</b> 봅니다</li>
+        <li>바이패스·스트레이너·압력계는 세트입니다. 밸브 하나만 그리지 마세요</li>
+        <li><b>급탕도 같은 압력대로</b> 맞춥니다</li>
+      </ol>
+
+      <p>압력검토는 최상층만 보고 끝내기 쉽습니다.
+      그런데 준공 후 민원은 오히려 <b>저층부에서 더 많이</b> 나옵니다.
+      최상층은 설계할 때 다들 신경 쓰지만, 저층부는 "압력 넉넉하네" 하고 넘어가기 때문입니다.</p>
+
+      <div class="post__cta">
+        <p>밸브 계통도 계산서는 층별 압력을 계산해 감압이 필요한 구간을 표시하고,
+        감압비가 과하면 2단 감압을 검토하라고 알려줍니다.
+        감압밸브 세트(차단밸브·스트레이너·압력계·바이패스)도 수량에 함께 잡힙니다.</p>
+        <a class="btn" href="https://choi-ilkwon.github.io/valve-calc/?utm_source=blog&utm_content=post-prv-end" target="_blank" rel="noopener">무료로 바로 쓰기</a>
+        <a class="btn btn--ghost" href="../../apps/valve.html">앱 소개 보기</a>
+        <span class="post__cta-fine">계통 설정 → 계통도 → 밸브 목록 → 엑셀까지 한 흐름으로.</span>
+      </div>
+
+      <div class="post__note">
+        <p>이 글은 설계 실무에서 쓰는 관점으로 정리한 것입니다.
+        허용 감압비와 압력 상·하한은 제품 사양과 사무소가 채택한 기준에 따라 다르므로,
+        구체적인 값은 해당 자료를 확인하시고 최종 판단은 프로젝트 조건에 맞춰 검토하시기 바랍니다.</p>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
