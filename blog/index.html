@@ -77,7 +77,12 @@
   fetch('posts.json?v=' + Date.now())
     .then(function (r) { return r.json(); })
     .then(function (data) {
-      var posts = (data.posts || []).slice().sort(function (a, b) {
+      // 발행일(date)이 오늘(한국시간) 이후인 글은 목록에 띄우지 않는다.
+      // 일요일에 한 주 치를 올려두면 월·수·금에 하나씩 열린다.
+      var today = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+      var posts = (data.posts || []).filter(function (p) {
+        return String(p.date) <= today;
+      }).sort(function (a, b) {
         return String(b.date).localeCompare(String(a.date));
       });
       if (!posts.length) {
