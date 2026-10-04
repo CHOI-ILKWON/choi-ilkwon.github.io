@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전기실은 30℃, 기계실은 5℃ — 실내 설계조건을 정하는 법 | MEP Works</title>
+<meta name="description" content="사무실 26℃는 법이 정한 숫자가 아닙니다. [별표 8]의 범위, 중앙제어실 24℃ ±2℃, 전기실 30℃와 KDS 40℃의 차이, 기계실 5℃와 발전기실까지 실 목적별로 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="전기실은 30℃, 기계실은 5℃ — 실내 설계조건을 정하는 법">
+<meta property="og:description" content="사무실 26℃는 법이 정한 숫자가 아닙니다. [별표 8]의 범위, 중앙제어실 24℃ ±2℃, 전기실 30℃와 KDS 40℃의 차이, 기계실 5℃와 발전기실까지 실 목적별로 정리했습니다.">
+<script src="../../js/analytics.js"></script>
+<style>
+.post__fig{margin:28px 0;}
+.post__fig img{width:100%;height:auto;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;}
+.post__fig figcaption{margin-top:10px;font-size:14px;line-height:1.6;opacity:.75;}
+.post__body code{font-size:.88em;padding:1px 5px;border-radius:4px;background:rgba(0,0,0,.05);word-break:break-all;}
+.post-table-wrap table td,.post-table-wrap table th{white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac003-nav" target="_blank" rel="noopener">부하·용량 계산서 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">부하계산</span>
+      <time datetime="2026-10-04">2026년 10월 4일</time>
+      <span>12분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">전기실은 30℃, 기계실은 5℃<br>실내 설계조건을 정하는 법</h1>
+    <p class="lead reveal">설계기준서 노트 AC-003 · 이 실에서 무엇을 보호할 것인가</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>발전소 설계를 처음 맡은 후배가 실별 설계조건표를 보다가 이렇게 묻는다고 해볼게요. “전기실은 왜 30℃예요? KDS에는 40℃까지 된다던데요. 그리고 기계실은 5℃면 너무 춥지 않나요?” 둘 다 좋은 질문입니다. 답의 출발점은 같습니다. <b>이 실에서 무엇을 보호하려고 하는가.</b></p>
+
+      <p>지난 두 글에서는 바깥 공기를 정했습니다(<a href="../ac-001-outdoor/">국내 외기조건</a>, <a href="../ac-002-overseas/">해외 외기조건</a>). 오늘은 그 반대편, 실내를 몇 ℃·몇 %로 설계할지를 정리하겠습니다. 냉난방부하는 결국 이 두 값의 차이에서 나옵니다.</p>
+
+      <h2>먼저 결론부터 말씀드릴게요</h2>
+
+      <p>실내조건을 정하기 전에 실의 목적을 네 가지로 나눕니다.</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>구분</th><th>무엇이 조건을 정하나</th><th>대표 공간</th></tr></thead><tbody><tr><td>① 사람 중심</td><td>재실자의 쾌적성</td><td>사무실, 탈의실, 탕비실</td></tr><tr><td>② 사람 + 중요장비</td><td>재실자 + 전자·계장장비 운전환경</td><td>중앙제어실</td></tr><tr><td>③ 장비·설비 보호</td><td>장비 허용온도, 동결방지</td><td>전기실, 기계실</td></tr><tr><td>④ 환기 중심</td><td>방열, 연소공기</td><td>비상발전기실</td></tr></tbody></table></div>
+
+      <p>같은 건물 안에 있어도 HVAC의 목적이 다르니, 모든 실에 26℃를 쓰지 않습니다. 제가 쓰는 실별 조건은 이렇습니다.</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>실 용도</th><th>냉방</th><th>난방</th><th>습도</th><th>성격</th></tr></thead><tbody><tr><td>사무실·크레인 제어실</td><td><b>26℃</b></td><td><b>21℃</b></td><td>냉방 RH 50%</td><td>[별표 8] 범위 안에서 채택</td></tr><tr><td>중앙제어실</td><td><b>24℃</b></td><td><b>24℃</b></td><td>RH 50%</td><td>목표 24℃, 운전범위 ±2℃</td></tr><tr><td>제어장비·중요 전자장비실</td><td>24℃ 기본</td><td>24℃ 기본</td><td>RH 50% 기본</td><td>제조사·프로젝트 조건 확인</td></tr><tr><td>탈의실</td><td><b>26℃</b></td><td><b>22℃</b></td><td>냉방 RH 60%</td><td>착의 상태 고려</td></tr><tr><td>샤워실</td><td>미적용</td><td><b>24℃</b></td><td>—</td><td>냉방보다 배기 우선</td></tr><tr><td>탕비실·간이주방</td><td>26℃</td><td>21℃</td><td>냉방 RH 50%</td><td>일반 재실공간</td></tr><tr><td>화장실</td><td>미적용</td><td><b>20℃</b></td><td>—</td><td>짧은 재실, 상시 배기</td></tr><tr><td>전기실·MCC·배전반실</td><td><b>30℃ 상한</b></td><td>제조사 확인</td><td>—</td><td>KDS 허용 40℃보다 낮게</td></tr><tr><td>기계실</td><td>미적용</td><td><b>5℃ 하한</b></td><td>—</td><td>동결방지</td></tr><tr><td>비상발전기실</td><td>쾌적 냉난방 없음</td><td>쾌적 냉난방 없음</td><td>—</td><td>제조사 허용온도 + 열수지</td></tr><tr><td>일반 창고</td><td>미적용</td><td>미적용</td><td>—</td><td>저장품 조건이 없을 때</td></tr></tbody></table></div>
+
+      <p>여기서 “Target”, “상한(Max.)”, “하한(Min.)”은 서로 다른 종류의 값입니다. 중앙제어실 24℃는 맞추려는 목표이고, 전기실 30℃는 넘지 않을 상한, 기계실 5℃는 내려가지 않을 하한입니다.</p>
+
+      <h2>사무실 26℃는 법이 정한 숫자가 아닙니다</h2>
+
+      <p>「건축물의 에너지절약설계기준」 제9조와 [별표 8]은 용도별 실내 온·습도를 <b>범위</b>로 줍니다. 사무소는 난방 20~23℃, 냉방 26~28℃, 냉방 RH 50~60%입니다.</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>용도</th><th>난방 ℃</th><th>냉방 ℃</th><th>냉방 RH %</th></tr></thead><tbody><tr><td><b>사무소</b></td><td><b>20~23</b></td><td><b>26~28</b></td><td><b>50~60</b></td></tr><tr><td>병원(병실)</td><td>21~23</td><td>26~28</td><td>50~60</td></tr><tr><td>숙박시설(객실)</td><td>20~24</td><td>26~28</td><td>50~60</td></tr><tr><td>판매시설</td><td>18~21</td><td>26~28</td><td>50~60</td></tr><tr><td>목욕장</td><td>26~29</td><td>26~29</td><td>50~75</td></tr></tbody></table></div>
+
+      <p>그러니 사무실 26℃ / 21℃ / 50%는 법이 정한 고정값이 아니라 <b>허용 범위 안에서 제가 고른 값</b>입니다. 냉방은 범위의 하한인 26℃, RH도 하한인 50%를 택해 쾌적성을 우선했습니다. 그만큼 부하는 커집니다. 얼마나 커지는지 보겠습니다.</p>
+
+      <p><b>온도 1℃의 차이</b>: 서울 냉방외기 31.2℃, 외기·외피의 온도차 비례 부하계수를 120.9W/K로 두면(AC-001의 대표 사무실 예제와 같은 조건)</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>실내온도</th><th>온도차</th><th>온도차 비례 부하</th></tr></thead><tbody><tr><td><b>26℃ (채택)</b></td><td>5.2K</td><td>약 629W</td></tr><tr><td>27℃</td><td>4.2K</td><td>약 508W</td></tr><tr><td>28℃</td><td>3.2K</td><td>약 387W</td></tr></tbody></table></div>
+
+      <p>26℃를 쓰면 28℃보다 이 항목이 약 242W 커집니다. 일사·인체·조명·기기 부하는 따로 있으니, 전체 냉방부하가 같은 비율로 커진다는 뜻은 아닙니다.</p>
+
+      <p><b>습도 10%의 차이</b>: 외기 300㎥/h, 서울 외기 수분비 18.27g/kgDA 기준으로</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>실내 RH</th><th>실내 수분비</th><th>외기 잠열</th></tr></thead><tbody><tr><td><b>50% (사무실)</b></td><td>약 10.5g/kgDA</td><td>약 1.95kW</td></tr><tr><td>55%</td><td>약 11.6g/kgDA</td><td>약 1.68kW</td></tr><tr><td><b>60% (탈의실)</b></td><td>약 12.6g/kgDA</td><td>약 1.42kW</td></tr></tbody></table></div>
+
+      <p>실내 습도 목표를 낮게 잡을수록 외기에서 빼내야 할 수분이 많아집니다.</p>
+
+      <h2>중앙제어실 24℃ ±2℃</h2>
+
+      <p>중앙제어실은 운전원이 장시간 상주하면서 DCS·계장·전자장비가 함께 있는 공간입니다. 그래서 사무실보다 낮고 안정적인 조건을 둡니다.</p>
+
+      <ul><li><b>24℃</b>는 목표온도이자 부하계산 기준값입니다.</li><li><b>±2℃</b>, 즉 22~26℃는 실제 운전에서 허용하는 범위입니다.</li></ul>
+
+      <p>ASHRAE Handbook의 「Power Plants」 장은 제어실을 냉방 24±1℃, 난방 22±1℃, RH 30~65%로 제시합니다. 제 기준의 24℃ ±2℃는 이 값을 그대로 옮긴 게 아니라, ASHRAE 기준과 그동안의 설계 운영을 참고해 <b>연중 24℃ 하나를 중심으로 관리하는 회사 기준</b>으로 정한 것입니다. 발주처나 DCS 제조사가 더 엄격한 범위를 요구하면 그 조건을 따릅니다.</p>
+
+      <p>대가도 분명합니다. 같은 외기·외피 조건에서 온도차가 5.2K에서 7.2K로 커지니, 온도차 비례 냉방부하는 사무실의 약 <b>1.38배</b>입니다. 24시간 운전하는 실이라 연간 에너지에도 영향이 있습니다.</p>
+
+      <p>습도도 짚어둘 것이 있습니다. RH 50% 목표는 유지하지만, 온도의 ±2℃를 습도에 그대로 가져와 “±2%”처럼 쓰지 않습니다. 습도 제어 허용폭, 센서 오차, 경보값은 장비 사양에 달린 값이라 기준서가 미리 정하지 않고 <b>발주처·제조사와 프로젝트마다 확정</b>합니다.</p>
+
+      <div class="post__cta">
+        <p>지역을 고르면 오늘 표의 외기조건이 자동으로 들어가고, 실을 등록하면 부하가 이어서 계산됩니다.</p>
+        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac003-mid" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
+        <span class="post__cta-fine">설치 없음 · 브라우저에서 바로 시작</span>
+      </div>
+
+      <h2>전기실 30℃와 KDS 40℃는 다른 종류의 숫자입니다</h2>
+
+      <p>KDS 31 25 20 「환기설비 설계기준」은 전기실의 <b>실 허용 최고온도를 40℃</b>로 제시하고, 변압기 발열량과 하절기 설계외기온도로 환기량을 산정하도록 합니다. KDS 32 10 11은 전기실에 환기를 요구하고, 설비 중요도에 따라 냉방·제습장치를 둘 수 있다고 봅니다.</p>
+
+      <p>여기서 40℃는 <b>넘으면 안 되는 한계</b>입니다. 정상 운전을 그 한계에 맞춰 설계하지는 않습니다. 장비 열화, 국부 고온, 제어 오차를 생각해 <b>10℃ 여유를 둔 30℃를 정상 설계 상한</b>으로 잡습니다. 설치되는 Switchgear, MCC, 변압기, UPS 제조사가 더 낮은 주위온도를 요구하면 그 값이 우선입니다.</p>
+
+      <p>그런데 왜 사무실처럼 26℃로 하지 않을까요? 환기로 뺄 수 있는 열이 크게 달라지기 때문입니다. 100㎡, 천장고 4m, 환기량 4,800㎥/h인 전기실로 계산해보겠습니다.</p>
+
+      <figure class="post__fig"><img src="elec-room-vent.png" alt="전기실 실내 26℃와 30℃일 때 외기온도별로 환기만으로 제거할 수 있는 열" loading="lazy"><figcaption>제거 가능한 열 = 0.336 × 4,800 × (실내온도 − 외기온도). 외기 25℃일 때 실내를 26℃로 두면 1.6kW, 30℃로 두면 8.1kW를 환기만으로 뺄 수 있습니다. 외기가 실내보다 뜨거우면 환기는 열을 빼지 못하고 오히려 더합니다.</figcaption></figure>
+
+      <p>실내 상한을 30℃로 두면 중간기와 부분부하 시간대에 환기만으로 처리할 수 있는 발열이 커져, 냉방기 운전시간을 줄일 수 있습니다. 다만 여름 피크처럼 외기가 30℃를 넘으면 환기로는 열을 뺄 수 없으니 필요한 만큼 냉방을 따로 둡니다. 환기 자체는 냉각과 별개로 계속 필요할 수 있습니다.</p>
+
+      <p>중요 계측·전자장비실은 일반 전기실 30℃를 일괄 적용하지 않습니다. 온도에 더 민감할 수 있어서 중앙제어실 조건이나 제조사 조건을 씁니다.</p>
+
+      <h2>기계실 5℃는 사람을 위한 온도가 아닙니다</h2>
+
+      <p>기계실은 사람이 상주하지 않으니 쾌적 난방을 하지 않습니다. 목적은 <b>배관과 장비 안의 물이 얼지 않게 하는 것</b>입니다. ASHRAE 「Power Plants」는 동결방지 실온으로 약 2~4℃ 수준을 언급합니다. 여기에 여유를 두어 <b>5℃를 기본 하한</b>으로 정했습니다. 약품이나 장비가 더 높은 최소온도를 요구하면 그 값을 따릅니다.</p>
+
+      <h2>냉난방이 없다는 것과 조건이 없다는 것은 다릅니다</h2>
+
+      <p>비상발전기실에는 사무실 같은 쾌적 냉난방을 두지 않습니다. 그렇다고 “온도조건 없음”으로 처리하면 안 됩니다. 발전기실의 설계는 엔진·발전기 방열량, 연소공기량, 라디에이터 냉각풍량, 제조사 허용 주위온도, 외기 설계조건으로 정해집니다. KDS도 발전기실 급기량을 연소공기량과 방열량으로 산정하도록 하고, 공랭식은 제조사 자료로 냉각풍량을 정하도록 합니다. 발전기 용량이나 형식이 바뀌면 환기량도 다시 봐야 합니다.</p>
+
+      <p>같은 원리로, 기계실에 냉방이 없어도 동결방지 온도가 있고, 창고도 저장품에 온습도 요구가 있으면 조건이 생깁니다.</p>
+
+      <h2>난방 RH를 적는 순간 가습기가 따라옵니다</h2>
+
+      <p>냉방 RH는 냉방 잠열 계산을 위한 실내 수분 조건입니다. 반면 <b>난방 RH는 겨울에 그 습도를 실제로 유지하겠다는 성능 조건</b>입니다. 적는 순간 가습기 용량, 급수, 배수, 전력이나 스팀이 함께 따라옵니다. 그래서 난방 RH는 중앙제어실처럼 실제로 가습하는 실에만 적습니다. 사무실 칸에 습관처럼 “21℃ / 50%”를 적으면, 계획에 없던 가습설비를 요구하는 표가 됩니다.</p>
+
+      <h2>제가 실내조건표를 검토하는 순서</h2>
+
+      <ol><li>실마다 HVAC의 목적(사람, 사람+장비, 장비보호, 환기)을 먼저 나눴는가?</li><li>일반 재실공간 값이 [별표 8] 범위 안에 있는가?</li><li>중앙제어실 24±2℃가 발주처·DCS 제조사 조건과 충돌하지 않는가? 부하계산은 24℃로 했는가?</li><li>중앙제어실 난방 RH와 가습조건이 가습 대상실 기준(AC-004)과 맞는가?</li><li>전기실 30℃를 KDS 허용 최고온도 40℃와 혼동하지 않았는가? 제조사 주위온도 조건을 확인했는가?</li><li>중요 계측·전자장비실을 일반 전기실 30℃로 묶어버리지 않았는가?</li><li>기계실에 5℃보다 높은 최소온도가 필요한 장비나 약품이 없는가?</li><li>발전기실을 “조건 없음”으로 처리하지 않았는가? 방열량·연소공기·냉각풍량이 환기량에 반영됐는가?</li><li>가습하지 않는 실에 난방 RH를 적지 않았는가?</li></ol>
+
+      <p>발주처가 “전기실은 왜 30℃냐”고 물으면 이렇게 설명합니다.</p>
+
+      <div class="post__note"><p>“전기실은 사람의 쾌적온도가 아니라 설치장비의 운전환경을 기준으로 설계합니다. KDS 31 25 20의 실 허용 최고온도는 40℃이며, 정상 운전 시 충분한 여유를 두기 위해 30℃를 실내 설계 상한으로 적용했습니다. 설치 장비 제조사의 조건이 더 엄격하면 그 조건을 따릅니다.”</p></div>
+
+      <h2>앱에서는 실 유형만 고르면 됩니다</h2>
+
+      <p><b>HVAC 부하·용량 계산서 앱</b>은 실을 추가하고 유형을 고르면 오늘 표의 실내조건이 자동으로 들어갑니다. 사무실류는 26℃·50% / 21℃, 중앙제어실류는 24℃·50% / 24℃·50%, 전기실류는 냉방 상한 30℃, 기계실류는 난방 하한 5℃입니다. 냉방이 없는 실은 냉방부하 계산을 건너뛰고 환기로 처리합니다. 이번 주에 앱의 실 유형 10종을 이 기준서와 한 칸씩 대조했고 모두 일치했습니다.</p>
+
+      <p>오늘 글의 사무실 26℃와 28℃ 차이를 직접 넣어 비교해보세요.</p>
+
+      <div class="post__cta">
+        <p>샘플보다 <b>지금 하고 계신 프로젝트의 지역 하나</b>를 넣어보시길 권합니다. 오늘 표의 서울 값과 화면의 값이 어떻게 이어지는지 바로 보입니다.</p>
+        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac003-end" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
+        <a class="btn btn--ghost" href="../../apps/hvac-calc.html">앱 소개 보기</a>
+        <span class="post__cta-fine">17개 지역 설계 외기조건 · 실별 부하 · 장비 용량까지 한 흐름으로.</span>
+      </div>
+
+      <div class="post__note"><p>관련 기준: 국내 외기조건 AC-001, 해외 외기조건 AC-002, 가습 대상실 AC-004, 부하계산 방법 AC-005, 실용도 분류 AC-014, 실별 냉난방방식 AC-015, 환기량 AC-017, 24시간 운전실 AC-021. 외부 기준: 「건축물의 에너지절약설계기준」 제9조·[별표 8], KDS 31 25 20, KDS 32 10 11, ASHRAE Handbook—HVAC Applications 「Power Plants」.</p></div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
