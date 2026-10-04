@@ -40,7 +40,7 @@
       <span>12분</span>
     </p>
     <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">냉방 용량 계산의 첫 숫자,<br>외기조건은 어떻게 정할까</h1>
-    <p class="lead reveal">설계기준서 노트 AC-001 · [별표 7] 17개 지역, 원문값과 계산값을 나눠 읽는 법</p>
+    <p class="lead reveal">설계기준서 노트 AC-001 · 근거: 「건축물의 에너지절약설계기준」 제8조·[별표 7]</p>
   </div>
 </header>
 
@@ -80,6 +80,8 @@
 
       <div class="post__note"><p>원문 확인: [국가법령정보센터 「건축물의 에너지절약설계기준」 제8조제1호·[별표 7]](https://law.go.kr/LSW/admRulLsInfoP.do?admRulId=2036618&amp;admRulNm=%EA%B1%B4%EC%B6%95%EB%AC%BC%EC%9D%98+%EC%97%90%EB%84%88%EC%A7%80%EC%A0%88%EC%95%BD%EC%84%A4%EA%B3%84%EA%B8%B0%EC%A4%80). 2026년 10월 4일 확인, 고시 제2026-360호.</p></div>
 
+      <figure class="post__fig"><img src="law-art8.jpg" alt="고시 제8조제1호의 외기조건 세 가지 경로" loading="lazy"><figcaption>그림: 국가법령정보센터의 고시 제8조제1호 원문 화면. 적용하는 판은 프로젝트마다 다시 확인합니다.</figcaption></figure>
+
       <h2>저는 왜 [별표 7]을 기본으로 골랐을까요?</h2>
 
       <p>기상자료를 직접 분석하면 대상지의 특성을 세밀하게 살펴볼 수 있습니다. 다만 관측지점, 자료기간, 냉·난방기간, 위험률 산정방법을 정하고 기록해야 합니다.</p>
@@ -92,15 +94,11 @@
 
       <p>이제 실제 숫자를 보겠습니다. 아래는 AC-001에 채택한 17개 지역 값입니다. 처음부터 여덟 열을 모두 외울 필요는 없습니다. <b>굵은 네 열(여름 DB·WB, 겨울 DB·RH)이 [별표 7] 원문</b>이고, 다른 네 열은 계산값이라는 구분부터 해보세요. 온도는 ℃, RH는 %, 수분비는 kg/kgDA입니다.</p>
 
+      <figure class="post__fig"><img src="law-annex7.jpg" alt="고시 별표 7 원문 표의 여름 DB·WB와 겨울 DB·RH" loading="lazy"><figcaption>그림: [별표 7] 원문 화면의 일부. 아래 표의 여름 RH·수분비와 겨울 WB·수분비는 고시 원문 열이 아니라 AC-001 계산값입니다.</figcaption></figure>
+
       <div class="post-table-wrap"><table><thead><tr><th>지역</th><th>여름 DB</th><th>여름 WB</th><th>여름 RH</th><th>여름 수분비</th><th>겨울 DB</th><th>겨울 WB</th><th>겨울 RH</th><th>겨울 수분비</th></tr></thead><tbody><tr><td>서울</td><td><b>31.2</b></td><td><b>25.5</b></td><td>63.6</td><td>0.01827</td><td><b>-11.3</b></td><td>-12.3</td><td><b>63</b></td><td>0.00090</td></tr><tr><td>인천</td><td><b>30.1</b></td><td><b>25.0</b></td><td>66.4</td><td>0.01790</td><td><b>-10.4</b></td><td>-11.6</td><td><b>58</b></td><td>0.00089</td></tr><tr><td>수원</td><td><b>31.2</b></td><td><b>25.5</b></td><td>63.6</td><td>0.01827</td><td><b>-12.4</b></td><td>-13.2</td><td><b>70</b></td><td>0.00090</td></tr><tr><td>춘천</td><td><b>31.6</b></td><td><b>25.2</b></td><td>60.0</td><td>0.01760</td><td><b>-14.7</b></td><td>-15.2</td><td><b>77</b></td><td>0.00080</td></tr><tr><td>강릉</td><td><b>31.6</b></td><td><b>25.1</b></td><td>59.4</td><td>0.01743</td><td><b>-7.9</b></td><td>-9.9</td><td><b>42</b></td><td>0.00081</td></tr><tr><td>대전</td><td><b>32.3</b></td><td><b>25.5</b></td><td>58.3</td><td>0.01780</td><td><b>-10.3</b></td><td>-11.1</td><td><b>71</b></td><td>0.00110</td></tr><tr><td>청주</td><td><b>32.5</b></td><td><b>25.8</b></td><td>59.0</td><td>0.01823</td><td><b>-12.1</b></td><td>-12.7</td><td><b>76</b></td><td>0.00101</td></tr><tr><td>전주</td><td><b>32.4</b></td><td><b>25.8</b></td><td>59.5</td><td>0.01827</td><td><b>-8.7</b></td><td>-9.6</td><td><b>72</b></td><td>0.00129</td></tr><tr><td>서산</td><td><b>31.1</b></td><td><b>25.8</b></td><td>65.9</td><td>0.01882</td><td><b>-9.6</b></td><td>-10.3</td><td><b>78</b></td><td>0.00129</td></tr><tr><td>광주</td><td><b>31.8</b></td><td><b>26.0</b></td><td>63.5</td><td>0.01887</td><td><b>-6.6</b></td><td>-7.7</td><td><b>70</b></td><td>0.00151</td></tr><tr><td>대구</td><td><b>33.3</b></td><td><b>25.8</b></td><td>55.4</td><td>0.01789</td><td><b>-7.6</b></td><td>-9.0</td><td><b>61</b></td><td>0.00120</td></tr><tr><td>부산</td><td><b>30.7</b></td><td><b>26.2</b></td><td>70.4</td><td>0.01968</td><td><b>-5.3</b></td><td>-7.5</td><td><b>46</b></td><td>0.00111</td></tr><tr><td>진주</td><td><b>31.6</b></td><td><b>26.3</b></td><td>66.2</td><td>0.01947</td><td><b>-8.4</b></td><td>-9.2</td><td><b>76</b></td><td>0.00140</td></tr><tr><td>울산</td><td><b>32.2</b></td><td><b>26.8</b></td><td>66.0</td><td>0.02010</td><td><b>-7.0</b></td><td>-8.1</td><td><b>70</b></td><td>0.00146</td></tr><tr><td>포항</td><td><b>32.5</b></td><td><b>26.0</b></td><td>60.1</td><td>0.01857</td><td><b>-6.4</b></td><td>-8.7</td><td><b>41</b></td><td>0.00090</td></tr><tr><td>목포</td><td><b>31.1</b></td><td><b>26.3</b></td><td>68.8</td><td>0.01969</td><td><b>-4.7</b></td><td>-5.7</td><td><b>75</b></td><td>0.00190</td></tr><tr><td>제주</td><td><b>30.9</b></td><td><b>26.3</b></td><td>69.9</td><td>0.01977</td><td><b>0.1</b></td><td>-1.5</td><td><b>70</b></td><td>0.00266</td></tr></tbody></table></div>
 
       <p>서울 행을 같이 읽어보겠습니다. 여름 <b>31.2℃ DB / 25.5℃ WB</b>는 고시 표에서 확인합니다. 그 옆의 <b>63.6% RH / 0.01827 kg/kgDA</b>는 AC-001의 계산조건으로 구한 값입니다. 숫자가 같은 줄에 있다고 출처까지 같은 것은 아닙니다. 계산서에 이 네 숫자를 적을 때도 원문값과 계산값을 나눠 표시해야 다음 사람이 검토할 수 있습니다.</p>
-
-      <div class="post__cta">
-        <p>지역을 고르면 오늘 표의 외기조건이 자동으로 들어가고, 실을 등록하면 부하가 이어서 계산됩니다.</p>
-        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac001-mid" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
-        <span class="post__cta-fine">설치 없음 · 브라우저에서 바로 시작</span>
-      </div>
 
       <h2>표에 없는 지역이면 어디를 고를까요?</h2>
 
@@ -150,12 +148,7 @@
 
       <p>이 반복을 덜기 위해 <b>HVAC 부하·용량 계산서 웹앱</b>을 만들었습니다. 지역을 고르면 오늘 표의 외기조건이 들어가고, 실을 등록하면 부하가 이어서 계산됩니다. 오늘 글에서 이해한 서울 외기조건을 가지고 앱의 입력·계산 결과를 직접 비교해보세요. 내가 계산한 값과 화면의 값이 어떻게 이어지는지 확인하는 것이 가장 좋은 체험입니다.</p>
 
-      <div class="post__cta">
-        <p>샘플보다 <b>지금 하고 계신 프로젝트의 지역 하나</b>를 넣어보시길 권합니다. 오늘 표의 서울 값과 화면의 값이 어떻게 이어지는지 바로 보입니다.</p>
-        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac001-end" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
-        <a class="btn btn--ghost" href="../../apps/hvac-calc.html">앱 소개 보기</a>
-        <span class="post__cta-fine">17개 지역 설계 외기조건 · 실별 부하 · 장비 용량까지 한 흐름으로.</span>
-      </div>
+      <p>👉 <b><a href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a></b> · <a href="https://choi-ilkwon.github.io/apps/hvac-calc.html" target="_blank" rel="noopener">앱 소개 보기</a></p>
 
       <p>앱에서 보이는 값이 기준서와 다르거나 확인이 필요한 항목이 있다면 <a href="mailto:jikwang8610@gmail.com">메일</a>로 알려주세요. 실제 설계자의 질문을 다음 검토에 반영하겠습니다.</p>
 

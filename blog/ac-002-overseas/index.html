@@ -40,7 +40,7 @@
       <span>11분</span>
     </p>
     <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">해외 현장 외기조건,<br>0.4%와 1% 중 무엇을 쓸까</h1>
-    <p class="lead reveal">설계기준서 노트 AC-002 · 관측지점, 백분위, MCWB, 그리고 습도를 바꾸지 않았을 때 생기는 일</p>
+    <p class="lead reveal">설계기준서 노트 AC-002 · 근거: 해외 외기조건 기준서 및 프로젝트별 기후자료</p>
   </div>
 </header>
 
@@ -88,12 +88,6 @@
 
       <p>모든 실에 0.4%를 쓰면 안전해 보이지만, 냉난방 장비와 전원 용량, 초기 비용이 함께 커집니다. <b>실의 중요도를 먼저 나누고 백분위를 고르는 것</b>이 핵심입니다.</p>
 
-      <div class="post__cta">
-        <p>지역을 고르면 오늘 표의 외기조건이 자동으로 들어가고, 실을 등록하면 부하가 이어서 계산됩니다.</p>
-        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac002-mid" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
-        <span class="post__cta-fine">설치 없음 · 브라우저에서 바로 시작</span>
-      </div>
-
       <h2>가장 더운 순간과 가장 습한 순간은 다릅니다</h2>
 
       <p>국내 [별표 7]은 여름 DB와 WB를 한 쌍으로 줍니다. ASHRAE에서는 가장 높은 DB와 가장 높은 WB를 따로 찾아 붙이면 안 됩니다. 두 값은 같은 시간에 나타나지 않을 수 있기 때문입니다.</p>
@@ -101,6 +95,8 @@
       <ul><li><b>냉방 현열</b>: Cooling DB와, 그 DB가 나타날 때 같은 시간에 관측된 습구온도의 평균인 <b>MCWB(Mean Coincident Wet-Bulb)</b>를 씁니다. “그만큼 더운 날 실제로 얼마나 습했나”를 함께 보는 값입니다.</li><li><b>제습</b>: 가장 더운 날이 가장 습한 날과 같지 않을 수 있으니, <b>Dehumidification DP·수분비와 그때의 MCDB</b>로 따로 검토합니다. 항온항습실, DOAS, 고온다습 지역, 외기량이 큰 계통에서는 이 조건이 코일 용량을 정하기도 합니다.</li><li><b>난방</b>: 실내외 온도차로 정해지므로 <b>Heating DB</b>를 씁니다.</li><li><b>가습</b>: 수분량 차이로 정해지므로 Heating DB가 아니라 <b>겨울 Humidification DP·수분비</b>를 씁니다.</li></ul>
 
       <div class="post-table-wrap"><table><thead><tr><th>계산 목적</th><th>쓰는 값</th></tr></thead><tbody><tr><td>냉방 현열</td><td>Cooling DB + MCWB</td></tr><tr><td>외기 잠열·제습</td><td>Dehumidification DP·수분비 + MCDB</td></tr><tr><td>난방 현열</td><td>Heating DB</td></tr><tr><td>겨울 가습</td><td>Humidification DP·수분비 + MCDB</td></tr></tbody></table></div>
+
+      <figure class="post__fig"><img src="purpose-states.png" alt="냉방 현열·제습·난방 현열·가습별로 묶어야 할 외기조건" loading="lazy"><figcaption>그림: 가장 높은 DB와 WB를 임의로 조합하지 않습니다. 냉방용 DB–MCWB와 제습용 DP·수분비–MCDB는 서로 다른 설계 상태입니다.</figcaption></figure>
 
       <h2>온도만 바꾸고 습도는 그대로 두면 생기는 일</h2>
 
@@ -112,7 +108,7 @@
 
       <figure class="post__fig"><img src="dry-site-latent.png" alt="실내, 서울 설계조건, 건조 현장의 수분비와 외기 잠열 비교" loading="lazy"><figcaption>설명용 예시입니다. 대기압 101,325Pa, 단열포화 습구 기준으로 계산했습니다. 서울 습도를 그대로 두면 외기 잠열이 약 +1.95kW로 나오지만, 현장 습도로 계산하면 약 −0.48kW입니다. 음수는 외기가 실내를 오히려 건조하게 만든다는 뜻입니다.</figcaption></figure>
 
-      <p>현장 외기는 실내보다 건조합니다. 실제로는 제습할 것이 없는데, 국내 습도를 그대로 두면 2kW 가까운 제습부하가 있는 것으로 계산됩니다. 코일과 장비가 엉뚱하게 커집니다. 그래서 해외에서는 <b>DB만 바꾸지 않고 습도까지 그 관측지점 자료를 씁니다.</b></p>
+      <p>현장 외기는 실내보다 건조합니다. 이 예시의 외기 수분차에서는 제습부하가 음수인데, 국내 습도를 그대로 두면 약 1.95kW의 양수로 계산됩니다. 이 값을 그대로 적용하면 코일·장비 선정에 불필요한 잠열부하가 들어갈 수 있습니다. 그래서 해외에서는 <b>DB만 바꾸지 않고 습도까지 그 관측지점 자료를 씁니다.</b></p>
 
       <h2>과거 프로젝트 값을 그대로 가져오지 않습니다</h2>
 
@@ -140,16 +136,11 @@
 
       <p>솔직하게 말씀드리면, 지금 제 <b>HVAC 부하·용량 계산서 앱은 국내 17개 지역용</b>입니다. 해외 관측지점의 DB·MCWB·제습·가습 조건을 넣는 기능은 아직 없습니다.</p>
 
-      <p>그리고 앱의 “외기온 직접입력”은 해외 현장용이 아닙니다. 냉방 DB만 바꾸고 습구온도는 선택한 국내 지역 값을 그대로 쓰기 때문에, 위에서 본 “온도만 바꾸고 습도는 그대로” 실수가 그대로 재현됩니다. 해외 현장은 이 기준서의 기록표를 먼저 채우고 계산해주세요. 해외 지점 입력은 실 중요도별 백분위와 MCWB·제습 조건까지 한 번에 다루도록 설계해서 추가하겠습니다. 그 과정은 <a href="../devlog-01/">이번 주 개발 기록</a>에 적었습니다.</p>
+      <p>그리고 앱의 “외기온 직접입력”은 해외 현장용이 아닙니다. 냉방 DB만 바꾸고 습구온도는 선택한 국내 지역 값을 그대로 쓰기 때문에, 위에서 본 “온도만 바꾸고 습도는 그대로” 실수가 그대로 재현됩니다. 해외 현장은 이 기준서의 기록표를 먼저 채우고 계산해주세요. 해외 지점 입력은 실 중요도별 백분위와 MCWB·제습 조건까지 한 번에 다루도록 설계해서 추가하겠습니다. 앱의 직접입력 칸에도 이 제한을 안내해두었습니다. 그 판단 과정은 <a href="../devlog-01/">이번 주 개발 기록</a>에 적었습니다.</p>
 
       <p>국내 프로젝트라면 오늘 글의 원리가 그대로 들어간 계산을 앱에서 바로 해보실 수 있습니다.</p>
 
-      <div class="post__cta">
-        <p>샘플보다 <b>지금 하고 계신 프로젝트의 지역 하나</b>를 넣어보시길 권합니다. 오늘 표의 서울 값과 화면의 값이 어떻게 이어지는지 바로 보입니다.</p>
-        <a class="btn" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac002-end" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a>
-        <a class="btn btn--ghost" href="../../apps/hvac-calc.html">앱 소개 보기</a>
-        <span class="post__cta-fine">17개 지역 설계 외기조건 · 실별 부하 · 장비 용량까지 한 흐름으로.</span>
-      </div>
+      <p>👉 <b><a href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a></b> · <a href="https://choi-ilkwon.github.io/apps/hvac-calc.html" target="_blank" rel="noopener">앱 소개 보기</a></p>
 
       <div class="post__note"><p>관련 기준: 국내 외기조건 AC-001, 실내 설계조건 AC-003, 가습 대상실 AC-004, 부하계산 방법 AC-005, 안전율 AC-012, 환기량 AC-017. 외부 기준: 2025 ASHRAE Handbook—Fundamentals 14장, ASHRAE Handbook—HVAC Applications 「Power Plants」, ANSI/ASHRAE Standard 169-2025.</p></div>
 
