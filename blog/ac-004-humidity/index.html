@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>겨울 습도 50%, 어느 실에만 적어야 할까 — 습도 제어 대상 실 | MEP Works</title>
+<meta name="description" content="냉방 RH와 겨울 RH는 다른 숫자입니다. 겨울 가습을 중앙제어실에만 적용하는 이유, 50%를 고른 근거, 가습량 kg/h 계산과 이슬점·결로까지 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="겨울 습도 50%, 어느 실에만 적어야 할까 — 습도 제어 대상 실">
+<meta property="og:description" content="냉방 RH와 겨울 RH는 다른 숫자입니다. 겨울 가습을 중앙제어실에만 적용하는 이유, 50%를 고른 근거, 가습량 kg/h 계산과 이슬점·결로까지 정리했습니다.">
+<script src="../../js/analytics.js"></script>
+<style>
+.post__fig{margin:28px 0;}
+.post__fig img{width:100%;height:auto;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;}
+.post__fig figcaption{margin-top:10px;font-size:14px;line-height:1.6;opacity:.75;}
+.post__body code{font-size:.88em;padding:1px 5px;border-radius:4px;background:rgba(0,0,0,.05);word-break:break-all;}
+.post-table-wrap table td,.post-table-wrap table th{white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac004-nav" target="_blank" rel="noopener">부하·용량 계산서 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">부하계산</span>
+      <time datetime="2026-10-12">2026년 10월 12일</time>
+      <span>10분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">겨울 습도 50%,<br>어느 실에만 적어야 할까</h1>
+    <p class="lead reveal">설계기준서 노트 AC-004 · 근거: 습도 제어 대상 실 기준서, ASHRAE 「Power Plants」, [별표 8]</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>후배가 실별 설계조건표를 만들어 왔는데, 모든 실의 난방 칸에 “21℃ / 50%”가 적혀 있다고 해볼게요. “냉방도 50%니까 겨울도 50%로 맞췄습니다.” 성실하게 채운 표입니다. 그런데 이 표대로라면 사무실, 탕비실, 탈의실마다 가습기가 들어가야 합니다. 오늘은 겨울 습도를 <b>어느 실에, 왜, 얼마로</b> 적는지 정리해보겠습니다.</p>
+
+      <p>지난주에는 바깥 공기(<a href="../ac-001-outdoor/">AC-001</a>)와 실내 온습도(<a href="../ac-003-indoor/">AC-003</a>)를 정했습니다. 오늘은 그중 겨울 습도 하나를 따로 떼어 봅니다. 숫자 하나지만, 적는 순간 설비가 따라오는 칸입니다.</p>
+
+      <h2>먼저 결론부터 말씀드릴게요</h2>
+
+      <ul><li>겨울 가습은 원칙적으로 <b>중앙제어실류</b>에만 적용합니다.</li><li>중앙제어실의 겨울 목표 습도는 <b>24℃ / RH 50%</b>입니다. 이때 수분비는 약 <b>9.3g/kgDA</b>, 이슬점은 약 <b>12.9℃</b>입니다.</li><li>사무실, 탕비실, 탈의실, 화장실, 기계실, 전기실은 <b>겨울 RH를 적지 않습니다.</b></li><li>RH 50%는 법이 정한 값도, 모든 DCS가 요구하는 값도 아닙니다. ASHRAE가 제시하는 제어실 범위 30~65% 안에서 고른 <b>회사 설계 목표값</b>입니다.</li><li>실제 설치되는 DCS·전자장비 제조사의 습도 조건이 더 엄격하면 그 조건이 우선입니다.</li></ul>
+
+      <div class="post-table-wrap"><table><thead><tr><th>실 용도</th><th>냉방 RH</th><th>겨울 RH</th><th>겨울 가습</th></tr></thead><tbody><tr><td><b>중앙제어실</b></td><td>50%</td><td><b>50%</b></td><td><b>적용</b> (CTH 등 가습 기능 장비)</td></tr><tr><td>중요 제어장비·전자장비실</td><td>50% 기본</td><td>50% 기본 검토</td><td>제조사·프로젝트 조건에 따라</td></tr><tr><td>사무실·크레인 제어실</td><td>50%</td><td>—</td><td>미적용</td></tr><tr><td>탕비실·간이주방</td><td>50%</td><td>—</td><td>미적용</td></tr><tr><td>탈의실</td><td>60%</td><td>—</td><td>미적용</td></tr><tr><td>화장실·기계실·전기실·발전기실·창고</td><td>—</td><td>—</td><td>미적용</td></tr></tbody></table></div>
+
+      <h2>냉방 RH와 겨울 RH는 다른 종류의 숫자입니다</h2>
+
+      <p>같은 “50%”로 보여도 하는 일이 다릅니다.</p>
+
+      <ul><li><b>냉방 RH</b>는 냉방 잠열을 계산하기 위한 실내 수분 조건입니다. 여름에 외기에서 수분을 얼마나 빼야 하는지 정하는 입력값입니다.</li><li><b>겨울 RH</b>는 “겨울에도 이 습도를 실제 설비로 유지하겠다”는 성능 조건입니다.</li></ul>
+
+      <p>그래서 냉방 RH가 50%라고 겨울 RH가 자동으로 50%가 되지 않습니다. [별표 8]도 마찬가지입니다. 사무소의 “50~60%”는 냉방 조건 열에 있는 값이고, 표에는 난방 습도 항목이 따로 없습니다. 이 범위를 가져와 “겨울에도 사무실을 50~60%로 유지해야 한다”고 읽지 않습니다.</p>
+
+      <h2>겨울에 공기를 데우면 왜 건조해질까요</h2>
+
+      <p>겨울 바깥 공기는 수분 자체가 적습니다. 서울 겨울 설계외기의 수분비는 약 <b>0.90g/kgDA</b>입니다(<a href="../ac-001-outdoor/">AC-001</a> 확정값). 이 공기를 24℃까지 데워도 수분은 그대로입니다. 그런데 따뜻한 공기는 담을 수 있는 수분이 훨씬 많아서, 상대습도는 한 자릿수까지 떨어집니다.</p>
+
+      <p>그래서 중앙제어실을 겨울에도 50%로 유지하려면 부족한 물을 <b>kg/h 단위로 보충</b>해야 합니다. 이때 RH만으로는 계산할 수 없고, 실내와 외기의 <b>수분비 차이</b>로 계산합니다.</p>
+
+      <p><code>가습량 ≈ 건공기 질량유량 × (실내 목표 수분비 − 외기 수분비)</code></p>
+
+      <p>외기 300㎥/h로 따라가 보겠습니다.</p>
+
+      <ol><li>공기량을 질량으로: 300 × 1.2 = 360 kgDA/h</li><li>수분 차이: (9.3 − 0.90) ÷ 1,000 = 0.0084 kg/kgDA</li><li>가습량: 360 × 0.0084 ≈ <b>3.0 kg/h</b></li></ol>
+
+      <p>시간당 물 3리터를 공기에 넣어야 한다는 뜻입니다. 이건 외기만 본 예시이고, 실제로는 침기, 문 개폐, 공조 계통 구성까지 넣어 확인합니다.</p>
+
+      <h2>왜 하필 50%인가</h2>
+
+      <p>ASHRAE Handbook—HVAC Applications의 「Power Plants」 장은 중앙제어실·제어장비실의 실내조건으로 냉방 24±1℃, 난방 22±1℃, <b>RH 30~65%</b>를 제시합니다. 그 범위 안에서 어디를 고를지 보겠습니다.</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>24℃에서 RH</th><th>수분비</th><th>이슬점</th><th>의미</th></tr></thead><tbody><tr><td>30%</td><td>5.5 g/kgDA</td><td>5.4℃</td><td>ASHRAE 범위의 저습 쪽</td></tr><tr><td>40%</td><td>7.4 g/kgDA</td><td>9.6℃</td><td>중간</td></tr><tr><td><b>50%</b></td><td><b>9.3 g/kgDA</b></td><td><b>12.9℃</b></td><td><b>채택</b></td></tr><tr><td>60%</td><td>11.2 g/kgDA</td><td>15.8℃</td><td>고습 쪽</td></tr></tbody></table></div>
+
+      <figure class="post__fig"><img src="humid-dewpoint.png" alt="24℃에서 목표 RH별 겨울 가습량과 이슬점" loading="lazy"><figcaption>그림: 왼쪽은 외기 300㎥/h 기준 가습량입니다. 30% 1.7kg/h, 40% 2.3kg/h, 50% 3.0kg/h, 60% 3.7kg/h. 오른쪽은 24℃에서 RH가 오를 때 이슬점이 따라 오르는 모습입니다. 50%면 12.9℃, 60%면 15.8℃입니다.</figcaption></figure>
+
+      <p><b>낮은 쪽으로 가면</b> 가습기와 물, 에너지가 줄어듭니다. 대신 장시간 앉아 있는 운전원의 피부·눈·점막이 건조해지고 정전기에 불리할 수 있습니다. ASHRAE Standard 55도 열쾌적만으로 하나의 최소 습도를 정하지는 않지만, 아주 낮은 습도에서 생기는 이런 비열적 불편을 언급합니다.</p>
+
+      <p><b>높은 쪽으로 가면</b> 가습량이 커지고, 무엇보다 <b>이슬점이 올라갑니다.</b> 60%에서는 이슬점이 15.8℃라서, 표면온도가 16℃보다 낮은 창호, 외벽 열교부, 외기에 면한 덕트와 배관부터 결로를 걱정해야 합니다. 미국 EPA의 일반 실내 수분관리 자료도 실내 RH를 60% 미만, 가능하면 30~50% 정도로 두라고 권합니다. 발전소 제어실의 설계 기준은 아니지만, 고습 쪽 위험을 이해하는 보조 자료로 봅니다.</p>
+
+      <p>그래서 <b>저습과 고습 어느 쪽에도 치우치지 않고, 하나의 제어 설정값으로 쓰기 쉬운 50%</b>를 골랐습니다. 50%에서 10%를 올리거나 내리면 가습량은 약 0.7kg/h씩 달라집니다.</p>
+
+      <h2>50%는 “항상 정확히 50%”가 아닙니다</h2>
+
+      <p>RH 50%는 목표값입니다. 겨울 내내 정확히 50.0%를 보증한다는 뜻이 아닙니다. 습도 제어 허용폭, 센서 오차, 경보값은 장비 사양과 발주처 운영조건에 달려 있어서 기준서가 미리 정하지 않고 <b>프로젝트마다 확정</b>합니다.</p>
+
+      <p>그리고 전자장비가 있다고 모든 장비가 정확히 50%를 요구하지도 않습니다. 실제 프로젝트에서는 제조사 사양서의 이 항목들을 확인합니다.</p>
+
+      <ul><li>운전 습도 범위 (Operating RH Range)</li><li>결로 없음 조건 (Non-condensing)</li><li>보관 습도 범위</li><li>허용 온도 범위</li><li>정전기(ESD) 관련 요구</li></ul>
+
+      <h2>사무실에는 왜 겨울 습도를 적지 않을까요</h2>
+
+      <p>일반 사무실도 가습하면 겨울 건조감은 나아집니다. 하지만 RH 50%를 성능 조건으로 적는 순간 이것들이 함께 따라옵니다.</p>
+
+      <ul><li>가습기와 그 용량</li><li>급수배관과 배수(Drain)</li><li>전력 또는 스팀</li><li>수처리</li><li>습도 센서와 제어 로직</li><li>유지관리</li><li>외피·저온표면 결로 검토</li></ul>
+
+      <p>발전소 사무실은 습도가 플랜트 운전이나 중요 장비에 직접 영향을 주는 공간이 아닙니다. 그래서 발주처 요구가 없으면 이 설비를 추가해 50%를 보증할 필요성이 낮다고 판단했습니다. 사무실은 <b>냉방 RH는 부하계산에 쓰고, 겨울 RH는 비워둡니다.</b> 또 하나, EHP처럼 가습 기능이 없는 장비를 쓰는 실에 겨울 RH를 적으면, 장비가 해낼 수 없는 조건을 표가 약속하게 됩니다.</p>
+
+      <h2>제가 습도 조건을 검토하는 순서</h2>
+
+      <ol><li>겨울 RH가 적힌 모든 실에 실제 가습 장비가 있는가?</li><li>중앙제어실 온도가 AC-003의 24℃와 같은가?</li><li>실제 DCS·전자장비 제조사의 습도 허용범위를 확인했는가? 50%가 그 범위 안에 있는가?</li><li>겨울 외기 수분비를 현장 조건으로 넣었는가?</li><li>가습량을 kg/h로 계산했는가? 가습기 용량이 그 이상인가?</li><li>급수·배수·전원 또는 스팀, 수처리가 도면과 시방에 반영됐는가?</li><li>실내 이슬점과 창호·외벽·덕트·배관의 표면온도를 비교했는가?</li><li>사무실 등에 의도하지 않은 겨울 RH가 적혀 있지 않은가?</li></ol>
+
+      <p>발주처가 “사무실은 왜 가습을 안 하느냐”고 물으면 이렇게 설명합니다.</p>
+
+      <div class="post__note"><p>“겨울 상대습도는 계산 조건이 아니라 실제 가습설비와 연결되는 성능 조건입니다. 중앙제어실은 DCS와 중요 전자·계장설비가 있고 운전원이 장시간 상주해 겨울 습도 제어를 적용했습니다. ASHRAE Power Plants의 제어실 범위 30~65% 안에서 가습량과 결로 위험을 함께 고려해 50%를 목표값으로 정했습니다. 일반 사무실은 가습기·급수·배수·유지관리 설비가 추가로 필요하지만 플랜트 운전상 필요성이 낮아, 별도 요구가 없으면 겨울 습도를 설정하지 않습니다.”</p></div>
+
+      <h2>앱에서 확인해보세요</h2>
+
+      <p><b>HVAC 부하·용량 계산서 앱</b>에서는 실 유형 중 <b>중앙제어실류만</b> 겨울 RH 50%가 들어가 있고, 가습량이 kg/h로 계산되어 장비 용량 칸까지 이어집니다. 사무실류는 냉방 50%만 있고 겨울 칸은 비어 있습니다.</p>
+
+      <p>이번 주에 이 가습 계산을 기준서와 대조하다가, 전열교환기가 있는 실에서 가습량이 작게 나오던 부분을 찾아 고쳤습니다. 무엇이 문제였는지는 <a href="../devlog-02/">이번 주 개발 기록</a>에 적었습니다. 중앙제어실 하나를 만들어 가습량이 몇 kg/h로 나오는지 직접 확인해보세요.</p>
+
+      <p>👉 <b><a href="https://choi-ilkwon.github.io/hvac-calc/" target="_blank" rel="noopener">HVAC 부하·용량 계산서 써보기</a></b> · <a href="https://choi-ilkwon.github.io/apps/hvac-calc.html" target="_blank" rel="noopener">앱 소개 보기</a></p>
+
+      <div class="post__note"><p>관련 기준: 국내 외기조건 AC-001, 해외 외기조건 AC-002, 실내 설계온습도 AC-003, 부하계산 방법 AC-005, 실별 냉난방방식 AC-015, 24시간 운전실 AC-021. 외부 기준: 「건축물의 에너지절약설계기준」 [별표 8], ASHRAE Handbook—HVAC Applications 「Power Plants」, ANSI/ASHRAE Standard 55, U.S. EPA 실내 수분관리 자료.</p></div>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
