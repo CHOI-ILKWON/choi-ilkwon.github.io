@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사무실 인원은 어디서 정할까 — 인체발열과 외기량이 달라지지 않게 하는 법 | MEP Works</title>
+<meta name="description" content="부하계산의 재실밀도만 바꾸면 인체발열은 12.5명분, 외기는 10명분이 됩니다. 실제 인원 확인, 재실밀도 계획값, 인체발열 출처 상태, 업무시설 필요 환기량 29㎥/인·h를 구분해 정리했습니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="사무실 인원은 어디서 정할까 — 인체발열과 외기량이 달라지지 않게 하는 법">
+<meta property="og:description" content="부하계산의 재실밀도만 바꾸면 인체발열은 12.5명분, 외기는 10명분이 됩니다. 실제 인원 확인, 재실밀도 계획값, 인체발열 출처 상태, 업무시설 필요 환기량 29㎥/인·h를 구분해 정리했습니다.">
+<script src="../../js/analytics.js"></script>
+<style>
+.post__fig{margin:28px 0;}
+.post__fig img{width:100%;height:auto;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;}
+.post__fig figcaption{margin-top:10px;font-size:14px;line-height:1.6;opacity:.75;}
+.post__body code{font-size:.88em;padding:1px 5px;border-radius:4px;background:rgba(0,0,0,.05);word-break:break-all;}
+.post-table-wrap table td,.post-table-wrap table th{white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="gnav__inner">
+    <a class="gnav__brand" href="../../index.html">MEP Works</a>
+    <span class="gnav__title"><a href="../index.html" style="color:inherit;text-decoration:none;">설비 실무 노트</a></span>
+    <div class="gnav__actions">
+      <a class="btn btn--sm" href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac007-nav" target="_blank" rel="noopener">부하·용량 계산서 써보기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="wrap--narrow">
+    <p class="post__meta reveal">
+      <span class="pcard__tag">부하계산</span>
+      <time datetime="2026-10-18">2026년 10월 18일</time>
+      <span>8분</span>
+    </p>
+    <h1 class="display reveal" style="font-size:clamp(30px,4.4vw,46px);">사무실 인원은<br>어디서 정할까</h1>
+    <p class="lead reveal">설계기준서 노트 AC-007 · 근거: 인체발열·재실밀도 기준서(잠정), 「건축물의 설비기준 등에 관한 규칙」 별표 1의6, ASHRAE Handbook</p>
+  </div>
+</header>
+
+<article class="section">
+  <div class="wrap--narrow">
+    <div class="post post__body">
+
+      <p>사무실 100㎡에 10명이 있다고 가정해 보겠습니다. 부하계산서에서 이 10명은 사람 몸에서 나오는 열을 만들고, 환기 계산에서는 필요한 외기량을 결정합니다.</p>
+
+      <p>문제는 두 계산이 인원을 따로 관리할 때 생깁니다. 부하계산의 재실밀도만 바꾸고 환기 계산은 그대로 두면, 같은 사무실인데 인체발열은 12.5명분, 외기는 10명분이 됩니다. 각 계산식은 정상적으로 작동하므로 불일치가 눈에 잘 띄지 않습니다.</p>
+
+      <p>이번 글에서는 <b>인원을 어떻게 정하고, 부하와 환기에 어떻게 연결할지</b> 정리하겠습니다.</p>
+
+      <div class="post__note"><p><b>기준 상태:</b> 아래의 재실밀도와 인체발열 값에는 출처 확인이 필요한 항목이 있습니다. 법정 환기량과 회사의 계획 단계 입력값은 구분해서 설명합니다.</p></div>
+
+      <h2>먼저 실제 인원을 확인합니다</h2>
+
+      <p>좌석 수나 상주 인원이 정해져 있다면 그 숫자를 사용합니다. 크레인조정실에 실제로 2명이 근무한다면 면적을 재실밀도로 나누어 임의의 인원을 만드는 것보다 2명을 쓰는 편이 낫습니다.</p>
+
+      <p>실제 인원을 아직 모를 때는 실 용도에 따라 정한 <b>재실밀도</b>를 계획값으로 사용합니다. 재실밀도가 <code>10㎡/인</code>인 사무실 100㎡라면 계산의 출발점은 10명입니다.</p>
+
+      <p>재실밀도는 “한 사람이 차지한다고 가정한 면적”입니다. 숫자가 작아질수록 같은 면적에 더 많은 사람이 있다고 계산합니다.</p>
+
+      <h2>인원 하나가 여러 계산에 쓰입니다</h2>
+
+      <p>인체발열은 <b>현열</b>과 <b>잠열</b>로 나눕니다. 현열은 실내 온도를 올리는 열이고, 잠열은 사람이 내놓는 수분과 관련된 부하입니다.</p>
+
+      <p>현재 검토 중인 예제값인 현열 57W/인, 잠열 62W/인을 사용하면 10명의 부하는 다음과 같습니다.</p>
+
+      <div class="post-table-wrap"><table><thead><tr><th>항목</th><th>계산</th><th>결과</th></tr></thead><tbody><tr><td>인체 현열</td><td>10인 × 57W/인</td><td>570W</td></tr><tr><td>인체 잠열</td><td>10인 × 62W/인</td><td>620W</td></tr></tbody></table></div>
+
+      <p>이 <b>57W와 62W의 원 출처는 아직 확인하지 못했습니다.</b> 따라서 예제 계산에는 쓸 수 있어도, 출처가 확인된 법정값이나 학회 확정값처럼 소개하지 않습니다.</p>
+
+      <p>같은 10명은 환기량 계산에도 들어갑니다. 다만 <b>외기량은 모든 건물에 하나의 <code>㎥/인·h</code> 값을 곱해 정할 수 없습니다.</b> 건물의 용도, 적용 법령, 환기 방식, 프로젝트 기준을 먼저 확인해야 합니다.</p>
+
+      <p>예를 들어 「건축물의 설비기준 등에 관한 규칙」 별표 1의6이 적용되는 업무시설이라면, 해당 별표의 업무시설 필요 환기량은 <b>29㎥/인·h 이상</b>입니다. 이 조건을 적용하는 예제에서 10명의 필요 환기량은 최소 290㎥/h입니다. 이 숫자를 면적과 용도에 관계없이 모든 사무실의 공통 법정값으로 쓰지는 않습니다. (<a href="https://www.law.go.kr/LSW/flDownload.do?bylClsCd=110201&amp;flSeq=143339993&amp;gubun=" target="_blank" rel="noopener">별표 1의6 원문</a>)</p>
+
+      <figure class="post__fig"><img src="occupant-one-number.png" alt="재실인원 10명이 인체 현열, 잠열, 필요 환기량에 함께 쓰이는 구조와 두 칸으로 나뉠 때의 불일치" loading="lazy"><figcaption>그림: 사무실 100㎡, 재실밀도 10㎡/인. 같은 10명이 인체 현열 570W, 잠열 620W, 필요 환기량(업무시설 29㎥/인·h 적용 예) 290㎥/h 이상으로 이어집니다. 인원을 두 칸에서 따로 관리하면 한쪽만 바뀌어도 경고 없이 어긋납니다.</figcaption></figure>
+
+      <h2>인원과 외기 공급 여부는 다른 입력입니다</h2>
+
+      <p>탕비실에는 사람이 들어올 수 있습니다. 그렇다고 그 실에 외기를 <b>직접 공급하는 방식</b>이 반드시 적용되는 것은 아닙니다. 배기하고 인접 공간에서 보충공기를 받는 구성도 검토할 수 있습니다.</p>
+
+      <p>따라서 “직접 공급 외기 없음”을 표현하기 위해 재실인원을 0명으로 만들면 안 됩니다. 그러면 인체발열까지 계산에서 사라집니다.</p>
+
+      <p>입력은 다음처럼 나누는 편이 명확합니다.</p>
+
+      <ol><li><b>재실인원:</b> 실제 인원 또는 재실밀도로 정한 인원</li><li><b>환기 방식:</b> 직접 외기 공급, 인접실 보충공기, 배기 등</li><li><b>적용 환기량:</b> 해당 건물과 실에 적용되는 기준으로 산정한 값</li></ol>
+
+      <p>ASHRAE의 사무공간 자료도 커피 공간과 간이주방 등을 일반 사무실과 구분해 환기·배기를 다룹니다. 따라서 “탕비실 외기 0”이라는 한 줄만으로 환기 검토가 끝났다고 보면 안 됩니다. (<a href="https://handbook.ashrae.org/handbooks/A19/SI/A19_Ch03/a19_ch03_si.aspx" target="_blank" rel="noopener">ASHRAE Handbook—HVAC Applications 3장</a>)</p>
+
+      <h2>앱에서는 인원을 한 곳에서 관리합니다</h2>
+
+      <p>기존 계산 구조에서는 부하계산용 인원과 외기량 계산용 인원이 서로 다른 상수에서 나올 수 있었습니다. 두 상수가 처음에는 같은 인원을 가리키더라도, 한쪽만 수정하면 결과가 달라집니다.</p>
+
+      <p>기본 재실인원을 <b>한 입력에서 계산하고 각 계산에 전달</b>하면 이런 불일치를 줄일 수 있습니다. 용도에 따라 서로 다른 설계인원을 써야 한다면 그 이유와 값을 별도로 표시해야 합니다.</p>
+
+      <p>여기서 중요한 것은 <b>‘미입력’과 ‘실제로 무인’을 구분하는 것</b>입니다. 인원 칸을 비웠다는 이유만으로 0명으로 확정해서는 안 됩니다.</p>
+
+      <h2>설계할 때 확인할 순서</h2>
+
+      <ol><li>실제 좌석 수와 상주 인원이 있는지 확인합니다.</li><li>없으면 실 용도에 맞는 계획 재실밀도를 사용하고 그 사실을 표시합니다.</li><li>인체발열에 적용할 현열·잠열 값과 출처를 확인합니다.</li><li>해당 건물에 적용되는 환기 기준과 실의 환기 방식을 따로 확인합니다.</li><li>부하계산과 환기 계산이 같은 기본 재실인원에서 출발하는지 대조합니다.</li></ol>
+
+      <p>사람 수는 간단한 입력처럼 보이지만, 냉방부하와 환기설비 양쪽으로 이어집니다. 그래서 저는 <b>인원을 한 곳에서 정하되, 그 인원을 각 계산에 어떻게 적용했는지는 따로 보이게</b> 하려고 합니다.</p>
+
+      <p>👉 <b><a href="https://choi-ilkwon.github.io/hvac-calc/?utm_source=blog&utm_content=post-ac007-end" target="_blank" rel="noopener">HVAC 부하·용량 계산서 살펴보기</a></b> · <a href="https://choi-ilkwon.github.io/apps/hvac-calc.html" target="_blank" rel="noopener">앱 소개 보기</a></p>
+
+    </div>
+  </div>
+</article>
+
+<section class="section section--alt">
+  <div class="wrap--narrow center">
+    <h2 class="title reveal">다른 글도 보기</h2>
+    <div class="hero__cta reveal" style="margin-top:22px;">
+      <a class="btn btn--ghost" href="../index.html">설비 실무 노트 목록</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__apps">
+      <a href="../../apps/sanitary.html">위생배관 관경</a>
+      <a href="../../apps/valve.html">밸브 계통도</a>
+      <a href="../../apps/hvac-calc.html">HVAC 부하·용량</a>
+      <a href="../../apps/duct.html">환기 덕트</a>
+      <a href="../../apps/fire.html">소화설비 법규검토</a>
+      <a href="../../apps/sprinkler.html">스프링클러</a>
+      <a href="../../apps/hvac-spec.html">HVAC 시방서</a>
+    </div>
+    <div class="footer__meta">
+      <span>Copyright © 2026 CHOI ILKWON. All rights reserved.</span>
+      <a href="mailto:jikwang8610@gmail.com">jikwang8610@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
